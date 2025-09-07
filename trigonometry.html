@@ -4,175 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trigonometry - HNC Maths</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        /* Basic styles from the original document for context */
-        .info-box { background-color: #eef2ff; border-left: 4px solid #4f46e5; padding: 1rem; margin-top: 1rem; margin-bottom: 1rem; border-radius: 0.25rem; }
-        .info-box p:first-child { font-weight: bold; color: #4338ca; margin-top: 0; }
-        .example-box { background-color: #f9fafb; border: 1px solid #e5e7eb; padding: 1rem; margin-top: 1rem; border-radius: 0.5rem; }
-        .example-box p { margin-bottom: 0.5rem; }
-        .math-table td, .math-table th { padding: 0.75rem; border-bottom: 1px solid #e5e7eb; }
-        .active { color: #1d4ed8; text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <header class="bg-white shadow-md sticky top-0 z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
-            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+    <header>
+        <div class="container">
+            <h1>HNC Maths Master Reference</h1>
+            <p class="mt-1">The definitive guide with all topics and detailed examples.</p>
         </div>
     </header>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder" class="lg:sticky lg:self-start"></aside>
+
+        <main>
+            <h2>Trigonometry</h2>
+
+            <h3 id="trig-fundamentals">1. Fundamentals of Right-Angled Triangles</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>Use for any right-angled triangle to relate angles and side lengths.</p>
+            </div>
+            <p><strong>Pythagoras' Theorem:</strong> For finding a third side when you know two sides.</p>
+            <div class="math-block">$$ a^2 + b^2 = c^2 $$</div>
+            <p><strong>SOH CAH TOA:</strong> For finding unknown sides or angles.</p>
+            <div class="math-block">$$ \sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}, \quad \cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}, \quad \tan\theta = \frac{\text{Opposite}}{\text{Adjacent}} $$</div>
+
+            <h3 id="trig-radians">2. Radians & Circular Motion</h3>
+            <div class="info-box">
+                <p><strong>What is a Radian?</strong></p>
+                <p>A radian is the angle at the center of a circle created by an arc that has the same length as the circle's radius. Using radians simplifies many formulas in physics and engineering. A full circle is $$2\pi$$ radians.</p>
+            </div>
             
-            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+            <h4>Angle Conversions</h4>
+            <div class="info-box">
+                <p><strong>Critical Reminder</strong></p>
+                <p>You must convert angles to <strong>radians</strong> before using them in formulas for arc length, sector area, or any angular motion calculations.</p>
+            </div>
+            <p><strong>Degrees to Radians:</strong></p>
+            <div class="math-block">$$ \text{Radians} = \text{Degrees} \times \frac{\pi}{180} $$</div>
+            <p><strong>Radians to Degrees:</strong></p>
+            <div class="math-block">$$ \text{Degrees} = \text{Radians} \times \frac{180}{\pi} $$</div>
+            
+            <h4>Arc Length and Sector Area</h4>
+            <p><strong>Arc Length (s):</strong> $$ s = r\theta $$ (where $$\theta$$ is in <strong>radians</strong>)</p>
+            <p><strong>Sector Area (A):</strong> $$ A = \frac{1}{2}r^2\theta $$ (where $$\theta$$ is in <strong>radians</strong>)</p>
+            <div class="example-box">
+                <p><strong>Example:</strong> A circular sector has a radius of 8cm and an angle of 60°. Find its arc length and area.</p>
+                <p><strong>1. Convert angle to radians:</strong></p>
+                <div class="math-block">$$ \theta = 60^\circ \times \frac{\pi}{180} = \frac{\pi}{3} \text{ rad} $$</div>
+                <p><strong>2. Calculate Arc Length:</strong></p>
+                <div class="math-block">$$ s = r\theta = 8 \times \frac{\pi}{3} \approx 8.38 \text{ cm} $$</div>
+                <p><strong>3. Calculate Sector Area:</strong></p>
+                <div class="math-block">$$ A = \frac{1}{2}r^2\theta = \frac{1}{2}(8^2)\left(\frac{\pi}{3}\right) = \frac{32\pi}{3} \approx 33.51 \text{ cm}^2 $$</div>
+            </div>
+            
+            <h4>Angular Motion & Centripetal Force</h4>
+            <div class="info-box">
+                <p><strong>Key Formulas</strong></p>
+                <p>These formulas connect rotational (angular) motion to linear (tangential) motion for an object moving in a circle.</p>
+            </div>
+            <p><strong>Linear vs. Angular Speed ($$\omega$$):</strong> $$ v = r\omega $$</p>
+            <p><strong>Centripetal Acceleration ($$a_c$$):</strong> $$ a_c = \omega^2r = \frac{v^2}{r} $$</p>
+            <p><strong>Centripetal Force ($$F_c$$):</strong> $$ F_c = m\omega^2r = \frac{mv^2}{r} $$</p>
+            <div class="example-box">
+                <p><strong>Example:</strong> A 0.5 kg ball is swung on a 1.2m rope, completing 2 full rotations every second. Find its angular speed, linear speed, and the centripetal force in the rope.</p>
+                <p><strong>1. Find angular speed ($$\omega$$) in rad/s:</strong><br> Two rotations is $$2 \times 2\pi = 4\pi$$ radians. This occurs in 1 second.</p>
+                <div class="math-block">$$ \omega = 4\pi \text{ rad/s} \approx 12.57 \text{ rad/s} $$</div>
+                <p><strong>2. Find linear speed (v):</strong></p>
+                <div class="math-block">$$ v = r\omega = 1.2 \times 4\pi \approx 15.08 \text{ m/s} $$</div>
+                <p><strong>3. Find centripetal force ($$F_c$$):</strong></p>
+                <div class="math-block">$$ F_c = \frac{mv^2}{r} = \frac{0.5 \times (15.08)^2}{1.2} \approx \frac{113.7}{1.2} \approx 94.75 \text{ N} $$</div>
+            </div>
 
-            <main class="lg:col-span-3 mt-8 lg:mt-0">
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-bold text-gray-900">Trigonometry</h2>
-
-                    <h3 id="trig-fundamentals" class="text-xl font-semibold mt-6">1. Fundamentals of Right-Angled Triangles</h3>
-                    <div class="info-box"><p>When to Use</p>Use for any right-angled triangle to relate angles and side lengths.</div>
-                    <p class="mt-4"><strong>Pythagoras' Theorem:</strong> For finding a third side when you know two sides.</p>
-                    <p>$$ a^2 + b^2 = c^2 $$</p>
-                    <p class="mt-4"><strong>SOH CAH TOA:</strong> For finding unknown sides or angles.</p>
-                    <p>$$ \sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}}, \quad \cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}}, \quad \tan\theta = \frac{\text{Opposite}}{\text{Adjacent}} $$</p>
-
-                    <hr class="my-8">
-
-                    <h3 id="trig-radians" class="text-xl font-semibold">2. Radians & Circular Motion</h3>
-                    <div class="info-box"><p>What is a Radian?</p>A radian is the angle at the center of a circle created by an arc that has the same length as the circle's radius. Using radians simplifies many formulas in physics and engineering. A full circle is $$2\pi$$ radians.</div>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Angle Conversions</h4>
-                    <div class="info-box"><p>Critical Reminder</p>You must convert angles to **radians** before using them in formulas for arc length, sector area, or any angular motion calculations.</div>
-                    <p class="mt-4"><strong>Degrees to Radians:</strong> $$ \text{Radians} = \text{Degrees} \times \frac{\pi}{180} $$</p>
-                    <p><strong>Radians to Degrees:</strong> $$ \text{Degrees} = \text{Radians} \times \frac{180}{\pi} $$</p>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Arc Length and Sector Area</h4>
-                    <p class="mt-4"><strong>Arc Length (s):</strong> $$ s = r\theta $$ (where $$\theta$$ is in **radians**)</p>
-                    <p><strong>Sector Area (A):</strong> $$ A = \frac{1}{2}r^2\theta $$ (where $$\theta$$ is in **radians**)</p>
-                    <div class="example-box">
-                        <p>Example: A circular sector has a radius of 8cm and an angle of 60°. Find its arc length and area.</p>
-                        <p><strong>1. Convert angle to radians:</strong> $$ \theta = 60^\circ \times \frac{\pi}{180} = \frac{\pi}{3} \text{ rad} $$</p>
-                        <p><strong>2. Calculate Arc Length:</strong> $$ s = r\theta = 8 \times \frac{\pi}{3} \approx 8.38 \text{ cm} $$</p>
-                        <p><strong>3. Calculate Sector Area:</strong> $$ A = \frac{1}{2}r^2\theta = \frac{1}{2}(8^2)\left(\frac{\pi}{3}\right) = \frac{32\pi}{3} \approx 33.51 \text{ cm}^2 $$</p>
-                    </div>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Angular Motion & Centripetal Force</h4>
-                    <div class="info-box"><p>Key Formulas</p>These formulas connect rotational (angular) motion to linear (tangential) motion for an object moving in a circle.</div>
-                    <p class="mt-4"><strong>Linear vs. Angular Speed ($$\omega$$):</strong> $$ v = r\omega $$</p>
-                    <p><strong>Centripetal Acceleration ($$a_c$$):</strong> $$ a_c = \omega^2r = \frac{v^2}{r} $$</p>
-                    <p><strong>Centripetal Force ($$F_c$$):</strong> $$ F_c = m\omega^2r = \frac{mv^2}{r} $$</p>
-                    <div class="example-box">
-                        <p>Example: A 0.5 kg ball is swung on a 1.2m rope, completing 2 full rotations every second. Find its angular speed, linear speed, and the centripetal force in the rope.</p>
-                        <p><strong>1. Find angular speed ($$\omega$$) in rad/s:</strong><br> Two rotations is $$2 \times 2\pi = 4\pi$$ radians. This occurs in 1 second.<br>$$ \omega = 4\pi \text{ rad/s} \approx 12.57 \text{ rad/s} $$</p>
-                        <p><strong>2. Find linear speed (v):</strong><br>$$ v = r\omega = 1.2 \times 4\pi \approx 15.08 \text{ m/s} $$</p>
-                        <p><strong>3. Find centripetal force ($$F_c$$):</strong><br>$$ F_c = \frac{mv^2}{r} = \frac{0.5 \times (15.08)^2}{1.2} \approx \frac{113.7}{1.2} \approx 94.75 \text{ N} $$</p>
-                    </div>
-
-                    <hr class="my-8">
-
-                    <h3 id="trig-rules" class="text-xl font-semibold">3. Rules for Non-Right-Angled Triangles</h3>
-                    <div class="info-box"><p>When to Use</p>Use for any triangle. Use the <strong>Sine Rule</strong> when you know an angle and its opposite side. Use the <strong>Cosine Rule</strong> when you know two sides and the included angle, or all three sides.</div>
-                    <p class="mt-4"><strong>Sine Rule:</strong> $$ \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} $$</p>
-                    <p><strong>Cosine Rule (for a side):</strong> $$ a^2 = b^2 + c^2 - 2bc\cos A $$</p>
-                    <p><strong>Cosine Rule (rearranged for an angle):</strong> $$ \cos A = \frac{b^2 + c^2 - a^2}{2bc} $$</p>
-                    <div class="example-box">
-                        <p>Example: In a triangle, side b=10, side c=12, and angle A=48°. Find the length of side a.</p>
-                        We have two sides and the included angle, so we use the Cosine Rule: <br>
-                        $$ a^2 = 10^2 + 12^2 - 2(10)(12)\cos(48^\circ) $$ <br>
-                        $$ a^2 = 100 + 144 - 240(0.6691) \approx 244 - 160.59 = 83.41 $$ <br>
-                        $$ a = \sqrt{83.41} \approx 9.13 $$
-                    </div>
-
-                    <hr class="my-8">
-
-                    <h3 id="trig-identities" class="text-xl font-semibold">4. Trigonometric Identities</h3>
-                    <div class="info-box"><p>When to Use</p>Use to expand, simplify, or rewrite trigonometric expressions involving the sum, difference, or multiples of angles. These are fundamental for solving complex trig equations.</div>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Compound Angle (Sum & Difference) Formulas</h4>
-                    <p class="mt-4">$$ \sin(A \pm B) = \sin A \cos B \pm \cos A \sin B $$</p>
-                    <p>$$ \cos(A \pm B) = \cos A \cos B \mp \sin A \sin B $$</p>
-                    <div class="example-box">
-                        <p>Example: Find the exact value of $$ \sin(75^\circ) $$ without a calculator.</p>
-                        $$ \sin(75^\circ) = \sin(45^\circ+30^\circ) = \sin(45^\circ)\cos(30^\circ) + \cos(45^\circ)\sin(30^\circ) $$
-                        $$ = \left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) + \left(\frac{\sqrt{2}}{2}\right)\left(\frac{1}{2}\right) = \frac{\sqrt{6}+\sqrt{2}}{4} $$
-                    </div>
-
-                    <h4 class="text-lg font-semibold mt-4">Double Angle Formulas</h4>
-                    <p class="mt-4">$$ \sin(2A) = 2\sin A \cos A $$</p>
-                    <p>$$ \cos(2A) = \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A $$</p>
-                    <div class="example-box">
-                        <p>Example: If $$ \sin A = \frac{4}{5} $$ and A is an acute angle, find the exact value of $$ \cos(2A) $$.</p>
-                        <p><strong>1. Find $$\cos A$$:</strong> We can imagine a right-angled triangle with opposite=4, hypotenuse=5. The adjacent side is $$ \sqrt{5^2 - 4^2} = \sqrt{9} = 3 $$. So, $$ \cos A = \frac{3}{5} $$.</p>
-                        <p><strong>2. Use the double angle formula:</strong><br>$$ \cos(2A) = \cos^2 A - \sin^2 A = \left(\frac{3}{5}\right)^2 - \left(\frac{4}{5}\right)^2 = \frac{9}{25} - \frac{16}{25} = -\frac{7}{25} $$</p>
-                    </div>
-
-                    <hr class="my-8">
-
-                    <h3 id="trig-harmonic" class="text-xl font-semibold">5. Harmonic Form (R-alpha Method)</h3>
-                    <div class="info-box"><p>When to Use</p>Use to combine multiple sine and cosine waves of the same frequency into a single, phase-shifted wave. This is essential for finding the maximum amplitude and phase shift of a combined signal, e.g., in AC circuits or mechanical vibrations.</div>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Basic Combination</h4>
-                    <p class="mt-4">To express $$ a\sin x + b\cos x $$ in the form $$ R\sin(x + \alpha) $$:</p>
-                    <p>$$ R = \sqrt{a^2 + b^2} \quad \text{and} \quad \tan \alpha = \frac{b}{a} $$</p>
-                    <div class="example-box">
-                        <p>Example: Given $$V_1 = 9\sin(\omega t)$$ and $$V_2 = 8\cos(\omega t)$$, express $$V_3 = V_1 + V_2$$ in the form $$R\sin(\omega t + \alpha)$$.</p>
-                        <p><strong>1. Identify 'a' and 'b':</strong> Here, $$a=9$$ and $$b=8$$.</p>
-                        <p><strong>2. Calculate the resultant amplitude (R):</strong><br>$$ R = \sqrt{9^2 + 8^2} = \sqrt{81 + 64} = \sqrt{145} \approx 12.04 $$</p>
-                        <p><strong>3. Calculate the phase angle ($$\alpha$$) in radians:</strong><br>$$ \tan \alpha = \frac{b}{a} = \frac{8}{9} \implies \alpha = \tan^{-1}\left(\frac{8}{9}\right) \approx 0.73 \text{ rad} $$</p>
-                        <p class="font-semibold mt-2">Final Answer: $$ V_3 \approx 12.04\sin(\omega t + 0.73) $$</p>
-                    </div>
-                    
-                    <h4 class="text-lg font-semibold mt-4">Combining Waves with Existing Phase Shifts</h4>
-                    <div class="info-box"><p>Strategy</p>When combining waves that already have phase shifts, first use the compound angle formulas to expand each term. Then, collect all the $$\sin\theta$$ and $$\cos\theta$$ terms together. Finally, apply the standard R-alpha method to the simplified expression.</div>
-                    <div class="example-box">
-                        <p>Example: Solve $$1.3\cos\theta + 0.8\sin(\theta + \pi/4) = 0.5$$ for its general solution in radians.</p>
-                        <p><strong>1. Expand the term with the phase shift:</strong><br>
-                        $$ 0.8\sin(\theta + \pi/4) = 0.8(\sin\theta\cos(\pi/4) + \cos\theta\sin(\pi/4)) \approx 0.5657\sin\theta + 0.5657\cos\theta $$</p>
-                        <p><strong>2. Add to the original expression and collect terms:</strong><br>
-                        $$ 1.3\cos\theta + (0.5657\sin\theta + 0.5657\cos\theta) = 0.5657\sin\theta + 1.8657\cos\theta $$</p>
-                        <p><strong>3. Convert to the form $$R\cos(\theta - \alpha)$$:</strong> (Using cos form as the cos term is larger)<br>
-                        $$ R = \sqrt{0.5657^2 + 1.8657^2} \approx 1.9496 $$
-                        $$ \alpha = \arctan\left(\frac{0.5657}{1.8657}\right) \approx 0.2944 \text{ rad} $$
-                        So the LHS becomes $$ 1.9496\cos(\theta - 0.2944) $$</p>
-                        <p><strong>4. Solve the simplified equation:</strong><br>
-                        $$ 1.9496\cos(\theta - 0.2944) = 0.5 \implies \cos(\theta - 0.2944) \approx 0.2565 $$</p>
-                        <p><strong>5. Find all solutions for the angle:</strong><br>
-                        The principal value is $$\beta = \arccos(0.2565) \approx 1.3114 \text{ rad}$$.<br>
-                        Due to the symmetry of the cosine graph, the other solution in the range $$[0, 2\pi]$$ is $$2\pi - 1.3114 = 4.9718 \text{ rad}$$.</p>
-                        <p><strong>6. Solve for $$\theta$$ and write the general solution ($$n$$ is any integer):</strong><br>
-                        $$ \theta - 0.2944 = 1.3114 \implies \theta \approx 1.6058 $$.<br>
-                        $$ \theta - 0.2944 = 4.9718 \implies \theta \approx 5.2662 $$.</p>
-                        <p class="font-semibold mt-2">Final Answer: $$ \theta \approx 1.6058 + 2\pi n $$ and $$ \theta \approx 5.2662 + 2\pi n $$.</p>
-                    </div>
-
-                    <hr class="my-8">
-
-                    <h3 id="trig-quadratic" class="text-xl font-semibold">6. Solving Quadratic Trigonometric Equations</h3>
-                    <div class="info-box"><p>When to Use</p>For equations containing a squared trig function (like $$\sin^2x$$) that can be factorised or solved using the quadratic formula. You may need to use identities like $$\sin^2x + \cos^2x = 1$$ to get the equation in terms of a single trig function first.</div>
-                    <div class="example-box">
-                        <p>Example: Solve $$(2\sin x - 1)(4\sin x + 1) = 0$$ for $$0^\circ \le x \le 360^\circ$$.</p>
-                        <p><strong>1. Set each factor to zero:</strong><br>
-                        $$ 2\sin x - 1 = 0 \implies \sin x = 0.5 $$
-                        or
-                        $$ 4\sin x + 1 = 0 \implies \sin x = -0.25 $$</p>
-                        <p><strong>2. Solve for each case within the range $$0^\circ \le x \le 360^\circ$$:</strong><br>
-                        For $$\sin x = 0.5$$, the principal value is $$x = \sin^{-1}(0.5) = 30^\circ$$. The other solution is $$180^\circ - 30^\circ = 150^\circ$$.<br>
-                        For $$\sin x = -0.25$$, the principal value is $$x = \sin^{-1}(-0.25) \approx -14.48^\circ$$. This is outside the range. The solutions inside the range are $$180^\circ - (-14.48^\circ) = 194.48^\circ$$ and $$360^\circ + (-14.48^\circ) = 345.52^\circ$$.</p>
-                        <p class="font-semibold mt-2">Final Answer: The solutions are $$30^\circ, 150^\circ, 194.48^\circ, \text{ and } 345.52^\circ$$.</p>
-                    </div>
-
+            <h3 id="trig-rules">3. Rules for Non-Right-Angled Triangles</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>Use for any triangle. Use the <strong>Sine Rule</strong> when you know an angle and its opposite side. Use the <strong>Cosine Rule</strong> when you know two sides and the included angle, or all three sides.</p>
+            </div>
+            <p><strong>Sine Rule:</strong> $$ \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} $$</p>
+            <p><strong>Cosine Rule (for a side):</strong> $$ a^2 = b^2 + c^2 - 2bc\cos A $$</p>
+            <p><strong>Cosine Rule (rearranged for an angle):</strong> $$ \cos A = \frac{b^2 + c^2 - a^2}{2bc} $$</p>
+            <div class="example-box">
+                <p><strong>Example:</strong> In a triangle, side b=10, side c=12, and angle A=48°. Find the length of side a.</p>
+                <p>We have two sides and the included angle, so we use the Cosine Rule:</p>
+                <div class="math-block">
+                    $$ a^2 = 10^2 + 12^2 - 2(10)(12)\cos(48^\circ) $$ <br>
+                    $$ a^2 = 100 + 144 - 240(0.6691) \approx 244 - 160.59 = 83.41 $$ <br>
+                    $$ a = \sqrt{83.41} \approx 9.13 $$
                 </div>
-            </main>
-        </div>
+            </div>
+
+            <h3 id="trig-identities">4. Trigonometric Identities</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>Use to expand, simplify, or rewrite trigonometric expressions involving the sum, difference, or multiples of angles. These are fundamental for solving complex trig equations.</p>
+            </div>
+            
+            <h4>Compound Angle (Sum & Difference) Formulas</h4>
+            <p>$$ \sin(A \pm B) = \sin A \cos B \pm \cos A \sin B $$</p>
+            <p>$$ \cos(A \pm B) = \cos A \cos B \mp \sin A \sin B $$</p>
+            <div class="example-box">
+                <p><strong>Example:</strong> Find the exact value of $$ \sin(75^\circ) $$ without a calculator.</p>
+                <div class="math-block">
+                    $$ \sin(75^\circ) = \sin(45^\circ+30^\circ) = \sin(45^\circ)\cos(30^\circ) + \cos(45^\circ)\sin(30^\circ) $$
+                    $$ = \left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) + \left(\frac{\sqrt{2}}{2}\right)\left(\frac{1}{2}\right) = \frac{\sqrt{6}+\sqrt{2}}{4} $$
+                </div>
+            </div>
+
+            <h4>Double Angle Formulas</h4>
+            <p>$$ \sin(2A) = 2\sin A \cos A $$</p>
+            <p>$$ \cos(2A) = \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A $$</p>
+            <div class="example-box">
+                <p><strong>Example:</strong> If $$ \sin A = \frac{4}{5} $$ and A is an acute angle, find the exact value of $$ \cos(2A) $$.</p>
+                <p><strong>1. Find $$\cos A$$:</strong> We can imagine a right-angled triangle with opposite=4, hypotenuse=5. The adjacent side is $$ \sqrt{5^2 - 4^2} = \sqrt{9} = 3 $$. So, $$ \cos A = \frac{3}{5} $$.</p>
+                <p><strong>2. Use the double angle formula:</strong></p>
+                <div class="math-block">
+                    $$ \cos(2A) = \cos^2 A - \sin^2 A = \left(\frac{3}{5}\right)^2 - \left(\frac{4}{5}\right)^2 = \frac{9}{25} - \frac{16}{25} = -\frac{7}{25} $$
+                </div>
+            </div>
+
+            <h3 id="trig-harmonic">5. Harmonic Form (R-alpha Method)</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>Use to combine multiple sine and cosine waves of the same frequency into a single, phase-shifted wave. This is essential for finding the maximum amplitude and phase shift of a combined signal, e.g., in AC circuits or mechanical vibrations.</p>
+            </div>
+            
+            <h4>Basic Combination</h4>
+            <p>To express $$ a\sin x + b\cos x $$ in the form $$ R\sin(x + \alpha) $$:</p>
+            <div class="math-block">$$ R = \sqrt{a^2 + b^2} \quad \text{and} \quad \tan \alpha = \frac{b}{a} $$</div>
+            <div class="example-box">
+                <p><strong>Example:</strong> Given $$V_1 = 9\sin(\omega t)$$ and $$V_2 = 8\cos(\omega t)$$, express $$V_3 = V_1 + V_2$$ in the form $$R\sin(\omega t + \alpha)$$.</p>
+                <p><strong>1. Identify 'a' and 'b':</strong> Here, $$a=9$$ and $$b=8$$.</p>
+                <p><strong>2. Calculate the resultant amplitude (R):</strong></p>
+                <div class="math-block">$$ R = \sqrt{9^2 + 8^2} = \sqrt{81 + 64} = \sqrt{145} \approx 12.04 $$</div>
+                <p><strong>3. Calculate the phase angle ($$\alpha$$) in radians:</strong></p>
+                <div class="math-block">$$ \tan \alpha = \frac{b}{a} = \frac{8}{9} \implies \alpha = \tan^{-1}\left(\frac{8}{9}\right) \approx 0.73 \text{ rad} $$</div>
+                <p><strong>Final Answer:</strong> $$ V_3 \approx 12.04\sin(\omega t + 0.73) $$</p>
+            </div>
+            
+            <h4>Combining Waves with Existing Phase Shifts</h4>
+            <div class="info-box">
+                <p><strong>Strategy</strong></p>
+                <p>When combining waves that already have phase shifts, first use the compound angle formulas to expand each term. Then, collect all the $$\sin\theta$$ and $$\cos\theta$$ terms together. Finally, apply the standard R-alpha method to the simplified expression.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Example:</strong> Solve $$1.3\cos\theta + 0.8\sin(\theta + \pi/4) = 0.5$$ for its general solution in radians.</p>
+                <p><strong>1. Expand the term with the phase shift:</strong></p>
+                <div class="math-block">$$ 0.8\sin(\theta + \pi/4) = 0.8(\sin\theta\cos(\pi/4) + \cos\theta\sin(\pi/4)) \approx 0.5657\sin\theta + 0.5657\cos\theta $$</div>
+                <p><strong>2. Add to the original expression and collect terms:</strong></p>
+                <div class="math-block">$$ 1.3\cos\theta + (0.5657\sin\theta + 0.5657\cos\theta) = 0.5657\sin\theta + 1.8657\cos\theta $$</div>
+                <p><strong>3. Convert to the form $$R\cos(\theta - \alpha)$$:</strong> (Using cos form as the cos term is larger)</p>
+                <div class="math-block">
+                    $$ R = \sqrt{0.5657^2 + 1.8657^2} \approx 1.9496 $$
+                    $$ \alpha = \arctan\left(\frac{0.5657}{1.8657}\right) \approx 0.2944 \text{ rad} $$
+                </div>
+                <p>So the LHS becomes $$ 1.9496\cos(\theta - 0.2944) $$</p>
+                <p><strong>4. Solve the simplified equation:</strong></p>
+                <div class="math-block">$$ 1.9496\cos(\theta - 0.2944) = 0.5 \implies \cos(\theta - 0.2944) \approx 0.2565 $$</div>
+                <p><strong>5. Find all solutions for the angle:</strong><br>
+                The principal value is $$\beta = \arccos(0.2565) \approx 1.3114 \text{ rad}$$.<br>
+                Due to the symmetry of the cosine graph, the other solution in the range $$[0, 2\pi]$$ is $$2\pi - 1.3114 = 4.9718 \text{ rad}$$.</p>
+                <p><strong>6. Solve for $$\theta$$ and write the general solution ($$n$$ is any integer):</strong><br>
+                $$ \theta - 0.2944 = 1.3114 \implies \theta \approx 1.6058 $$.<br>
+                $$ \theta - 0.2944 = 4.9718 \implies \theta \approx 5.2662 $$.</p>
+                <p><strong>Final Answer:</strong> $$ \theta \approx 1.6058 + 2\pi n $$ and $$ \theta \approx 5.2662 + 2\pi n $$.</p>
+            </div>
+
+            <h3 id="trig-quadratic">6. Solving Quadratic Trigonometric Equations</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>For equations containing a squared trig function (like $$\sin^2x$$) that can be factorised or solved using the quadratic formula. You may need to use identities like $$\sin^2x + \cos^2x = 1$$ to get the equation in terms of a single trig function first.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Example:</strong> Solve $$(2\sin x - 1)(4\sin x + 1) = 0$$ for $$0^\circ \le x \le 360^\circ$$.</p>
+                <p><strong>1. Set each factor to zero:</strong><br>
+                $$ 2\sin x - 1 = 0 \implies \sin x = 0.5 $$
+                or
+                $$ 4\sin x + 1 = 0 \implies \sin x = -0.25 $$</p>
+                <p><strong>2. Solve for each case within the range $$0^\circ \le x \le 360^\circ$$:</strong><br>
+                For $$\sin x = 0.5$$, the principal value is $$x = \sin^{-1}(0.5) = 30^\circ$$. The other solution is $$180^\circ - 30^\circ = 150^\circ$$.<br>
+                For $$\sin x = -0.25$$, the principal value is $$x = \sin^{-1}(-0.25) \approx -14.48^\circ$$. This is outside the range. The solutions inside the range are $$180^\circ - (-14.48^\circ) = 194.48^\circ$$ and $$360^\circ + (-14.48^\circ) = 345.52^\circ$$.</p>
+                <p><strong>Final Answer:</strong> The solutions are $$30^\circ, 150^\circ, 194.48^\circ, \text{ and } 345.52^\circ$$.</p>
+            </div>
+
+        </main>
     </div>
-    ...
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HNC Maths Master Reference. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed with a modern aesthetic inspired by Uiverse.io</p>
+        </div>
+    </footer>
+
     <script src="navigation.js"></script>
 </body>
 </html>

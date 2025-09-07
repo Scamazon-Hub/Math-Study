@@ -87,43 +87,10 @@
                         <text x="80" y="140" font-weight="bold" fill="var(--accent-green)">k</text>
                     </svg>
                 </div>
-
-                <h4>Magnitude of a Vector</h4>
-                <div class="info-box">
-                    <p><strong>Definition</strong></p>
-                    <p>The magnitude (or length) of a vector $$\mathbf{v} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}$$ is calculated using the Pythagorean theorem in 3D:</p>
-                    <div class="math-block">
-                        $$ |\mathbf{v}| = \sqrt{x^2 + y^2 + z^2} $$
-                    </div>
-                    <p>In mechanical engineering, this is crucial for determining the strength of forces or velocities.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: Find the magnitude of the vector $$\mathbf{v} = 3\mathbf{i} - 4\mathbf{j} + 5\mathbf{k}$$</p>
-                    <div class="math-block">
-                        $$ |\mathbf{v}| = \sqrt{3^2 + (-4)^2 + 5^2} = \sqrt{9 + 16 + 25} = \sqrt{50} \approx 7.07 $$
-                    </div>
-                </div>
-
-                <h4>Calculating Unit Vectors</h4>
-                <div class="info-box">
-                    <p><strong>Definition</strong></p>
-                    <p>A unit vector $$\hat{\mathbf{v}}$$ in the direction of $$\mathbf{v}$$ is obtained by dividing the vector by its magnitude:</p>
-                    <div class="math-block">
-                        $$ \hat{\mathbf{v}} = \frac{\mathbf{v}}{|\mathbf{v}|} $$
-                    </div>
-                    <p>This is useful in engineering for normalizing forces or directions in simulations.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: Find the unit vector for $$\mathbf{v} = 3\mathbf{i} - 4\mathbf{j} + 5\mathbf{k}$$</p>
-                    <div class="math-block">
-                        $$ \hat{\mathbf{v}} = \frac{3\mathbf{i} - 4\mathbf{j} + 5\mathbf{k}}{\sqrt{50}} = \frac{3}{\sqrt{50}}\mathbf{i} - \frac{4}{\sqrt{50}}\mathbf{j} + \frac{5}{\sqrt{50}}\mathbf{k} \approx 0.424\mathbf{i} - 0.566\mathbf{j} + 0.707\mathbf{k} $$
-                    </div>
-                </div>
             </section>
 
             <section id="vectors-ops">
                 <h3>Vector Addition and Subtraction</h3>
-
                 <h4>Triangle Rule</h4>
                 <div class="info-box">
                     <p><strong>How it Works</strong></p>
@@ -143,52 +110,6 @@
                         <line x1="20" y1="100" x2="200" y2="40" stroke="var(--accent-green)" stroke-width="3" marker-end="url(#arrowhead2)" />
                         <text x="100" y="60" font-weight="bold" fill="var(--accent-green)">a + b</text>
                     </svg>
-                </div>
-
-                <h4>Component Method for Addition</h4>
-                <div class="info-box">
-                    <p><strong>How it Works</strong></p>
-                    <p>For vectors $$\mathbf{a} = a_x\mathbf{i} + a_y\mathbf{j} + a_z\mathbf{k}$$ and $$\mathbf{b} = b_x\mathbf{i} + b_y\mathbf{j} + b_z\mathbf{k}$$, the sum is:</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} + \mathbf{b} = (a_x + b_x)\mathbf{i} + (a_y + b_y)\mathbf{j} + (a_z + b_z)\mathbf{k} $$
-                    </div>
-                    <p>This method is efficient for multiple vectors in mechanical systems, such as summing forces in a truss.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: Add $$\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - 1\mathbf{k}$$ and $$\mathbf{b} = 4\mathbf{i} - 2\mathbf{j} + 5\mathbf{k}$$</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} + \mathbf{b} = (2+4)\mathbf{i} + (3-2)\mathbf{j} + (-1+5)\mathbf{k} = 6\mathbf{i} + 1\mathbf{j} + 4\mathbf{k} $$
-                    </div>
-                </div>
-
-                <h4>Vector Subtraction</h4>
-                <div class="info-box">
-                    <p><strong>How it Works</strong></p>
-                    <p>Subtracting $$\mathbf{b}$$ from $$\mathbf{a}$$ is equivalent to adding $$\mathbf{a}$$ and $$-\mathbf{b}$$. Using components: $$\mathbf{a} - \mathbf{b} = (a_x - b_x)\mathbf{i} + (a_y - b_y)\mathbf{j} + (a_z - b_z)\mathbf{k}$$</p>
-                    <p>In engineering, this is used to find relative velocities or displacements.</p>
-                </div>
-                <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
-                    <svg width="250" height="120" viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins', sans-serif" font-size="14">
-                        <defs>
-                            <marker id="arrowhead-sub" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-light)" />
-                            </marker>
-                        </defs>
-                        <line x1="20" y1="100" x2="120" y2="100" stroke="var(--text-light)" stroke-width="2" marker-end="url(#arrowhead-sub)" />
-                        <text x="65" y="95" font-weight="bold">a</text>
-                        <line x1="120" y1="100" x2="200" y2="40" stroke="var(--text-light)" stroke-width="2" marker-end="url(#arrowhead-sub)" />
-                        <text x="165" y="65" font-weight="bold">b</text>
-                        <line x1="120" y1="100" x2="40" y2="40" stroke="var(--text-medium)" stroke-width="2" marker-end="url(#arrowhead-sub)" />
-                        <text x="85" y="65" font-weight="bold">-b</text>
-                        <line x1="20" y1="100" x2="40" y2="40" stroke="var(--accent-green)" stroke-width="3" marker-end="url(#arrowhead-sub)" />
-                        <text x="20" y="60" font-weight="bold" fill="var(--accent-green)">a - b</text>
-                    </svg>
-                </div>
-                <div class="example-box">
-                    <p>Example: Subtract $$\mathbf{b} = 4\mathbf{i} - 2\mathbf{j} + 5\mathbf{k}$$ from $$\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} - 1\mathbf{k}$$</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} - \mathbf{b} = (2-4)\mathbf{i} + (3+2)\mathbf{j} + (-1-5)\mathbf{k} = -2\mathbf{i} + 5\mathbf{j} - 6\mathbf{k} $$
-                    </div>
                 </div>
             </section>
 
@@ -278,29 +199,13 @@
                     <div class="math-block">
                         $$ |\mathbf{R}|^2 = 10^2 + 20^2 - 2(10)(20)\cos(60^\circ) $$
                         $$ |\mathbf{R}|^2 = 100 + 400 - 400(0.5) = 300 $$
-                        $$ |\mathbf{R}| = \sqrt{300} \approx 17.3 \text{ N} $$
+                        $$ |\mathbf{R}| = \sqrt(300) \approx 17.3 \text{ N} $$
                     </div>
                     <p><strong>Step 3: Use the Cosine Rule again to find the direction.</strong></p>
                     <p>Let $$\theta$$ be the angle between the resultant R and the 20N force.</p>
                     <div class="math-block">
                         $$ \cos\theta = \frac{|\mathbf{R}|^2 + 20^2 - 10^2}{2 \times |\mathbf{R}| \times 20} = \frac{300 + 400 - 100}{2 \times \sqrt{300} \times 20} = \frac{600}{692.8} \approx 0.866 $$
                         $$ \theta = \cos^{-1}(0.866) = 30^\circ $$
-                    </div>
-                </div>
-
-                <h4>Resolving Vectors in 3D</h4>
-                <div class="info-box">
-                    <p><strong>When to Use</strong></p>
-                    <p>In 3D, a vector $$\mathbf{F}$$ with magnitude $$|\mathbf{F}|$$ and direction angles $$\alpha, \beta, \gamma$$ (to x, y, z axes) has components:</p>
-                    <div class="math-block">
-                        $$ F_x = |\mathbf{F}|\cos\alpha, \quad F_y = |\mathbf{F}|\cos\beta, \quad F_z = |\mathbf{F}|\cos\gamma $$
-                    </div>
-                    <p>Note: $$\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$$. This is essential for 3D force analysis in mechanical structures.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: A force of 50 N acts in a direction where $$\cos\alpha = 0.6$$, $$\cos\beta = 0.8$$, $$\cos\gamma = 0$$. Find the components.</p>
-                    <div class="math-block">
-                        $$ F_x = 50 \times 0.6 = 30 \text{ N}, \quad F_y = 50 \times 0.8 = 40 \text{ N}, \quad F_z = 50 \times 0 = 0 \text{ N} $$
                     </div>
                 </div>
             </section>
@@ -312,93 +217,33 @@
                     <p><strong>Position Vectors</strong></p>
                     <p>The vector $$\vec{OP} = \mathbf{r}$$ specifies the position of a point P relative to the origin O and is called the <strong>position vector</strong> of P. Using the triangle rule, it can be expressed in terms of its components along the axes.</p>
                 </div>
-                <p class="mt-4">For a point P(a,b,c), the position vector is given by:</p>
+                <p class="mt-4">For a point P(a,b), the position vector is given by:</p>
                 <div class="math-block">
-                    $$ \mathbf{r} = a\mathbf{i} + b\mathbf{j} + c\mathbf{k} $$
+                    $$ \mathbf{r} = a\mathbf{i} + b\mathbf{j} $$
                 </div>
 
                 <div class="info-box">
                     <p><strong>Direction Cosines</strong></p>
-                    <p>The <strong>direction cosines</strong> of a vector are the cosines of the angles the vector makes with the x, y, and z axes ($$\alpha, \beta, \gamma$$ respectively). They are also the components of the unit vector in the direction of the main vector.</p>
+                    <p>The <strong>direction cosines</strong> of a vector are the cosines of the angles the vector makes with the x and y axes ($$\alpha$$ and $$\beta$$ respectively). They are also the components of the unit vector in the direction of the main vector.</p>
                 </div>
-                <p class="mt-4">$$ \cos\alpha = \frac{a}{|\mathbf{r}|}, \quad \cos\beta = \frac{b}{|\mathbf{r}|}, \quad \cos\gamma = \frac{c}{|\mathbf{r}|} $$</p>
+                <p class="mt-4">$$ \cos\alpha = \frac{a}{|\mathbf{r}|}, \quad \cos\beta = \frac{b}{|\mathbf{r}|} $$</p>
 
                 <div class="example-box">
-                    <p>Example: The position vector of a point is P(4,7,0). Determine the magnitude of the vector, its direction cosines, and the direction angles.</p>
+                    <p>Example: The position vector of a point is P(4,7). Determine the magnitude of the vector, its direction cosines, and the direction angles.</p>
                     <p><strong>Step 1: Write the vector in component form and find its magnitude.</strong><br>
-                    The vector is $$ \mathbf{r} = 4\mathbf{i} + 7\mathbf{j} + 0\mathbf{k} $$.</p>
+                    The vector is $$ \mathbf{r} = 4\mathbf{i} + 7\mathbf{j} $$.</p>
                     <div class="math-block">
-                        $$ |\mathbf{r}| = \sqrt{4^2 + 7^2 + 0^2} = \sqrt{16 + 49} = \sqrt{65} \approx 8.06 $$
+                        $$ |\mathbf{r}| = \sqrt{4^2 + 7^2} = \sqrt{16 + 49} = \sqrt{65} \approx 8.06 $$
                     </div>
                     <p><strong>Step 2: Find the direction cosines.</strong><br>
                     The direction cosines are the components of the unit vector $$\hat{\mathbf{r}}$$.</p>
                     <div class="math-block">
-                        $$ \cos\alpha = \frac{4}{\sqrt{65}}, \quad \cos\beta = \frac{7}{\sqrt{65}}, \quad \cos\gamma = \frac{0}{\sqrt{65}} = 0 $$
+                        $$ \cos\alpha = \frac{4}{\sqrt{65}}, \quad \cos\beta = \frac{7}{\sqrt{65}} $$
                     </div>
-                    <p><strong>Step 3: Find the direction angles ($$\alpha$$, $$\beta$$, $$\gamma$$) by taking the inverse cosine.</strong></p>
+                    <p><strong>Step 3: Find the direction angles ($$\alpha$$, $$\beta$$) by taking the inverse cosine.</strong></p>
                     <div class="math-block">
                         $$ \alpha = \arccos\left(\frac{4}{\sqrt{65}}\right) \approx 60.26^\circ $$<br>
-                        $$ \beta = \arccos\left(\frac{7}{\sqrt{65}}\right) \approx 29.74^\circ $$<br>
-                        $$ \gamma = \arccos(0) = 90^\circ $$
-                    </div>
-                </div>
-
-                <h4>Applications in Mechanical Engineering</h4>
-                <div class="info-box">
-                    <p><strong>Key Uses</strong></p>
-                    <ul class="list-disc list-inside ml-4 mt-2">
-                        <li><strong>Forces in Structures:</strong> Resolving forces in beams or trusses to find equilibrium.</li>
-                        <li><strong>Velocity and Acceleration:</strong> Analyzing motion in mechanisms, such as robotic arms or vehicles.</li>
-                        <li><strong>Moments and Torque:</strong> Using position vectors to calculate moments about a point.</li>
-                    </ul>
-                </div>
-                <div class="example-box">
-                    <p>Example: In a crane, a force of 100 N is applied at a point with position vector $$\mathbf{r} = 2\mathbf{i} + 3\mathbf{j} + 1\mathbf{k}$$ m from the pivot. If the force direction is along $$\mathbf{f} = 1\mathbf{i} + 1\mathbf{j} + 1\mathbf{k}$$, find the unit vector of the force and its components.</p>
-                    <p>First, find the magnitude of $$\mathbf{f}$$: </p>
-                    <div class="math-block">
-                        $$ |\mathbf{f}| = \sqrt{1^2+1^2+1^2} = \sqrt{3} $$
-                    </div>
-                    <p>Unit vector: </p>
-                    <div class="math-block">
-                        $$ \hat{\mathbf{f}} = \frac{1}{\sqrt{3}}\mathbf{i} + \frac{1}{\sqrt{3}}\mathbf{j} + \frac{1}{\sqrt{3}}\mathbf{k} $$
-                    </div>
-                    <p>Force vector: </p>
-                    <div class="math-block">
-                        $$ \mathbf{F} = 100 \hat{\mathbf{f}} = \frac{100}{\sqrt{3}} (\mathbf{i} + \mathbf{j} + \mathbf{k}) \approx 57.74 (\mathbf{i} + \mathbf{j} + \mathbf{k}) \text{ N} $$
-                    </div>
-                </div>
-            </section>
-
-            <section id="vectors-products">
-                <h3>Vector Products (Dot and Cross)</h3>
-                <div class="info-box">
-                    <p><strong>Dot Product</strong></p>
-                    <p>The dot product of $$\mathbf{a}$$ and $$\mathbf{b}$$ is a scalar:</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta = a_x b_x + a_y b_y + a_z b_z $$
-                    </div>
-                    <p>Used for work done by a force ($$ W = \mathbf{F} \cdot \mathbf{d} $$) or projecting vectors.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: $$\mathbf{a} = 2\mathbf{i} + 3\mathbf{j}$$, $$\mathbf{b} = 4\mathbf{i} - 1\mathbf{j}$$. Find $$\mathbf{a} \cdot \mathbf{b}$$</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} \cdot \mathbf{b} = (2)(4) + (3)(-1) = 8 - 3 = 5 $$
-                    </div>
-                </div>
-
-                <div class="info-box">
-                    <p><strong>Cross Product</strong></p>
-                    <p>The cross product is a vector: $$ \mathbf{a} \times \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \sin\theta \hat{\mathbf{n}} $$, where $$\hat{\mathbf{n}}$$ is perpendicular to both.</p>
-                    <p>In components: </p>
-                    <div class="math-block">
-                        $$ \mathbf{a} \times \mathbf{b} = (a_y b_z - a_z b_y)\mathbf{i} - (a_x b_z - a_z b_x)\mathbf{j} + (a_x b_y - a_y b_x)\mathbf{k} $$
-                    </div>
-                    <p>Used for torque ($$ \mathbf{\tau} = \mathbf{r} \times \mathbf{F} $$) in mechanical systems.</p>
-                </div>
-                <div class="example-box">
-                    <p>Example: $$\mathbf{a} = 2\mathbf{i} + 3\mathbf{j} + 1\mathbf{k}$$, $$\mathbf{b} = 4\mathbf{i} - 1\mathbf{j} + 5\mathbf{k}$$. Find $$\mathbf{a} \times \mathbf{b}$$</p>
-                    <div class="math-block">
-                        $$ \mathbf{a} \times \mathbf{b} = (3\cdot5 - 1\cdot(-1))\mathbf{i} - (2\cdot5 - 1\cdot4)\mathbf{j} + (2\cdot(-1) - 3\cdot4)\mathbf{k} = (15 + 1)\mathbf{i} - (10 - 4)\mathbf{j} + (-2 - 12)\mathbf{k} = 16\mathbf{i} - 6\mathbf{j} - 14\mathbf{k} $$
+                        $$ \beta = \arccos\left(\frac{7}{\sqrt{65}}\right) \approx 29.74^\circ $$
                     </div>
                 </div>
             </section>

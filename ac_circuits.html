@@ -4,28 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AC Circuit Analysis - HNC Maths</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <header class="bg-white shadow-md sticky top-0 z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
-            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+    <header>
+        <div class="container">
+            <h1>HNC Maths Master Reference</h1>
+            <p class="mt-1">The definitive guide with all topics and detailed examples.</p>
         </div>
     </header>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
-            
-            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder" class="lg:sticky lg:self-start"></aside>
 
-            <main class="lg:col-span-3 mt-8 lg:mt-0">
-                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+        <main>
                     <h2 class="text-2xl font-bold text-gray-900">AC Circuit Analysis</h2>
                     <div class="info-box">
                         <p>Using Complex Numbers in AC Circuits</p>
@@ -114,11 +110,16 @@
                         $$ pf = \cos(9.07^\circ) \approx 0.987 $$<br>
                         Since $$\phi$$ is positive (voltage angle > current angle), the circuit is inductive and the power factor is **0.987 lagging**.</p>
                     </div>
-                </div>
-            </main>
-        </div>
+                </main>
     </div>
-    ...
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 HNC Maths Master Reference. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed with a modern aesthetic inspired by Uiverse.io</p>
+        </div>
+    </footer>
+
     <script src="navigation.js"></script>
 </body>
 </html>

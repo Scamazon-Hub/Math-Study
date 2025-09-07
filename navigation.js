@@ -1,43 +1,58 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // 1. Define the path to the current page
-    const currentPage = window.location.pathname.split('/').pop();
+document.addEventListener('DOMContentLoaded', () => {
+  const NAV_ITEMS = [
+    { href: 'index.html', label: 'Home' },
+    { href: 'units.html', label: 'Units & Notation' },
+    { href: 'algebra.html', label: 'Core Algebra' },
+    { href: 'trigonometry.html', label: 'Trigonometry' },
+    { href: 'sine_wave_fundamentals.html', label: 'Sine Wave Fundamentals' },
+    { href: 'vectors.html', label: 'Vectors' },
+    { href: 'vectorsOldButBEST.html', label: 'VectorsAlt' },
+    { href: 'calculus.html', label: 'Calculus' },
+    { href: 'mechanics.html', label: 'Applied Mechanics' },
+    { href: 'ac_circuits.html', label: 'AC Circuit Analysis' },
+    { href: 'linear_methods.html', label: 'Linear Methods' },
+    { href: 'advanced_calculus.html', label: 'Advanced Calculus' },
+    { href: 'numerical_methods.html', label: 'Numerical Methods' },
+    { href: 'economics.html', label: 'Financial Economics' },
+    { href: 'statistics.html', label: 'Statistics' },
+  ];
 
-    // 2. Define the HTML for the navigation menu.
-    // To add a new link in the future, just add a new <li> item here.
-    const navHTML = `
-        <nav class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-bold text-lg mb-4 border-b pb-2">Navigation</h2>
-            <ul class="space-y-2">
-                <li><a href="index.html" class="font-bold text-blue-600 hover:underline">Home</a></li>
-                <li><a href="units.html" class="font-bold text-blue-600 hover:underline mt-3 block">Units & Notation</a></li>
-                <li><a href="algebra.html" class="font-bold text-blue-600 hover:underline mt-3 block">Core Algebra</a></li>
-                <li><a href="trigonometry.html" class="font-bold text-blue-600 hover:underline mt-3 block">Trigonometry</a></li>
-                <li><a href="sine_wave_fundamentals.html" class="font-bold text-blue-600 hover:underline mt-3 block">Sine Wave Fundamentals</a></li>
-                <li><a href="vectors.html" class="font-bold text-blue-600 hover:underline mt-3 block">Vectors</a></li>
-                <li><a href="calculus.html" class="font-bold text-blue-600 hover:underline mt-3 block">Calculus</a></li>
-                <li><a href="mechanics.html" class="font-bold text-blue-600 hover:underline mt-3 block">Applied Mechanics</a></li>
-                <li><a href="ac_circuits.html" class="font-bold text-blue-600 hover:underline mt-3 block">AC Circuit Analysis</a></li>
-                <li><a href="linear_methods.html" class="font-bold text-blue-600 hover:underline mt-3 block">Linear Methods</a></li>
-                <li><a href="advanced_calculus.html" class="font-bold text-blue-600 hover:underline mt-3 block">Advanced Calculus</a></li>
-                <li><a href="numerical_methods.html" class="font-bold text-blue-600 hover:underline mt-3 block">Numerical Methods</a></li>
-                <li><a href="economics.html" class="font-bold text-blue-600 hover:underline mt-3 block">Financial Economics</a></li>
-                <li><a href="statistics.html" class="font-bold text-blue-600 hover:underline mt-3 block">Statistics</a></li>
-                            </ul>
-        </nav>
-    `;
+  const placeholder = document.getElementById('navigation-placeholder');
+  if (!placeholder) return;
 
-    // 3. Insert the HTML into the placeholder div
-    const navPlaceholder = document.getElementById('navigation-placeholder');
-    if (navPlaceholder) {
-        navPlaceholder.innerHTML = navHTML;
+  const currentPath = normalizePath(location.pathname);
+
+  const nav = document.createElement('nav');
+  nav.setAttribute('aria-label', 'Main');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Navigation';
+  nav.appendChild(h2);
+
+  const ul = document.createElement('ul');
+
+  NAV_ITEMS.forEach(({ href, label }) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = href;
+    a.textContent = label;
+
+    const itemPath = normalizePath(new URL(href, location.href).pathname);
+    if (itemPath === currentPath) {
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
     }
 
-    // 4. Add the 'active' class to the correct link
-    const navLinks = navPlaceholder.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
-    });
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+
+  nav.appendChild(ul);
+  placeholder.replaceChildren(nav);
+
+  function normalizePath(pathname) {
+    let p = pathname.replace(/\/index\.html?$/i, '/');
+    if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+    return p;
+  }
 });
