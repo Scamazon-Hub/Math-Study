@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+           <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Calculus</h2>
+
+                    <h3 id="calc-differentiation" class="text-xl font-semibold">1. Differentiation</h3>
+                    <div class="info-box"><p>What is it?</p>Differentiation is the process of finding the derivative, which represents the instantaneous rate of change or the gradient of a function at a specific point.</div>
+                    
+                    <h4 class="text-lg font-semibold mt-4">Standard Derivatives</h4>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-left border rounded-lg math-table">
+                            <thead class="bg-gray-100"><tr><th class="p-3">Function ($$y$$)</th><th class="p-3">Derivative ($$\frac{dy}{dx}$$)</th></tr></thead>
+                            <tbody>
+                                <tr><td>$$x^n$$</td><td>$$nx^{n-1}$$</td></tr>
+                                <tr><td>$$e^{ax}$$</td><td>$$ae^{ax}$$</td></tr>
+                                <tr><td>$$\ln(x)$$</td><td>$$\frac{1}{x}$$</td></tr>
+                                <tr><td>$$\sin(ax)$$</td><td>$$a\cos(ax)$$</td></tr>
+                                <tr><td>$$\cos(ax)$$</td><td>$$-a\sin(ax)$$</td></tr>
+                                <tr><td>$$\tan(ax)$$</td><td>$$a\sec^2(ax)$$</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-lg font-semibold mt-4">Differentiation Rules</h4>
+                    <p class="mt-4"><strong>Product Rule:</strong> $$ \frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx} $$</p>
+                    <p><strong>Quotient Rule:</strong> $$ \frac{d}{dx}\left(\frac{u}{v}\right) = \frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2} $$</p>
+                    <p><strong>Chain Rule:</strong> $$ \frac{dy}{dx} = \frac{dy}{du} \times \frac{du}{dx} $$</p>
+                    <div class="example-box">
+                        <p>Example (Chain Rule): Differentiate $$ y = (4x-3)^5 $$</p>
+                        <p><strong>Step 1: Identify the inner function (u).</strong> Let $$u = 4x-3$$. Then $$y=u^5$$.</p>
+                        <p><strong>Step 2: Differentiate both parts.</strong> $$ \frac{du}{dx} = 4 $$ and $$ \frac{dy}{du} = 5u^4 $$.</p>
+                        <p><strong>Step 3: Apply the chain rule.</strong> $$ \frac{dy}{dx} = \frac{dy}{du} \times \frac{du}{dx} = 5u^4 \times 4 = 20u^4 $$</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ \frac{dy}{dx} = 20(4x-3)^4 $$</p>
+                    </div>
+                    <div class="example-box">
+                        <p>Example (Quotient Rule): Differentiate $$ y = \frac{2x}{\sin(3x)} $$</p>
+                        <p><strong>Step 1: Identify u and v.</strong> Let $$u=2x$$ and $$v=\sin(3x)$$.</p>
+                        <p><strong>Step 2: Differentiate u and v.</strong> $$ \frac{du}{dx} = 2 $$ and $$ \frac{dv}{dx} = 3\cos(3x) $$.</p>
+                        <p><strong>Step 3: Apply the quotient rule.</strong> $$ \frac{dy}{dx} = \frac{(\sin(3x))(2) - (2x)(3\cos(3x))}{(\sin(3x))^2} $$</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ \frac{dy}{dx} = \frac{2\sin(3x) - 6x\cos(3x)}{\sin^2(3x)} $$</p>
+                    </div>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="calc-integration" class="text-xl font-semibold">2. Integration</h3>
+                    <div class="info-box"><p>What is it?</p>Integration is the reverse process of differentiation. A definite integral is used to find the total accumulation of a quantity, such as the area under a curve.</div>
+
+                    <h4 class="text-lg font-semibold mt-4">Standard Integrals</h4>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-left border rounded-lg math-table">
+                            <thead class="bg-gray-100"><tr><th class="p-3">Function ($$y$$)</th><th class="p-3">Integral ($$\int y \,dx$$)</th></tr></thead>
+                            <tbody>
+                                <tr><td>$$x^n$$</td><td>$$\frac{x^{n+1}}{n+1} + C$$</td></tr>
+                                <tr><td>$$e^{ax}$$</td><td>$$\frac{1}{a}e^{ax} + C$$</td></tr>
+                                <tr><td>$$\frac{1}{x}$$</td><td>$$\ln|x| + C$$</td></tr>
+                                <tr><td>$$\sin(ax)$$</td><td>$$-\frac{1}{a}\cos(ax) + C$$</td></tr>
+                                <tr><td>$$\cos(ax)$$</td><td>$$\frac{1}{a}\sin(ax) + C$$</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-lg font-semibold mt-4">Applications of Integration</h4>
+                    <p><strong>Area under a curve:</strong> $$ A = \int_{a}^{b} y \, dx $$</p>
+                    <p><strong>Volume of Revolution (about x-axis):</strong> $$ V = \pi \int_{a}^{b} y^2 \, dx $$</p>
+                    <div class="example-box">
+                        <p>Example (Area): Find the area under the curve $$y=x^2+1$$ from $$x=0$$ to $$x=2$$.</p>
+                        <p>$$ A = \int_{0}^{2} (x^2+1) \, dx = \left[ \frac{x^3}{3} + x \right]_{0}^{2} $$</p>
+                        <p>$$ A = \left( \frac{2^3}{3} + 2 \right) - (0) = \frac{8}{3} + 2 = \frac{14}{3} \approx 4.67 \text{ units}^2 $$</p>
+                    </div>
+                     <div class="example-box">
+                        <p>Example (Volume): Find the volume generated when the line $$y=2x$$ from $$x=0$$ to $$x=3$$ is rotated about the x-axis.</p>
+                        <p>$$ V = \pi \int_{0}^{3} (2x)^2 \, dx = \pi \int_{0}^{3} 4x^2 \, dx $$</p>
+                        <p>$$ V = \pi \left[ \frac{4x^3}{3} \right]_{0}^{3} = \pi \left( \frac{4(3)^3}{3} - 0 \right) = \pi(36) \approx 113.1 \text{ units}^3 $$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="calc-stationary" class="text-xl font-semibold">3. Stationary Points & Optimisation</h3>
+                    <div class="info-box"><p>When to Use</p>Use to find the maximum, minimum, or points of inflection of a function. This is crucial for optimization problems (e.g., finding maximum strength or minimum cost).</div>
+                    <p class="mt-4">Stationary points occur when the gradient is zero: $$ \frac{dy}{dx} = 0 $$.</p>
+                    <p>To determine the nature of a stationary point, use the **Second Derivative Test**:</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>If $$ \frac{d^2y}{dx^2} > 0 $$, the point is a <strong>local minimum</strong>.</li>
+                        <li>If $$ \frac{d^2y}{dx^2} < 0 $$, the point is a <strong>local maximum</strong>.</li>
+                        <li>If $$ \frac{d^2y}{dx^2} = 0 $$, the test is inconclusive.</li>
+                    </ul>
+                    <div class="example-box">
+                        <p>Example: Find and classify the stationary points of $$y = x^3 - 12x + 2$$</p>
+                        <p><strong>1. Find the first derivative:</strong> $$ \frac{dy}{dx} = 3x^2 - 12 $$</p>
+                        <p><strong>2. Find stationary points (set to zero):</strong> $$ 3x^2 - 12 = 0 \implies x^2 = 4 \implies x = \pm 2 $$</p>
+                        <p><strong>3. Find the second derivative:</strong> $$ \frac{d^2y}{dx^2} = 6x $$</p>
+                        <p><strong>4. Test each x-value:</strong><br>
+                        At $$x=2$$: $$ \frac{d^2y}{dx^2} = 6(2) = 12 $$. Since $$12 > 0$$, this is a <strong>local minimum</strong>.<br>
+                        At $$x=-2$$: $$ \frac{d^2y}{dx^2} = 6(-2) = -12 $$. Since $$-12 < 0$$, this is a <strong>local maximum</strong>.</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="calc-hyperbolic" class="text-xl font-semibold">4. Hyperbolic Functions</h3>
+                    <div class="info-box"><p>When to Use</p>These functions appear in specific engineering problems, such as the shape of a hanging cable (a catenary curve), described by the hyperbolic cosine function (cosh).</div>
+                    <p class="mt-4"><strong>Definitions:</strong> $$ \sinh x = \frac{e^x - e^{-x}}{2} \quad | \quad \cosh x = \frac{e^x + e^{-x}}{2} $$</p>
+                    <p><strong>Key Identity:</strong> $$ \cosh^2 x - \sinh^2 x = 1 $$</p>
+                    <p><strong>Derivatives & Integrals:</strong></p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                        <li>$$ \frac{d}{dx}(\sinh x) = \cosh x $$</li>
+                        <li>$$ \frac{d}{dx}(\cosh x) = \sinh x $$</li>
+                        <li>$$ \int \sinh x \,dx = \cosh x + C $$</li>
+                        <li>$$ \int \cosh x \,dx = \sinh x + C $$</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+...
+    <script src="navigation.js"></script>
+</body>
+</html>

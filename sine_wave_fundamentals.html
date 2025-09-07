@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sine Wave Fundamentals - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Sine Wave Fundamentals</h2>
+                    
+                    <h3 id="sine-anatomy" class="text-xl font-semibold">1. The Anatomy of a Sine Wave</h3>
+                    <div class="info-box"><p>The Universal Waveform</p>Sinusoidal waves (or sinusoids) are fundamental in engineering and science, describing everything from AC electricity and mechanical vibrations to sound and light waves.</div>
+                    
+                                        
+                    <p class="mt-4">The instantaneous value (y) of a waveform at any given time (t) can be described by the following equation:</p>
+                    <p>$$ y = A\sin(\omega t + \phi) $$</p>
+
+                    <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-left border rounded-lg math-table">
+                            <thead class="bg-gray-100"><tr><th class="p-3">Term</th><th class="p-3">Symbol</th><th class="p-3">Description</th></tr></thead>
+                            <tbody>
+                                <tr><td>Amplitude</td><td>$$A$$</td><td>The maximum value or peak of the wave from its center position.</td></tr>
+                                <tr><td>Angular Frequency</td><td>$$\omega$$</td><td>How fast the wave oscillates in radians per second (rad/s). It's related to frequency by $$\omega = 2\pi f$$.</td></tr>
+                                <tr><td>Period</td><td>$$T$$</td><td>The time taken to complete one full cycle, in seconds (s). $$T = 1/f = 2\pi/\omega$$.</td></tr>
+                                <tr><td>Frequency</td><td>$$f$$</td><td>The number of complete cycles per second, measured in Hertz (Hz).</td></tr>
+                                <tr><td>Phase Angle</td><td>$$\phi$$</td><td>The starting angle of the wave at t=0, in radians. It represents a horizontal shift.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="sine-example" class="text-xl font-semibold">2. Worked Example: Deconstructing a Waveform</h3>
+                    <div class="example-box">
+                        <p>An AC current is given by the equation $$i = 43\sin(50\pi t + 0.6)$$. Find its key characteristics.</p>
+                        <p class="mt-2">By comparing the equation to the general form $$y = A\sin(\omega t + \phi)$$, we can identify the values directly:</p>
+                        <p><strong>a) Amplitude (A):</strong> $$ A = 43 \text{ A} $$</p>
+                        <p><strong>b) Angular Frequency ($$\omega$$):</strong> $$ \omega = 50\pi \text{ rad/s} $$</p>
+                        <p><strong>c) Frequency (f):</strong> $$ f = \frac{\omega}{2\pi} = \frac{50\pi}{2\pi} = 25 \text{ Hz} $$</p>
+                        <p><strong>d) Period (T):</strong> $$ T = \frac{1}{f} = \frac{1}{25} = 0.04 \text{ s} = 40 \text{ ms} $$</p>
+                        <p><strong>e) Phase Angle ($$\phi$$):</strong> $$ \phi = 0.6 \text{ rad} $$ (or $$ \approx 34.4^\circ $$)</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="sine-cosine" class="text-xl font-semibold">3. The Cosine Wave Relationship</h3>
+                    <div class="info-box"><p>Just a Phase Shift</p>A cosine wave has the exact same shape as a sine wave, but it is shifted to the left by 90° ($$\pi/2$$ radians). A cosine wave starts at its maximum value, whereas a sine wave starts at zero.</div>
+                    <p class="mt-4">$$ \cos(x) = \sin(x + \frac{\pi}{2}) $$</p>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="sine-values" class="text-xl font-semibold">4. Important Waveform Values</h3>
+                    <div class="info-box"><p>Beyond the Peak</p>In many engineering applications, especially AC circuits, we are interested in the "effective" or average value of a wave, not just its peak amplitude.</div>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>RMS (Root Mean Square) Value:</strong> This is the effective value of the waveform. It's the equivalent DC value that would deliver the same amount of power. For a sinusoid, the formula is:
+                        $$ A_{RMS} = \frac{A}{\sqrt{2}} \approx 0.707A $$</li>
+                        <li><strong>Average Value:</strong> The true average over a full cycle is zero. The "average value" usually refers to the average over half a cycle (the average of the rectified wave). For a sinusoid, the formula is:
+                        $$ A_{avg} = \frac{2A}{\pi} \approx 0.637A $$</li>
+                    </ul>
+                     <div class="example-box">
+                        <p>For the wave $$i = 43\sin(50\pi t + 0.6)$$, find the RMS and average current.</p>
+                        <p class="mt-2"><strong>1. RMS Current:</strong><br>$$ I_{RMS} = \frac{43}{\sqrt{2}} \approx 30.4 \text{ A} $$</p>
+                        <p class="mt-2"><strong>2. Average Current:</strong><br>$$ I_{avg} = \frac{2 \times 43}{\pi} \approx 27.4 \text{ A} $$</p>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    ...
+    <script src="navigation.js"></script>
+</body>
+</html>

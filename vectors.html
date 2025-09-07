@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectors - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <!-- Dynamic navigation will be inserted here by navigation.js -->
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Vectors</h2>
+
+                    <h3 id="vectors-intro" class="text-xl font-semibold">Vector Fundamentals</h3>
+                    <div class="info-box"><p>Scalars vs. Vectors</p><ul class="list-disc list-inside ml-4 mt-2"><li>A **Scalar** is a quantity that has **magnitude (size) only**. Examples: speed, distance, mass, time.</li><li>A **Vector** is a quantity that has both **magnitude and direction**. Examples: velocity, force, displacement.</li></ul></div>
+                    
+                    <h4>Scalar Multiplication</h4>
+                    <div class="info-box"><p>What it is</p>Multiplying a vector by a scalar changes its magnitude. If the scalar is negative, it also reverses the vector's direction. The vector remains parallel to its original line of action.</div>
+                    <div class="my-4 p-4 border rounded-md bg-gray-50 flex justify-center">
+                         <svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+                            <defs><marker id="arrowhead" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111827" /></marker></defs>
+                            <line x1="20" y1="90" x2="80" y2="30" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <text x="40" y="75" font-weight="bold">a</text>
+                            <line x1="100" y1="110" x2="180" y2="30" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <text x="130" y="85" font-weight="bold">2a</text>
+                            <line x1="280" y1="10" x2="200" y2="90" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <text x="215" y="65" font-weight="bold">-1.5a</text>
+                        </svg>
+                    </div>
+                    
+                    <h4>Unit Vectors (i, j, k)</h4>
+                    <p class="mt-4">A unit vector has a magnitude of 1 and is used to specify a direction. The special unit vectors $$\mathbf{i}$$, $$\mathbf{j}$$, and $$\mathbf{k}$$ represent the directions of the x, y, and z axes in a Cartesian coordinate system.</p>
+                    <div class="my-4 p-4 border rounded-md bg-gray-50 flex justify-center">
+                        <svg width="250" height="150" viewBox="0 0 250 150" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+                            <defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111827" /></marker></defs>
+                            <line x1="125" y1="120" x2="225" y2="120" stroke="#111827" stroke-width="2" marker-end="url(#arrow)" />
+                            <text x="230" y="125">x</text>
+                            <line x1="125" y1="120" x2="125" y2="20" stroke="#111827" stroke-width="2" marker-end="url(#arrow)" />
+                            <text x="115" y="18">y</text>
+                            <line x1="125" y1="120" x2="45" y2="145" stroke="#111827" stroke-width="2" marker-end="url(#arrow)" />
+                            <text x="35" y="150">z</text>
+                            <text x="115" y="75" font-weight="bold" fill="#3b82f6">j</text>
+                            <text x="180" y="135" font-weight="bold" fill="#3b82f6">i</text>
+                            <text x="80" y="140" font-weight="bold" fill="#3b82f6">k</text>
+                        </svg>
+                    </div>
+
+                    <h3 id="vectors-ops" class="text-xl font-semibold">Vector Addition and Subtraction</h3>
+                    <h4>Triangle Rule</h4>
+                    <div class="info-box"><p>How it Works</p>To add two vectors $$\mathbf{a}$$ and $$\mathbf{b}$$, place the start of vector $$\mathbf{b}$$ at the end of vector $$\mathbf{a}$$. The sum, or resultant vector, is obtained by the third line which completes the triangle.</div>
+                     <div class="my-4 p-4 border rounded-md bg-gray-50 flex justify-center">
+                        <svg width="250" height="120" viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+                           <defs><marker id="arrowhead2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111827" /></marker></defs>
+                           <line x1="20" y1="100" x2="120" y2="100" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead2)" />
+                           <text x="65" y="95" font-weight="bold">a</text>
+                           <line x1="120" y1="100" x2="200" y2="40" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead2)" />
+                           <text x="165" y="65" font-weight="bold">b</text>
+                           <line x1="20" y1="100" x2="200" y2="40" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowhead2)" />
+                           <text x="100" y="60" font-weight="bold" fill="#3b82f6">a + b</text>
+                        </svg>
+                    </div>
+                    <div class="example-box"><p>Example: Vector $$\mathbf{a}$$ has magnitude 10. Vector $$\mathbf{b}$$ has magnitude 20 and is at an angle of 30° to $$\mathbf{a}$$. Find the magnitude of $$\mathbf{a}+\mathbf{b}$$ using the triangle rule.</p>
+                    <p><strong>Step 1: Draw the vector triangle.</strong> By placing the vectors tip-to-tail, the angle inside the triangle between them is $$180^\circ - 30^\circ = 150^\circ$$.</p>
+                    <p><strong>Step 2: Use the Cosine Rule to find the magnitude of the resultant vector.</strong><br>
+                    $$ |\mathbf{a}+\mathbf{b}|^2 = |\mathbf{a}|^2 + |\mathbf{b}|^2 - 2|\mathbf{a}||\mathbf{b}|\cos(150^\circ) $$
+                    $$ |\mathbf{a}+\mathbf{b}|^2 = 10^2 + 20^2 - 2(10)(20)\cos(150^\circ) $$
+                    $$ |\mathbf{a}+\mathbf{b}|^2 = 100 + 400 - 400(-0.866) = 846.41 $$
+                    $$ |\mathbf{a}+\mathbf{b}| = \sqrt{846.41} \approx 29.1 $$
+                    </p></div>
+
+                    <h4>Parallelogram Rule</h4>
+                    <div class="info-box"><p>How it Works</p>An alternative rule for adding two vectors. Place the start points of vectors $$\mathbf{a}$$ and $$\mathbf{b}$$ together, then complete the parallelogram. The diagonal of the parallelogram from the starting point represents the sum of $$\mathbf{a}$$ and $$\mathbf{b}$$.</div>
+                     <div class="my-4 p-4 border rounded-md bg-gray-50 flex justify-center">
+                        <svg width="250" height="120" viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+                           <defs><marker id="arrowhead-para" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111827" /></marker></defs>
+                           <line x1="20" y1="100" x2="120" y2="100" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead-para)" /><text x="65" y="95" font-weight="bold">a</text>
+                           <line x1="20" y1="100" x2="100" y2="40" stroke="#111827" stroke-width="2" marker-end="url(#arrowhead-para)" /><text x="50" y="65" font-weight="bold">b</text>
+                           <line x1="120" y1="100" x2="200" y2="40" stroke="#777" stroke-width="1" stroke-dasharray="4" /><line x1="100" y1="40" x2="200" y2="40" stroke="#777" stroke-width="1" stroke-dasharray="4" />
+                           <line x1="20" y1="100" x2="200" y2="40" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowhead-para)" /><text x="100" y="60" font-weight="bold" fill="#3b82f6">a + b</text>
+                        </svg>
+                    </div>
+                    <div class="example-box"><p>Example: An object is acted upon by two forces. One is 10N acting horizontally to the right. The other is 20N acting at 60° to the horizontal to the left. Find the resultant force R.</p>
+                    <p><strong>Step 1: Draw the parallelogram.</strong> The angle between the two force vectors is $$180^\circ - 60^\circ = 120^\circ$$. In the vector triangle used for calculation, the corresponding angle is $$180^\circ - 120^\circ = 60^\circ$$.</p>
+                    <p><strong>Step 2: Use the Cosine Rule to find the magnitude of R.</strong><br>
+                    $$ |\mathbf{R}|^2 = 10^2 + 20^2 - 2(10)(20)\cos(60^\circ) $$
+                    $$ |\mathbf{R}|^2 = 100 + 400 - 400(0.5) = 300 $$
+                    $$ |\mathbf{R}| = \sqrt{300} \approx 17.3 \text{ N} $$
+                    </p>
+                    <p><strong>Step 3: Use the Cosine Rule again to find the direction.</strong><br>
+                    Let $$\theta$$ be the angle between the resultant R and the 20N force.
+                    $$ \cos\theta = \frac{|\mathbf{R}|^2 + 20^2 - 10^2}{2 \times |\mathbf{R}| \times 20} = \frac{300 + 400 - 100}{2 \times \sqrt{300} \times 20} = \frac{600}{692.8} \approx 0.866 $$
+                    $$ \theta = \cos^{-1}(0.866) = 30^\circ $$
+                    </p></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

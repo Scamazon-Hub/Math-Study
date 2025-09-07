@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Methods - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Numerical Methods</h2>
+                    <div class="info-box"><p>Why Use Numerical Methods?</p>In the real world, many engineering problems don't have neat, exact solutions. Numerical methods are techniques used to find approximate solutions to these complex problems using basic arithmetic operations. They are the basis of computer simulations and modern engineering software.</div>
+                    
+                    <h3 id="num-integration" class="text-xl font-semibold">1. Numerical Integration</h3>
+                    <div class="info-box"><p>When to Use</p>To find the approximate area under a curve when the function is too difficult to integrate analytically, or when you only have a set of measured data points (e.g., from an experiment).</div>
+                    
+                    <h4 class="text-lg font-semibold mt-4">The Trapezoidal Rule</h4>
+                    <p>This method approximates the area by dividing it into a number of trapezoids.</p>
+                    <p>$$ \int_{a}^{b} y \, dx \approx \frac{h}{2} [y_0 + y_n + 2(y_1 + y_2 + ... + y_{n-1})] $$</p>
+
+                    <h4 class="text-lg font-semibold mt-4">Simpson's Rule</h4>
+                    <p>This method approximates the area using parabolas, which is often more accurate. It requires an **even number of strips**.</p>
+                    <p>$$ \int_{a}^{b} y \, dx \approx \frac{h}{3} [y_0 + y_n + 4(\text{sum of odd } y\text{'s}) + 2(\text{sum of even } y\text{'s})] $$</p>
+
+                    <div class="example-box">
+                        <p>Example: Approximate $$ \int_{0}^{4} x^2 dx $$ using 4 strips.</p>
+                        <p><strong>Step 1: Find strip width (h) and y-values.</strong><br>
+                        $$ h = (4-0)/4 = 1 $$. The ordinates are:<br>
+                        $$y_0 = 0^2 = 0$$
+                        $$y_1 = 1^2 = 1$$
+                        $$y_2 = 2^2 = 4$$
+                        $$y_3 = 3^2 = 9$$
+                        $$y_4 = 4^2 = 16$$</p>
+                        <p><strong>Step 2: Apply the Trapezoidal Rule.</strong><br>
+                        $$ A \approx \frac{1}{2}[y_0 + y_4 + 2(y_1+y_2+y_3)] = \frac{1}{2}[0 + 16 + 2(1+4+9)] = \frac{1}{2}[16+28] = 22 $$</p>
+                        <p><strong>Step 3: Apply Simpson's Rule.</strong><br>
+                        $$ A \approx \frac{1}{3}[y_0 + y_4 + 4(y_1+y_3) + 2(y_2)] = \frac{1}{3}[0 + 16 + 4(1+9) + 2(4)] = \frac{1}{3}[16+40+8] = \frac{64}{3} \approx 21.333 $$</p>
+                        <p class="font-semibold mt-2">Conclusion: The exact analytical answer is 21.333. For this function, Simpson's rule gives the exact answer, demonstrating its higher accuracy.</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="num-roots" class="text-xl font-semibold">2. Finding Roots of Equations</h3>
+                    <h4 class="text-lg font-semibold mt-4">Newton-Raphson Method</h4>
+                    <div class="info-box"><p>When to Use</p>To find successively better approximations to the roots (or zeroes) of a real-valued function. It's an iterative process that uses the tangent line to find the next guess. It is very powerful but requires the function's derivative. </div>
+                    <p class="mt-4"><strong>Iterative Formula:</strong> $$ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} $$</p>
+                    <div class="example-box">
+                        <p>Example: Find a root of $$f(x) = x^2 - 2$$, starting with $$x_0=1$$.</p>
+                        <p><strong>1. Find the derivative:</strong> $$ f'(x) = 2x $$</p>
+                        <p><strong>2. First iteration (to find x₁):</strong><br>
+                        $$ x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} = 1 - \frac{1^2-2}{2(1)} = 1 - \frac{-1}{2} = 1.5 $$</p>
+                        <p><strong>3. Second iteration (to find x₂):</strong><br>
+                        $$ x_2 = x_1 - \frac{f(x_1)}{f'(x_1)} = 1.5 - \frac{(1.5)^2-2}{2(1.5)} = 1.5 - \frac{0.25}{3} \approx 1.4167 $$</p>
+                        <p class="font-semibold mt-2">Final Answer: After two iterations, the root is approximately 1.4167. (The actual root is $$\sqrt{2} \approx 1.4142$$).</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="num-odes" class="text-xl font-semibold">3. Numerical Solutions for Differential Equations</h3>
+                    <h4 class="text-lg font-semibold mt-4">Euler's Method</h4>
+                    <div class="info-box"><p>When to Use</p>To find an approximate solution to a first-order ordinary differential equation when an analytical solution is not possible. It is the simplest method for this type of problem.</div>
+                    <p class="mt-4">Given $$ \frac{dy}{dx} = f(x,y) $$ with an initial value $$y(x_0)=y_0$$, we can find the next value using a small step size, h.</p>
+                    <p><strong>Iterative Formula:</strong> $$ y_{n+1} = y_n + h \cdot f(x_n, y_n) $$</p>
+                    <div class="example-box">
+                        <p>Example: Given $$ \frac{dy}{dx} = x - y $$ with initial value $$y(0)=1$$. Use Euler's method with a step size of $$h=0.1$$ to estimate $$y(0.2)$$.</p>
+                        <p><strong>Step 1 (Find y₁ at x₁=0.1):</strong><br>
+                        Here, $$x_0=0, y_0=1$$. The slope at this point is $$f(x_0, y_0) = 0 - 1 = -1$$.<br>
+                        $$ y_1 = y_0 + h \cdot f(x_0, y_0) = 1 + (0.1)(-1) = 0.9 $$</p>
+                        <p><strong>Step 2 (Find y₂ at x₂=0.2):</strong><br>
+                        Now, $$x_1=0.1, y_1=0.9$$. The slope at this new point is $$f(x_1, y_1) = 0.1 - 0.9 = -0.8$$.<br>
+                        $$ y_2 = y_1 + h \cdot f(x_1, y_1) = 0.9 + (0.1)(-0.8) = 0.9 - 0.08 = 0.82 $$</p>
+                        <p class="font-semibold mt-2">Final Answer: The approximate value is $$y(0.2) \approx 0.82$$.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    ...
+    <script src="navigation.js"></script>
+</body>
+</html>

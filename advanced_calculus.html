@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculus - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Advanced Calculus</h2>
+                    
+                    <h3 id="advcalc-techniques" class="text-xl font-semibold">1. Further Integration Techniques</h3>
+                    <div class="info-box"><p>When to Use</p>Use these methods for integrals that cannot be solved directly from standard tables, especially for products of functions or composite functions that look like the result of the chain rule.</div>
+                    
+                    <h4 class="text-lg font-semibold mt-4">Integration by Parts</h4>
+                    <p class="mt-4">This technique is used to integrate the product of two functions. It effectively reverses the product rule for differentiation.</p>
+                    <p><strong>Formula:</strong> $$ \int u \frac{dv}{dx} dx = uv - \int v \frac{du}{dx} dx $$.</p>
+                    <div class="example-box">
+                        <p>Example: Find $$ \int x e^{x} \,dx $$</p>
+                        <p><strong>Step 1: Choose u and dv/dx.</strong> A good rule of thumb is LATE (Logs, Algebra, Trig, Exponential) for choosing 'u'. Here, 'x' is algebraic, so we choose it.<br>
+                        Let $$u=x$$ and $$\frac{dv}{dx}=e^{x}$$.</p>
+                        <p><strong>Step 2: Differentiate u and integrate dv/dx.</strong><br>
+                        $$ \frac{du}{dx}=1 $$ and $$v= \int e^{x} dx = e^{x}$$</p>
+                        <p><strong>Step 3: Apply the formula.</strong><br>
+                        $$ \int x e^{x} dx = (x)(e^x) - \int (e^x)(1) dx $$</p>
+                        <p><strong>Step 4: Solve the remaining integral.</strong><br>
+                        $$ = xe^{x} - e^{x} + C $$</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ e^x(x-1) + C $$</p>
+                    </div>
+
+                    <h4 class="text-lg font-semibold mt-4">Integration by Substitution</h4>
+                    <p class="mt-4">This technique is used to simplify an integral by changing the variable of integration. It is the reverse of the chain rule for differentiation.</p>
+                    <div class="example-box">
+                        <p>Example: Find $$ \int 2x \sqrt{1+x^2} \,dx $$</p>
+                        <p><strong>Step 1: Choose a substitution 'u'.</strong> Let 'u' be the inner function. Here, that is the term inside the square root.<br>
+                        Let $$u = 1+x^2$$.</p>
+                        <p><strong>Step 2: Find du/dx and rearrange for dx.</strong><br>
+                        $$ \frac{du}{dx} = 2x \implies du = 2x \,dx $$</p>
+                        <p><strong>Step 3: Substitute u and du into the integral.</strong><br>
+                        Notice that $$2x \,dx$$ in the original integral can be replaced entirely by $$du$$.<br>
+                        $$ \int \sqrt{1+x^2} (2x \,dx) = \int \sqrt{u} \,du = \int u^{1/2} \,du $$</p>
+                        <p><strong>Step 4: Integrate with respect to u.</strong><br>
+                        $$ \int u^{1/2} \,du = \frac{u^{3/2}}{3/2} + C = \frac{2}{3}u^{3/2} + C $$</p>
+                        <p><strong>Step 5: Substitute x back into the expression.</strong><br>
+                        $$ = \frac{2}{3}(1+x^2)^{3/2} + C $$</p>
+                    </div>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="advcalc-odes1" class="text-xl font-semibold">2. First-Order Differential Equations</h3>
+                    <div class="info-box"><p>What are they?</p>These equations model dynamic systems where the rate of change of a quantity depends on the quantity itself. They are used in heat transfer, simple RC/RL circuits, and population models. We will cover two common solution methods.</div>
+
+                    <h4 class="text-lg font-semibold mt-4">Separation of Variables</h4>
+                    <p class="mt-4">Use for equations that can be written in the form $$ \frac{dy}{dx} = f(x)g(y) $$. The strategy is to move all y-terms to one side and all x-terms to the other, then integrate both sides.</p>
+                    <div class="example-box">
+                        <p>Example: Solve $$ \frac{dy}{dx} = 3x^2y $$</p>
+                        <p><strong>Step 1: Separate the variables.</strong><br>
+                        $$ \frac{1}{y} dy = 3x^2 dx $$</p>
+                        <p><strong>Step 2: Integrate both sides.</strong><br>
+                        $$ \int \frac{1}{y} dy = \int 3x^2 dx $$<br>
+                        $$ \ln|y| = x^3 + C $$</p>
+                        <p><strong>Step 3: Solve for y.</strong><br>
+                        $$ y = e^{x^3 + C} = e^{x^3}e^C $$<br>
+                        Since $$e^C$$ is just another constant, we can call it 'A'.</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ y = Ae^{x^3} $$</p>
+                    </div>
+
+                    <h4 class="text-lg font-semibold mt-4">Integrating Factor Method</h4>
+                    <p class="mt-4">Use for linear equations that can be written in the form $$ \frac{dy}{dx} + P(x)y = Q(x) $$.</p>
+                    <p><strong>Integrating Factor (IF):</strong> $$ \text{IF} = e^{\int P(x)dx} $$</p>
+                    <p><strong>General Solution:</strong> $$ y \times \text{IF} = \int Q(x) \times \text{IF} \, dx $$</p>
+                    <div class="example-box">
+                        <p>Example: Solve $$ \frac{dy}{dx} + 2y = 4x $$</p>
+                        <p><strong>Step 1: Identify P(x) and find the Integrating Factor (IF).</strong><br>
+                        Comparing to the standard form, $$P(x) = 2$$.<br>
+                        $$ \text{IF} = e^{\int 2 dx} = e^{2x} $$.</p>
+                        <p><strong>Step 2: Apply the general solution formula.</strong><br>
+                        $$ y e^{2x} = \int 4x e^{2x} dx $$</p>
+                        <p><strong>Step 3: Solve the integral on the right side.</strong> This requires integration by parts.<br>
+                        $$ \int 4xe^{2x} dx = 2xe^{2x} - e^{2x} + C $$</p>
+                        <p><strong>Step 4: Rearrange to solve for y.</strong><br>
+                        $$ y = \frac{2xe^{2x} - e^{2x} + C}{e^{2x}} $$</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ y = 2x - 1 + Ce^{-2x} $$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="advcalc-odes2" class="text-xl font-semibold">3. Second-Order Homogeneous Differential Equations</h3>
+                    <div class="info-box"><p>When to Use</p>To model systems like mechanical oscillations (springs, pendulums) and RLC circuits. We focus on linear equations with constant coefficients.</div>
+                    <p class="mt-4">For an equation of the form $$ a\frac{d^2y}{dx^2} + b\frac{dy}{dx} + cy = 0 $$, we first form the **Auxiliary Equation**: $$ ak^2 + bk + c = 0 $$.</p>
+                    <p>The general solution for y depends on the nature of the roots (k) of this quadratic equation.</p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>Case 1: Real, distinct roots ($$k_1, k_2$$)</strong><br>Solution: $$ y = Ae^{k_1x} + Be^{k_2x} $$</li>
+                        <li><strong>Case 2: Real, repeated roots ($$k$$)</strong><br>Solution: $$ y = (Ax+B)e^{kx} $$</li>
+                        <li><strong>Case 3: Complex roots ($$\alpha \pm j\beta$$)</strong><br>Solution: $$ y = e^{\alpha x}(A\cos(\beta x) + B\sin(\beta x)) $$</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <p>Example: Solve $$ \frac{d^2y}{dx^2} + 5\frac{dy}{dx} + 4y = 0 $$</p>
+                        <p><strong>Step 1: Write the auxiliary equation.</strong><br>
+                        $$ k^2 + 5k + 4 = 0 $$</p>
+                        <p><strong>Step 2: Solve for the roots (k).</strong><br>
+                        $$ (k+1)(k+4) = 0 $$<br>
+                        The roots are $$ k_1 = -1 $$ and $$ k_2 = -4 $$.</p>
+                        <p><strong>Step 3: Identify the case and write the general solution.</strong><br>
+                        The roots are real and distinct (Case 1).</p>
+                        <p class="font-semibold mt-2">Final Answer: $$ y = Ae^{-x} + Be^{-4x} $$</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+...
+    <script src="navigation.js"></script>
+</body>
+</html>

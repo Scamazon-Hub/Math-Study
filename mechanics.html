@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Mechanics - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Applied Mechanics & Kinematics</h2>
+                    
+                    <h3 id="mech-newton" class="text-xl font-semibold">1. Newton's Laws of Motion</h3>
+                    <div class="info-box"><p>The Foundation of Mechanics</p>These three laws describe the relationship between a body and the forces acting upon it, and its motion in response to those forces.</div>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>First Law (Inertia):</strong> An object remains at rest or continues in uniform motion in a straight line unless acted upon by a net external force.</li>
+                        <li><strong>Second Law (Force & Acceleration):</strong> The acceleration of an object is directly proportional to the net force and inversely proportional to its mass. $$ F = ma $$</li>
+                        <li><strong>Third Law (Action-Reaction):</strong> For every action, there is an equal and opposite reaction.</li>
+                    </ul>
+                    <div class="example-box">
+                        <p>Example (Second Law):</p> A net force of 200 N is applied to a 50 kg crate. Find the acceleration of the crate.
+                        <p class="mt-2">$$ F = ma \implies a = \frac{F}{m} = \frac{200 \text{ N}}{50 \text{ kg}} = 4 \text{ m/s}^2 $$</p>
+                    </div>
+
+                    <hr class="my-8">
+                    
+                    <h3 id="mech-suvat" class="text-xl font-semibold">2. Equations of Motion (SUVAT)</h3>
+                    <div class="info-box">
+                        <p>When to Use</p>
+                        Use these equations for motion in a straight line with **constant acceleration**. The variables are: <br> 
+                        <strong>s</strong> = displacement, <strong>u</strong> = initial velocity, <strong>v</strong> = final velocity, <strong>a</strong> = acceleration, <strong>t</strong> = time.
+                    </div>
+                    <p class="mt-4">$$ v = u + at \quad | \quad s = ut + \frac{1}{2}at^2 \quad | \quad v^2 = u^2 + 2as $$</p>
+                    <div class="example-box">
+                        <p>Example:</p>A ball is projected vertically upwards at 36km/h from a 108m tall building. Find the time taken to reach the ground (g = 9.8 m/s²).
+                        <p class="mt-2"><strong>Step 1: Convert units.</strong> $$ u = 36 \frac{\text{km}}{\text{h}} = 10 \text{ m/s} $$</p>
+                        <p class="mt-2"><strong>Step 2: List variables (taking upwards as positive).</strong><br>
+                        $$ s = -108 \text{ m} $$ (The final displacement is 108m below the start point)<br>
+                        $$ u = +10 \text{ m/s} $$<br>
+                        $$ a = -9.8 \text{ m/s}^2 $$ (Gravity acts downwards)<br>
+                        $$ t = ? $$</p>
+                        <p class="mt-2"><strong>Step 3: Choose equation and substitute.</strong> $$ s = ut + \frac{1}{2}at^2 $$<br>
+                        $$ -108 = 10t + \frac{1}{2}(-9.8)t^2 \implies -108 = 10t - 4.9t^2 $$</p>
+                        <p class="mt-2"><strong>Step 4: Rearrange to a standard quadratic equation.</strong> $$ 4.9t^2 - 10t - 108 = 0 $$</p>
+                        <p class="mt-2"><strong>Step 5: Solve the quadratic for t.</strong> Using the formula $$ t = \frac{-b \pm \sqrt{b^2-4ac}}{2a} $$<br>
+                        $$ t = \frac{10 \pm \sqrt{(-10)^2 - 4(4.9)(-108)}}{2(4.9)} = \frac{10 \pm \sqrt{100 + 2116.8}}{9.8} = \frac{10 \pm 47.08}{9.8} $$</p>
+                        <p class="mt-2"><strong>Step 6: Choose the valid solution.</strong> Since time must be positive, $$ t = \frac{10 + 47.08}{9.8} \approx 5.82 \text{ s} $$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="mech-circular" class="text-xl font-semibold">3. Circular Motion</h3>
+                    <div class="info-box"><p>Key Concepts</p>An object moving in a circle at a constant speed is accelerating because its direction is constantly changing. This **centripetal acceleration** is always directed towards the center of the circle and is caused by a **centripetal force**.</div>
+                    <p class="mt-4"><strong>Angular vs. Linear Speed:</strong> $$ v = r\omega $$</p>
+                    <p><strong>Centripetal Acceleration ($$a_c$$):</strong> $$ a_c = \omega^2r = \frac{v^2}{r} $$</p>
+                    <p><strong>Centripetal Force ($$F_c$$):</strong> $$ F_c = m\omega^2r = \frac{mv^2}{r} $$</p>
+                    <div class="example-box">
+                        <p>Example: Steam Engine Governor</p>
+                        A governor has two spheres on rods 60cm long. Find the rotational speed in rpm when the rods make an angle of 20° with the vertical shaft.
+                        <p class="mt-2"><strong>1. Equate forces:</strong> The horizontal component of tension provides the centripetal force ($$T\sin\theta = m\omega^2r$$), while the vertical component supports the weight ($$T\cos\theta = mg$$). Dividing these gives $$ \tan\theta = \frac{\omega^2r}{g} $$.</p>
+                        <p class="mt-2"><strong>2. Use geometry:</strong> The radius of rotation is $$ r = L\sin\theta = 0.6\sin(20^\circ) $$.</p>
+                        <p class="mt-2"><strong>3. Solve for $$\omega$$:</strong> $$ \tan(20^\circ) = \frac{\omega^2(0.6\sin(20^\circ))}{9.81} \implies \omega^2 = \frac{9.81 \tan(20^\circ)}{0.6\sin(20^\circ)} \approx 17.4 $$<br>$$ \omega = \sqrt{17.4} \approx 4.17 \text{ rad/s} $$.</p>
+                        <p class="mt-2"><strong>4. Convert to rpm:</strong> $$ \text{rpm} = 4.17 \frac{\text{rad}}{\text{s}} \times \frac{60}{2\pi} \approx 39.8 \text{ rpm} $$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="mech-energy" class="text-xl font-semibold">4. Work, Energy, and Power</h3>
+                    <div class="info-box"><p>Key Concepts</p>These concepts link forces with changes in motion and position.</div>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>Work Done (W):</strong> The energy transferred when a force causes displacement. $$W=Fd$$. Measured in Joules (J).</li>
+                        <li><strong>Kinetic Energy (KE):</strong> The energy of an object due to its motion. $$KE = \frac{1}{2}mv^2$$.</li>
+                        <li><strong>Potential Energy (PE):</strong> Stored energy due to an object's position in a gravitational field. $$PE = mgh$$.</li>
+                        <li><strong>Power (P):</strong> The rate at which work is done. $$P = \frac{W}{t} = Fv$$. Measured in Watts (W).</li>
+                    </ul>
+                    <div class="example-box">
+                        <p>Example: A 1200 kg car accelerates from 10 m/s to 30 m/s. Find the work done by the engine and the average power developed if this takes 8 seconds.</p>
+                        <p class="mt-2"><strong>1. Find the change in kinetic energy (Work-Energy Principle):</strong><br>The work done is equal to the change in KE.<br>$$ W = \Delta KE = KE_{final} - KE_{initial} = \frac{1}{2}m(v^2 - u^2) $$<br>$$ W = \frac{1}{2}(1200)(30^2 - 10^2) = 600(900-100) = 600(800) = 480,000 \text{ J} $$</p>
+                        <p class="mt-2"><strong>2. Calculate the average power:</strong><br>$$ P = \frac{\text{Work Done}}{\text{time}} = \frac{480000 \text{ J}}{8 \text{ s}} = 60,000 \text{ W} = 60 \text{ kW} $$</p>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    ...
+    <script src="navigation.js"></script>
+</body>
+</html>

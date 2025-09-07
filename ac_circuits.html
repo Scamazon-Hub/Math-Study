@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Circuit Analysis - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">AC Circuit Analysis</h2>
+                    <div class="info-box">
+                        <p>Using Complex Numbers in AC Circuits</p>
+                        Complex numbers are essential for analyzing AC circuits because they can represent both the amplitude and phase of a sinusoidal waveform in a single number (a phasor). This simplifies calculations by turning trigonometric problems into algebra.
+                    </div>
+
+                    <h3 id="ac-waveforms" class="text-xl font-semibold">1. AC Waveform Characteristics</h3>
+                    <div class="info-box"><p>General Form</p>The instantaneous value of a current or voltage can be expressed as $$ v(t) = V_m\sin(\omega t + \phi) $$.</div>
+                    <p class="mt-4"><strong>Key Formulas:</strong> Angular Frequency $$\omega = 2\pi f$$. Period $$T = 1/f = 2\pi/\omega$$.</p>
+                    <p><strong>RMS Value:</strong> The Root Mean Square (RMS) value is the effective DC equivalent for power delivery. For a sine wave, $$ V_{RMS} = \frac{V_m}{\sqrt{2}} \approx 0.707 V_m $$. Unless stated otherwise, AC voltage and current values are typically given as RMS.</p>
+                    <div class="example-box">
+                        <p>Example: An AC current is given by $$i = 43\sin(50\pi t + 0.6)$$. Find its key properties.</p>
+                        <p class="mt-2"><strong>a) Amplitude (Peak Current):</strong> $$ I_m = 43 $$ A.</p>
+                        <p class="mt-2"><strong>b) RMS Current:</strong> $$ I_{RMS} = \frac{43}{\sqrt{2}} \approx 30.41 $$ A.</p>
+                        <p class="mt-2"><strong>c) Angular Frequency ($$\omega$$):</strong> From the equation, $$ \omega = 50\pi $$ rad/s.</p>
+                        <p class="mt-2"><strong>d) Frequency (f):</strong> $$ f = \frac{\omega}{2\pi} = \frac{50\pi}{2\pi} = 25 \text{ Hz} $$.</p>
+                        <p class="mt-2"><strong>e) Period (T):</strong> $$ T = \frac{1}{f} = \frac{1}{25} = 0.04 \text{ s} = 40 \text{ ms}$$.</p>
+                        <p class="mt-2"><strong>f) Phase Angle ($$\phi$$):</strong> $$ \phi = 0.6 \text{ rad} $$. In degrees: $$ 0.6 \times \frac{180}{\pi} \approx 34.38^\circ $$.</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="ac-impedance" class="text-xl font-semibold">2. Impedance (Z) and Admittance (Y)</h3>
+                    <div class="info-box"><p>What is Impedance?</p>Impedance ($$Z$$) is the total opposition to current flow in an AC circuit. It is a complex quantity with a real part (Resistance, R) and an imaginary part (Reactance, X). Admittance ($$Y$$) is the reciprocal of impedance ($$Y=1/Z$$), useful for parallel circuits.</div>
+                    
+                    <h4 class="text-lg font-semibold mt-4">Impedance of Components</h4>
+                    <p>The impedance of the three basic passive components depends on the angular frequency $$\omega$$.</p>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-left border rounded-lg math-table">
+                            <thead class="bg-gray-100"><tr><th class="p-3">Component</th><th class="p-3">Impedance ($$Z$$)</th><th class="p-3">Description</th></tr></thead>
+                            <tbody>
+                                <tr><td>Resistor (R)</td><td>$$Z_R = R$$</td><td>Real, no phase shift.</td></tr>
+                                <tr><td>Inductor (L)</td><td>$$Z_L = j\omega L$$</td><td>Imaginary, causes voltage to lead current by 90°.</td></tr>
+                                <tr><td>Capacitor (C)</td><td>$$Z_C = \frac{1}{j\omega C} = -j\frac{1}{\omega C}$$</td><td>Imaginary, causes current to lead voltage by 90°.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="example-box">
+                        <p>Example: A circuit has R=20$$\Omega$$, L=10mH, and C=500$$\mu$$F in series at a frequency of 100 Hz. Find the total impedance.</p>
+                        <p><strong>Step 1: Find angular frequency $$\omega$$.</strong><br>$$ \omega = 2\pi f = 2\pi(100) \approx 628.3 \text{ rad/s} $$</p>
+                        <p><strong>Step 2: Calculate individual impedances.</strong><br>
+                        $$ Z_R = 20 \, \Omega $$<br>
+                        $$ Z_L = j\omega L = j(628.3)(0.01) \approx 6.28j \, \Omega $$<br>
+                        $$ Z_C = -j\frac{1}{\omega C} = -j\frac{1}{628.3 \times 500 \times 10^{-6}} \approx -3.18j \, \Omega $$</p>
+                        <p><strong>Step 3: Sum the impedances for the series circuit.</strong><br>$$ Z_{total} = Z_R + Z_L + Z_C = 20 + 6.28j - 3.18j = 20 + 3.1j \, \Omega $$</p>
+                    </div>
+
+                    <div class="example-box">
+                        <p>Example: Given parallel impedances $$ Z_1 = 9+2j $$ and $$ Z_2 = -12+8j $$, find the total equivalent impedance $$Z_T = \frac{Z_1Z_2}{Z_1+Z_2}$$.</p>
+                        <p><strong>Step 1: Sum $$Z_1+Z_2$$.</strong><br>$$ (9+2j) + (-12+8j) = -3 + 10j $$</p>
+                        <p><strong>Step 2: Product $$Z_1Z_2$$.</strong><br>$$ (9+2j)(-12+8j) = -108 + 72j - 24j + 16j^2 = -124 + 48j $$</p>
+                        <p><strong>Step 3: Perform the division.</strong><br>$$ Z_T = \frac{-124+48j}{-3+10j} = \frac{-124+48j}{-3+10j} \times \frac{-3-10j}{-3-10j} = \frac{372+1240j-144j-480j^2}{9+100} = \frac{852+1096j}{109} $$</p>
+                        <p class="mt-2 font-semibold">Rectangular form: $$ Z_T \approx 7.82 + 10.05j \, \Omega$$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="ac-power" class="text-xl font-semibold">3. Power in AC Circuits & The Power Triangle</h3>
+                    <div class="info-box"><p>Understanding AC Power</p>In AC circuits, not all power delivered by the source is used to do work. We use the power triangle to understand the relationship between Real, Reactive, and Apparent power.</div>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>Real Power (P):</strong> The actual power dissipated by resistive components, measured in **Watts (W)**. $$P = S \cos(\phi)$$.</li>
+                        <li><strong>Reactive Power (Q):</strong> Power exchanged with reactive components (inductors/capacitors), measured in **Volt-Amps Reactive (VAR)**. $$Q = S \sin(\phi)$$.</li>
+                        <li><strong>Apparent Power (S):</strong> The total power that appears to be delivered, measured in **Volt-Amps (VA)**. It's the vector sum of P and Q. $$S = |V_{RMS}||I_{RMS}|$$.</li>
+                        <li><strong>Power Factor (pf):</strong> The ratio of real power to apparent power. $$ pf = \cos(\phi) = P/S $$.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <p>Example: Given an RMS voltage of $$ V = 36+29j $$ volts and an RMS current of $$ I=7+4j $$ amps, analyze the circuit's power.</p>
+                        <p><strong>Step 1: Convert V and I to polar form to find magnitudes and angles.</strong><br>
+                        $$ |V| = \sqrt{36^2+29^2} \approx 46.23 \text{ V} $$<br>
+                        $$ \theta_V = \tan^{-1}(29/36) \approx 38.81^\circ $$<br>
+                        So, $$ V \approx 46.23\angle38.81^\circ \text{ V} $$ <br><br>
+                        $$ |I| = \sqrt{7^2+4^2} \approx 8.06 \text{ A} $$<br>
+                        $$ \theta_I = \tan^{-1}(4/7) \approx 29.74^\circ $$<br>
+                        So, $$ I \approx 8.06\angle29.74^\circ \text{ A} $$</p>
+                        
+                        <p><strong>Step 2: Calculate the phase difference ($$\phi$$).</strong> This is the angle of the impedance.<br>$$ \phi = \theta_V - \theta_I = 38.81^\circ - 29.74^\circ = 9.07^\circ $$</p>
+                        
+                        <p><strong>Step 3: Calculate the different types of power.</strong><br>
+                        <strong>Apparent Power (S):</strong> $$ S = |V||I| = (46.23)(8.06) \approx 372.6 \text{ VA} $$<br>
+                        <strong>Real Power (P):</strong> $$ P = S\cos(\phi) = 372.6 \times \cos(9.07^\circ) \approx 368.0 \text{ W} $$<br>
+                        <strong>Reactive Power (Q):</strong> $$ Q = S\sin(\phi) = 372.6 \times \sin(9.07^\circ) \approx 58.8 \text{ VAR} $$</p>
+
+                        <p><strong>Step 4: Determine the Power Factor (pf).</strong><br>
+                        $$ pf = \cos(9.07^\circ) \approx 0.987 $$<br>
+                        Since $$\phi$$ is positive (voltage angle > current angle), the circuit is inductive and the power factor is **0.987 lagging**.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    ...
+    <script src="navigation.js"></script>
+</body>
+</html>

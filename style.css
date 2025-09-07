@@ -1,0 +1,101 @@
+/* --- Material Design Inspired Variables --- */
+:root {
+    --primary-blue: #3b82f6;
+    --background-light: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-light: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* --- General Body & Typography --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+/* --- Header & Footer --- */
+header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* --- Sidebar --- */
+aside nav {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+aside nav h2 {
+    border-bottom: 1px solid var(--border-light);
+    margin: 0;
+}
+aside nav ul li a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+aside nav ul li a:hover {
+    background-color: var(--background-light);
+    color: var(--primary-blue);
+}
+aside nav ul li a.font-bold { /* Main topic links */
+    color: var(--text-primary);
+    font-weight: 600;
+}
+/* Style for the active page link */
+aside nav ul li a.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* --- Main Content Styling --- */
+main .bg-white {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+h2 {
+    color: var(--primary-blue);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid var(--border-light);
+    margin-top: 0;
+}
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* --- Card & Box Styles --- */
+.info-box, .example-box {
+    border-left: none;
+    border-top: 3px solid var(--border-light);
+    background-color: var(--background-light);
+    padding: 1.25rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+}
+.example-box { border-top-color: #22c55e; }
+.math-table td { padding: 0.75rem; vertical-align: top; }
+.math-table tr:nth-child(even) { background-color: #f9fafb; }

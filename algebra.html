@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Algebra - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Core Algebra</h2>
+                    
+                    <h3 id="algebra-quadratic" class="text-xl font-semibold">1. The Quadratic Equation</h3>
+                    <div class="info-box"><p>When to Use</p>Use to find the roots (solutions) of any quadratic equation in the form $$ax^2 + bx + c = 0$$.</div>
+                    <p class="mt-4">$$ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} $$</p>
+                    <div class="example-box"><p>Example: Solve $$ 2x^2 + 5x - 3 = 0 $$</p><p><strong>Step 1: Identify coefficients.</strong> $$a=2, b=5, c=-3$$</p><p><strong>Step 2: Substitute into the formula.</strong> $$ x = \frac{-(5) \pm \sqrt{(5)^2 - 4(2)(-3)}}{2(2)} $$</p><p><strong>Step 3: Solve.</strong> $$ x = \frac{-5 \pm \sqrt{25 + 24}}{4} = \frac{-5 \pm \sqrt{49}}{4} = \frac{-5 \pm 7}{4} $$</p><p><strong>Step 4: Find the two roots.</strong> $$ x_1 = \frac{-5 + 7}{4} = 0.5 $$ and $$ x_2 = \frac{-5 - 7}{4} = -3 $$</p></div>
+
+                    <hr class="my-8">
+
+                    <h3 id="algebra-polynomials" class="text-xl font-semibold">2. Polynomials</h3>
+                    <h4 class="text-lg font-semibold mt-4">Remainder & Factor Theorems</h4>
+                    <p class="mt-4">These theorems provide a quick way to find the remainder of a polynomial division and to find factors.</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                        <li><strong>Remainder Theorem:</strong> If a polynomial $$f(x)$$ is divided by $$(x-a)$$, the remainder is $$f(a)$$.</li>
+                        <li><strong>Factor Theorem:</strong> $$(x-a)$$ is a factor of $$f(x)$$ if and only if $$f(a) = 0$$.</li>
+                    </ul>
+                    <div class="example-box">
+                        <p>Example: Given $$f(x) = x^3 + 2x^2 - 5x - 6$$, show that $$(x-2)$$ is a factor.</p>
+                        <p>Using the Factor Theorem, we test $$f(2)$$:<br>$$ f(2) = (2)^3 + 2(2)^2 - 5(2) - 6 = 8 + 8 - 10 - 6 = 0 $$</p>
+                        <p class="font-semibold">Since $$f(2) = 0$$, $$(x-2)$$ is a factor of $$f(x)$$.</p>
+                    </div>
+
+                    <h4 class="text-lg font-semibold mt-4">Polynomial Division</h4>
+                    <div class="info-box"><p>When to Use</p>Use to divide a polynomial by another of a lower degree. This is essential for simplifying rational expressions and finding all factors of a polynomial.</div>
+                    <div class="example-box"><p>Example: Divide $$ x^3 + 2x^2 - 5x - 6 $$ by $$ x - 2 $$</p>
+                        <p>The division process yields a quotient of $$ x^2 + 4x + 3 $$ with a remainder of 0, confirming the result from the Factor Theorem.</p>
+                        <p class="font-semibold mt-2">This means we can write $$ x^3 + 2x^2 - 5x - 6 = (x-2)(x^2+4x+3) $$. By factoring the quadratic part, we get the fully factored form: $$ (x-2)(x+1)(x+3) $$.</p>
+                    </div>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="algebra-series" class="text-xl font-semibold">3. Arithmetic & Geometric Progression</h3>
+                    <div class="info-box"><p>When to Use</p>For sequences of numbers with a constant difference (Arithmetic) or a constant ratio (Geometric).</div>
+                    <h4 class="text-lg">Arithmetic Progression (AP)</h4>
+                    <p><strong>nth term:</strong> $$ u_n = a + (n-1)d $$</p>
+                    <p><strong>Sum of n terms:</strong> $$ S_n = \frac{n}{2}[2a + (n-1)d] $$</p>
+
+                    <h4 class="text-lg">Geometric Progression (GP)</h4>
+                    <p><strong>nth term:</strong> $$ u_n = ar^{n-1} $$</p>
+                    <p><strong>Sum of n terms:</strong> $$ S_n = \frac{a(1-r^n)}{1-r} $$</p>
+                    <p><strong>Sum to Infinity:</strong> $$ S_\infty = \frac{a}{1-r} $$, (for $$-1 < r < 1$$).</p>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="algebra-complex" class="text-xl font-semibold">4. Complex Numbers</h3>
+                    <div class="info-box"><p>When to Use</p>Essential for analyzing AC electrical circuits, control theory, and signal processing, where phase and amplitude must be considered together.</div>
+                    <p class="mt-4">A complex number $$z$$ is a number of the form $$z = a + bi$$, where 'a' is the real part, 'b' is the imaginary part, and $$i = \sqrt{-1}$$. They can be visualized on an **Argand diagram**, with a horizontal real axis and a vertical imaginary axis. </p>
+                    
+                    <h4 class="text-lg font-semibold mt-4">Basic Operations</h4>
+                    <p>Let $$z_1 = 3+4i$$ and $$z_2 = 5-2i$$.</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Addition/Subtraction:</strong> $$ z_1+z_2 = (3+5) + (4-2)i = 8+2i $$</li>
+                        <li><strong>Multiplication:</strong> $$ z_1z_2 = (3+4i)(5-2i) = 15 - 6i + 20i - 8i^2 = 15 + 14i - 8(-1) = 23+14i $$</li>
+                        <li><strong>Division:</strong> Multiply the top and bottom by the complex conjugate of the denominator ($$\bar{z_2} = 5+2i$$).<br>$$ \frac{z_1}{z_2} = \frac{3+4i}{5-2i} \times \frac{5+2i}{5+2i} = \frac{15+6i+20i+8i^2}{25-4i^2} = \frac{7+26i}{29} = \frac{7}{29} + \frac{26}{29}i $$</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mt-4">Forms of Complex Numbers</h4>
+                    <p>A complex number can be expressed in three main ways:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Rectangular Form:</strong> $$ z = a+bi $$</li>
+                        <li><strong>Polar Form:</strong> $$ z = r(\cos\theta + i\sin\theta) = r\angle\theta $$</li>
+                        <li><strong>Exponential Form:</strong> $$ z = re^{i\theta} $$ (based on Euler's formula)</li>
+                    </ul>
+                    <div class="example-box"><p>Example: Convert $$z = 4 + 3i$$ to Polar and Exponential Forms.</p>
+                        <p><strong>1. Find the modulus (r):</strong> $$ r = \sqrt{4^2 + 3^2} = \sqrt{16+9} = 5 $$</p>
+                        <p><strong>2. Find the argument ($$\theta$$):</strong> $$ \theta = \tan^{-1}\left(\frac{3}{4}\right) \approx 36.87^\circ $$ or $$0.6435$$ radians.</p>
+                        <p class="font-semibold mt-2">Polar Form: $$ z = 5\angle36.87^\circ $$</p>
+                        <p class="font-semibold mt-2">Exponential Form: $$ z = 5e^{i0.6435} $$</p>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+...
+    <script src="navigation.js"></script>
+</body>
+</html>

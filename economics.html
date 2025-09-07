@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Economics - HNC Maths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], } } } } </script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">HNC Maths Master Reference</h1>
+            <p class="text-gray-600 mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+            
+            <aside id="navigation-placeholder" class="lg:col-span-1 lg:sticky top-24 self-start"></aside>
+
+            <main class="lg:col-span-3 mt-8 lg:mt-0">
+                <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-900">Financial & Engineering Economics</h2>
+                    
+                    <div class="info-box">
+                        <p>What is it?</p>
+                        Engineering economics involves the systematic evaluation of the economic merits of proposed solutions to engineering problems. It is essential for making justifiable decisions regarding company assets and projects.
+                    </div>
+
+                    <h3 id="econ-sl" class="text-xl font-semibold">1. Straight-Line Depreciation</h3>
+                    <div class="info-box"><p>When to Use</p>This is the simplest and most common method. Use when an asset's value is expected to decrease by a uniform amount each year.</div>
+                    <p class="mt-4"><strong>Annual Depreciation (D):</strong> $$ D = \frac{\text{Cost} - \text{Scrap Value}}{\text{Useful Life in Years}} $$</p>
+                    <p><strong>Book Value ($$BV_n$$) after n years:</strong> $$ BV_n = \text{Cost} - (n \times D) $$</p>
+                    <div class="example-box">
+                        <p>Example:</p> A piece of machinery costs £12,000, has a useful life of 5 years, and an estimated scrap value of £2,000.
+                        <p class="mt-2"><strong>Annual depreciation:</strong><br>
+                        $$ D = \frac{12000 - 2000}{5} = \frac{10000}{5} = \text{£2,000 per year} $$</p>
+                        <p class="mt-2"><strong>Book value after 3 years:</strong><br>
+                        $$ BV_3 = 12000 - (3 \times 2000) = \text{£6,000} $$</p>
+                    </div>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="econ-rb" class="text-xl font-semibold">2. Reducing Balance Depreciation</h3>
+                    <div class="info-box"><p>When to Use</p>Use when an asset loses a larger proportion of its value in its earlier years. Depreciation is a fixed percentage of the asset's **current book value**.</div>
+                    <p class="mt-4"><strong>Book Value ($$BV_n$$) after n years:</strong> $$ BV_n = \text{Cost} \times (1 - \text{Rate})^n $$</p>
+                    <div class="example-box">
+                        <p>Example:</p> A company vehicle costs £25,000 and depreciates at a fixed rate of 20% per year. Find its book value after 2 years.
+                        <p class="mt-2"><strong>Book Value after 2 years:</strong><br>
+                        $$ BV_2 = 25000 \times (1-0.20)^2 = 25000 \times 0.8^2 = \text{£16,000} $$</p>
+                    </div>
+                    
+                    <hr class="my-8">
+                    
+                    <h3 id="econ-syd" class="text-xl font-semibold">3. Sum-of-the-Years'-Digits Depreciation</h3>
+                    <div class="info-box"><p>When to Use</p>This is an 'accelerated' method, similar to reducing balance, that results in higher depreciation charges in the early years.</div>
+                    <p class="mt-4"><strong>Sum of Digits (S):</strong> For a life of n years, $$ S = \frac{n(n+1)}{2} $$</p>
+                    <p><strong>Depreciation for Year k:</strong> $$ D_k = (\text{Cost} - \text{Scrap Value}) \times \frac{\text{Remaining Life at Start of Year k}}{S} $$</p>
+                    <div class="example-box">
+                        <p>Example:</p> Use the same £12,000 machine with a 5-year life and £2,000 scrap value. Find the depreciation for Year 2.
+                        <p class="mt-2"><strong>1. Depreciable Amount:</strong> $$ 12000 - 2000 = \text{£10,000} $$</p>
+                        <p class="mt-2"><strong>2. Sum of the Years' Digits (S):</strong> $$ S = \frac{5(5+1)}{2} = 15 $$</p>
+                        <p class="mt-2"><strong>3. Depreciation for Year 2:</strong> At the start of Year 2, there are 4 years of life remaining.<br>
+                        $$ D_2 = 10000 \times \frac{4}{15} = \text{£2,666.67} $$</p>
+                    </div>
+                    
+                    <hr class="my-8">
+
+                    <h3 id="econ-interest" class="text-xl font-semibold">4. Simple & Compound Interest</h3>
+                    <div class="info-box"><p>Time Value of Money</p>A core principle in finance is that money available today is worth more than the same amount in the future due to its potential earning capacity. Interest calculations are used to quantify this.</div>
+                    
+                    <h4 class="text-lg font-semibold mt-4">Simple Interest</h4>
+                    <p>Interest is calculated only on the initial principal amount.</p>
+                    <p><strong>Future Value (A):</strong> $$ A = P(1+rt) $$ (where P=Principal, r=annual rate, t=time in years)</p>
+
+                    <h4 class="text-lg font-semibold mt-4">Compound Interest</h4>
+                    <p>Interest is calculated on the principal plus any previously earned interest.</p>
+                    <p><strong>Future Value (A):</strong> $$ A = P(1+r)^t $$ (compounded annually)</p>
+                    <div class="example-box">
+                        <p>Example:</p> Calculate the future value of £5,000 after 4 years at an interest rate of 6%.
+                        <p class="mt-2"><strong>a) Using Simple Interest:</strong><br>
+                        $$ A = 5000(1 + 0.06 \times 4) = 5000(1.24) = \text{£6,200} $$</p>
+                        <p class="mt-2"><strong>b) Using Compound Interest (compounded annually):</strong><br>
+                        $$ A = 5000(1 + 0.06)^4 = 5000(1.2625) = \text{£6,312.38} $$</p>
+                    </div>
+
+                    <hr class="my-8">
+
+                    <h3 id="econ-appraisal" class="text-xl font-semibold">5. Investment Appraisal</h3>
+                    <div class="info-box"><p>Is it Worth it?</p>These techniques are used to evaluate the financial viability of a project or investment, helping businesses make informed decisions.</div>
+
+                    <h4 class="text-lg font-semibold mt-4">Payback Period</h4>
+                    <p>Calculates the time required for the cash inflows from a project to equal the initial investment. It is simple but ignores profitability and the time value of money.</p>
+
+                    <h4 class="text-lg font-semibold mt-4">Net Present Value (NPV)</h4>
+                    <p>Calculates the present value of all future cash flows, discounted by a minimum required rate of return, and subtracts the initial investment.</p>
+                    <p><strong>Formula:</strong> $$ NPV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t} - C_0 $$</p>
+                    <p><strong>Decision Rule:</strong> If NPV > 0, the project is financially acceptable.</p>
+                    <div class="example-box">
+                        <p>Example:</p> A project requires an initial investment ($$C_0$$) of £50,000. It is expected to generate cash flows of £20,000 in Year 1, £25,000 in Year 2, and £15,000 in Year 3. The discount rate (r) is 10%.
+                        <p class="mt-2"><strong>1. Calculate the Payback Period:</strong><br>
+                        After Y1: £50k - £20k = £30k remaining.<br>
+                        After Y2: £30k - £25k = £5k remaining.<br>
+                        Fraction of Y3 needed: $$ \frac{5000}{15000} \approx 0.33 $$ years.<br>
+                        Payback Period = <strong>2.33 years</strong>.</p>
+                        <p class="mt-2"><strong>2. Calculate the Net Present Value (NPV):</strong><br>
+                        PV of Y1: $$ \frac{20000}{(1.1)^1} = \text{£18,181.82} $$<br>
+                        PV of Y2: $$ \frac{25000}{(1.1)^2} = \text{£20,661.16} $$<br>
+                        PV of Y3: $$ \frac{15000}{(1.1)^3} = \text{£11,269.72} $$<br>
+                        Total PV of Cash Inflows = £50,112.70</p>
+                        <p>$$ NPV = 50112.70 - 50000 = \text{£112.70} $$</p>
+                        <p class="font-semibold">Conclusion: Since the NPV is positive, the project should be accepted.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+...
+    <script src="navigation.js"></script>
+</body>
+</html>
