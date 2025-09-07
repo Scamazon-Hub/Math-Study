@@ -485,128 +485,125 @@
         <p class="font-semibold mt-2 text-white">The area of the triangle is 14 square units.</p>
     </div>
 </section>
-            <section id="vectors-triple-product">
-                <h3>Scalar Triple Product</h3>
 
-                <div class="info-box">
-                    <p><strong>Definition</strong></p>
-                    <p>The <strong>scalar triple product</strong> combines three vectors into a single scalar value.
-                        It's defined as the dot product of one vector with the cross product of the other two.</p>
-                    <div class="math-block">
-                        $$ \text{Scalar Triple Product} = \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) $$
-                    </div>
-                    <p>The result is a scalar, not a vector, and it has significant geometric interpretations.</p>
-                </div>
 
-                <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
-                    <svg width="350" height="200" viewBox="0 0 350 200" xmlns="http://www.w.org/2000/svg"
-                        font-family="'Poppins', sans-serif" font-size="14">
-                        <title>A parallelepiped formed by vectors a, b, and c</title>
-                        <defs>
-                            <marker id="arrowhead-triple" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6"
-                                markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-light)" />
-                            </marker>
-                        </defs>
+<section id="vectors-triple-product">
+    <h3>Scalar Triple Product</h3>
 
-                        <line x1="70" y1="160" x2="130" y2="180" stroke="var(--text-medium)" stroke-width="1.5"
-                            stroke-dasharray="4" />
-                        <line x1="70" y1="160" x2="100" y2="100" stroke="var(--text-medium)" stroke-width="1.5"
-                            stroke-dasharray="4" />
-                        <line x1="70" y1="160" x2="220" y2="150" stroke="var(--text-medium)" stroke-width="1.5"
-                            stroke-dasharray="4" />
+    <div class="info-box">
+        <p><strong>Definition</strong></p>
+        <p>The <strong>scalar triple product</strong> combines three vectors into a single scalar value.
+            It's defined as the dot product of one vector with the cross product of the other two.</p>
+        <div class="math-block">
+            $$ \text{Scalar Triple Product} = \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) $$
+        </div>
+        <p>The result is a scalar, not a vector, and it has significant geometric interpretations.</p>
+    </div>
 
-                        <line x1="150" y1="130" x2="210" y2="150" stroke="var(--accent-green)" stroke-width="3"
-                            marker-end="url(#arrowhead-triple)" />
-                        <text x="215" y="155" fill="var(--accent-green)" font-weight="bold" font-size="18">c</text>
+    <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
+        <svg width="350" height="200" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg"
+            font-family="'Poppins', sans-serif" font-size="14">
+            <title>A parallelepiped formed by vectors a, b, and c</title>
+            <defs>
+                <marker id="arrowhead-triple" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6"
+                    markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-light)" />
+                </marker>
+            </defs>
+            <line x1="70" y1="160" x2="130" y2="180" stroke="var(--text-medium)" stroke-width="1.5"
+                stroke-dasharray="4" />
+            <line x1="70" y1="160" x2="100" y2="100" stroke="var(--text-medium)" stroke-width="1.5"
+                stroke-dasharray="4" />
+            <line x1="70" y1="160" x2="220" y2="150" stroke="var(--text-medium)" stroke-width="1.5"
+                stroke-dasharray="4" />
+            <line x1="150" y1="130" x2="210" y2="150" stroke="var(--accent-green)" stroke-width="3"
+                marker-end="url(#arrowhead-triple)" />
+            <text x="215" y="155" fill="var(--accent-green)" font-weight="bold" font-size="18">c</text>
+            <line x1="150" y1="130" x2="180" y2="70" stroke="var(--accent-green)" stroke-width="3"
+                marker-end="url(#arrowhead-triple)" />
+            <text x="185" y="70" fill="var(--accent-green)" font-weight="bold" font-size="18">b</text>
+            <line x1="150" y1="130" x2="300" y2="120" stroke="var(--accent-green)" stroke-width="3"
+                marker-end="url(#arrowhead-triple)" />
+            <text x="305" y="125" fill="var(--accent-green)" font-weight="bold" font-size="18">a</text>
+            <line x1="300" y1="120" x2="330" y2="60" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="180" y1="70" x2="330" y2="60" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="210" y1="150" x2="240" y2="90" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="180" y1="70" x2="240" y2="90" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="300" y1="120" x2="360" y2="140" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="210" y1="150" x2="360" y2="140" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="330" y1="60" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="360" y1="140" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
+            <line x1="240" y1="90" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
+        </svg>
+    </div>
 
-                        <line x1="150" y1="130" x2="180" y2="70" stroke="var(--accent-green)" stroke-width="3"
-                            marker-end="url(#arrowhead-triple)" />
-                        <text x="185" y="70" fill="var(--accent-green)" font-weight="bold" font-size="18">b</text>
+    <h4>Calculation using a Determinant</h4>
+    <div class="info-box">
+        <p>The most direct way to calculate the scalar triple product is by finding the determinant of a 3x3
+            matrix whose rows (or columns) are the components of the vectors.</p>
+        <p>For vectors $$\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}$$, $$\mathbf{b} =
+            b_1\mathbf{i} + b_2\mathbf{j} + b_3\mathbf{k}$$, and $$\mathbf{c} = c_1\mathbf{i} +
+            c_2\mathbf{j} + c_3\mathbf{k}$$:</p>
+        <div class="math-block">
+            $$
+            \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) =
+            \begin{vmatrix}
+            a_1 & a_2 & a_3 \\
+            b_1 & b_2 & b_3 \\
+            c_1 & c_2 & c_3
+            \end{vmatrix}
+            $$
+        </div>
+    </div>
 
-                        <line x1="150" y1="130" x2="300" y2="120" stroke="var(--accent-green)" stroke-width="3"
-                            marker-end="url(#arrowhead-triple)" />
-                        <text x="305" y="125" fill="var(--accent-green)" font-weight="bold" font-size="18">a</text>
+    <h4>Geometric Interpretations</h4>
+    <div class="info-box">
+        <ol class="list-decimal list-inside space-y-2">
+            <li><strong>Volume of a Parallelepiped:</strong> The absolute value of the scalar triple
+                product, $$|\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})|$$, gives the volume of the
+                parallelepiped formed by the three vectors.</li>
+            <li><strong>Coplanar Vectors:</strong> If the scalar triple product is <strong>zero</strong>, it
+                means the volume is zero. This only happens if the three vectors lie on the same plane,
+                making them <strong>coplanar</strong>.</li>
+        </ol>
+    </div>
 
-                        <line x1="300" y1="120" x2="330" y2="60" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="180" y1="70" x2="330" y2="60" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="210" y1="150" x2="240" y2="90" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="180" y1="70" x2="240" y2="90" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="300" y1="120" x2="360" y2="140" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="210" y1="150" x2="360" y2="140" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="330" y1="60" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="360" y1="140" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
-                        <line x1="240" y1="90" x2="390" y2="80" stroke="var(--text-light)" stroke-width="2" />
-                    </svg>
-                </div>
+    <div class="example-box">
+        <p>Example: Determine $$\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})$$ if $$\mathbf{a} =
+            \mathbf{i} + \mathbf{k}$$, $$\mathbf{b} = 2\mathbf{i} + 3\mathbf{j} - 3\mathbf{k}$$, and
+            $$\mathbf{c} = -2\mathbf{j} + 5\mathbf{k}$$.</p>
+        <p><strong>Step 1: Set up the determinant.</strong> Write the components of each vector as a row in
+            the matrix.</p>
+        <div class="math-block">
+            $$
+            \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) =
+            \begin{vmatrix}
+            1 & 0 & 1 \\
+            2 & 3 & -3 \\
+            0 & -2 & 5
+            \end{vmatrix}
+            $$
+        </div>
+        <p class="mt-4"><strong>Step 2: Calculate the determinant.</strong></p>
+        <div class="math-block">
+            $$
+            = 1 \begin{vmatrix} 3 & -3 \\ -2 & 5 \end{vmatrix} - 0 \begin{vmatrix} 2 & -3 \\ 0 & 5
+            \end{vmatrix} + 1 \begin{vmatrix} 2 & 3 \\ 0 & -2 \end{vmatrix}
+            $$
+            $$
+            = 1((3)(5) - (-3)(-2)) - 0(\text{anything}) + 1((2)(-2) - (3)(0))
+            $$
+            $$
+            = 1(15 - 6) + 1(-4 - 0) = 9 - 4 = 5
+            $$
+        </div>
+        <p class="font-semibold mt-2 text-white">The scalar triple product is 5. This means the volume of
+            the parallelepiped formed by these vectors is 5 cubic units, and the vectors are not coplanar.
+        </p>
+    </div>
+</section>
 
-                <h4>Calculation using a Determinant</h4>
-                <div class="info-box">
-                    <p>The most direct way to calculate the scalar triple product is by finding the determinant of a 3x3
-                        matrix whose rows (or columns) are the components of the vectors.</p>
-                    <p>For vectors $$\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}$$, $$\mathbf{b} =
-                        b_1\mathbf{i} + b_2\mathbf{j} + b_3\mathbf{k}$$, and $$\mathbf{c} = c_1\mathbf{i} +
-                        c_2\mathbf{j} + c_3\mathbf{k}$$:</p>
-                    <div class="math-block">
-                        $$
-                        \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) =
-                        \begin{vmatrix}
-                        a_1 & a_2 & a_3 \\
-                        b_1 & b_2 & b_3 \\
-                        c_1 & c_2 & c_3
-                        \end{vmatrix}
-                        $$
-                    </div>
-                </div>
-
-                <h4>Geometric Interpretations</h4>
-                <div class="info-box">
-                    <ol class="list-decimal list-inside space-y-2">
-                        <li><strong>Volume of a Parallelepiped:</strong> The absolute value of the scalar triple
-                            product, $$|\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})|$$, gives the volume of the
-                            parallelepiped formed by the three vectors.</li>
-                        <li><strong>Coplanar Vectors:</strong> If the scalar triple product is <strong>zero</strong>, it
-                            means the volume is zero. This only happens if the three vectors lie on the same plane,
-                            making them <strong>coplanar</strong>.</li>
-                    </ol>
-                </div>
-
-                <div class="example-box">
-                    <p>Example: Determine $$\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})$$ if $$\mathbf{a} =
-                        \mathbf{i} + \mathbf{k}$$, $$\mathbf{b} = 2\mathbf{i} + 3\mathbf{j} - 3\mathbf{k}$$, and
-                        $$\mathbf{c} = -2\mathbf{j} + 5\mathbf{k}$$.</p>
-                    <p><strong>Step 1: Set up the determinant.</strong> Write the components of each vector as a row in
-                        the matrix.</p>
-                    <div class="math-block">
-                        $$
-                        \mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) =
-                        \begin{vmatrix}
-                        1 & 0 & 1 \\
-                        2 & 3 & -3 \\
-                        0 & -2 & 5
-                        \end{vmatrix}
-                        $$
-                    </div>
-                    <p class="mt-4"><strong>Step 2: Calculate the determinant.</strong></p>
-                    <div class="math-block">
-                        $$
-                        = 1 \begin{vmatrix} 3 & -3 \\ -2 & 5 \end{vmatrix} - 0 \begin{vmatrix} 2 & -3 \\ 0 & 5
-                        \end{vmatrix} + 1 \begin{vmatrix} 2 & 3 \\ 0 & -2 \end{vmatrix}
-                        $$
-                        $$
-                        = 1((3)(5) - (-3)(-2)) - 0(\text{anything}) + 1((2)(-2) - (3)(0))
-                        $$
-                        $$
-                        = 1(15 - 6) + 1(-4 - 0) = 9 - 4 = 5
-                        $$
-                    </div>
-                    <p class="font-semibold mt-2 text-white">The scalar triple product is 5. This means the volume of
-                        the parallelepiped formed by these vectors is 5 cubic units, and the vectors are not coplanar.
-                    </p>
-                </div>
-            </section>
-
-            <section id="vectors-applications-physics">
+<section id="vectors-applications-physics">
     <h3>Applications in Physics and Mechanics</h3>
     <p class="mt-4">Vectors are fundamental to describing physical quantities. The dot and cross products have direct applications in calculating key mechanical concepts like work, energy, and torque.</p>
 
@@ -627,10 +624,8 @@
             </defs>
             <line x1="50" y1="120" x2="300" y2="120" stroke="var(--text-light)" stroke-width="2.5" marker-end="url(#arrowhead-physics)"/>
             <text x="170" y="135" font-weight="bold" font-size="18">d</text>
-
             <line x1="70" y1="100" x2="220" y2="40" stroke="var(--accent-green)" stroke-width="3" marker-end="url(#arrowhead-physics)"/>
             <text x="225" y="40" fill="var(--accent-green)" font-weight="bold" font-size="18">F</text>
-
             <line x1="70" y1="100" x2="220" y2="100" stroke="var(--text-medium)" stroke-width="1.5" stroke-dasharray="4"/>
             <path d="M 100 100 A 30 30 0 0 1 126 80" stroke="var(--text-medium)" stroke-width="1.5" fill="none"/>
             <text x="110" y="85" fill="var(--text-medium)" font-size="16">&theta;</text>
@@ -675,25 +670,21 @@
             <text x="335" y="185" fill="var(--text-medium)">x</text>
             <line x1="20" y1="180" x2="20" y2="20" stroke="var(--text-medium)" stroke-width="1.5" marker-end="url(#arrowhead-physics2)"/>
             <text x="10" y="20" fill="var(--text-medium)">y</text>
-
             <line x1="20" y1="180" x2="180" y2="100" stroke="var(--text-light)" stroke-width="2.5" marker-end="url(#arrowhead-physics2)"/>
             <text x="90" y="135" font-weight="bold" font-size="18">r</text>
-
             <line x1="180" y1="100" x2="300" y2="60" stroke="var(--accent-green)" stroke-width="3" marker-end="url(#arrowhead-physics2)"/>
             <text x="305" y="60" fill="var(--accent-green)" font-weight="bold" font-size="18">F</text>
-
             <line x1="100" y1="140" x2="260" y2="60" stroke="var(--text-medium)" stroke-width="1.5" stroke-dasharray="4"/>
             <path d="M 180 100 A 50 50 0 0 1 223 80" stroke="var(--text-medium)" stroke-width="1.5" fill="none"/>
             <text x="205" y="80" fill="var(--text-medium)" font-size="16">&theta;</text>
-            
             <circle cx="20" cy="180" r="4" fill="var(--text-light)"/>
             <text x="25" y="195" font-weight="bold">O</text>
             <circle cx="180" cy="100" r="4" fill="var(--text-light)"/>
         </svg>
     </div>
 </section>
-            
-        </main>
+
+</main>
     </div>
 
     <footer>
@@ -706,4 +697,5 @@
     <script src="navigation.js"></script>
 </body>
 </html>
+
 
