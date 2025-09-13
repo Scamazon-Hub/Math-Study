@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Template | Scamazon Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for a better aesthetic in dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569; /* slate-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* slate-500 */
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-800/50 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-700">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-cyan-400 tracking-wide">Scamazon Hub</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Algebra</a>
+                        <a href="#" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Calculus</a>
+                        <a href="#" class="text-slate-300 hover:bg-slate-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Geometry</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="bg-slate-800 rounded-lg shadow-xl p-6 md:p-8">
+            
+            <!-- ================================================================= -->
+            <!--                  PAGE CONTENT STARTS HERE                         -->
+            <!-- ================================================================= -->
+
+            <!-- Page Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 border-b-2 border-cyan-500 pb-2">
+                <!-- Replace with your page title -->
+                Page Title Goes Here
+            </h1>
+
+            <!-- Section 1 -->
+            <section class="mt-8">
+                <h2 class="text-2xl font-semibold text-cyan-400 mb-3">
+                    <!-- Replace with your section title -->
+                    Section 1: Introduction
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    <!-- Add your content for this section here. You can use <p>, <ul>, <ol>, etc. -->
+                    This is a paragraph of text. You can replace this with your own content to build out the page. The template provides a consistent structure and style for all pages on the Scamazon Hub Math Study website.
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="mt-8">
+                <h2 class="text-2xl font-semibold text-cyan-400 mb-3">
+                    <!-- Replace with your section title -->
+                    Section 2: Core Concepts
+                </h2>
+                <div class="bg-slate-900/50 p-4 rounded-md border border-slate-700">
+                    <p class="text-slate-300 leading-relaxed">
+                        <!-- Add more content here -->
+                        This is another paragraph within a slightly different styled container, which is useful for highlighting examples, definitions, or key formulas.
+                    </p>
+                    <!-- Example of a formula block -->
+                    <div class="mt-4 p-4 bg-slate-700 rounded-lg">
+                        <p class="font-mono text-cyan-300 text-center">
+                            [c = \sqrt{a^2 + b^2}]
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================= -->
+            <!--                   PAGE CONTENT ENDS HERE                          -->
+            <!-- ================================================================= -->
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800/50 mt-12 border-t border-slate-700">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+            &copy; 2025 Scamazon Hub. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
