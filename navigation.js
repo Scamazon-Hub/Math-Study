@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { href: 'numerical_methods.html', label: 'Numerical Methods' },
     { href: 'economics.html', label: 'Financial Economics' },
     { href: 'statistics.html', label: 'Statistics' },
+    { href: 'chainrule.html', label: 'Calculus - chain Rule' },
+    { href: 'expocalc.html', label: 'Exponential Calculus' },
   ];
 
   const placeholder = document.getElementById('navigation-placeholder');

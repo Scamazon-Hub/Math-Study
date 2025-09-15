@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chain Rule - HNC Maths</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Maths Master Reference</h1>
+            <p class="mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder" class="lg:sticky lg:self-start"></aside>
+
+        <main>
+            <h2 class="text-2xl font-bold text-gray-900">The Chain Rule (Function of a Function)</h2>
+            
+            <h3 id="chain-intro" class="text-xl font-semibold">1. Understanding Cascade Relationships</h3>
+            <div class="info-box">
+                <p><strong>What is a Cascade Relationship?</strong></p>
+                <p>In many systems, variables are linked indirectly. For example, a variable $$y$$ might depend on $$z$$, which in turn depends on $$x$$. This creates a chain or 'cascade' where changing $$x$$ affects $$z$$, which then affects $$y$$. We can represent this as two linked functions: $$y=f(z)$$ and $$z=f(x)$$.</p>
+            </div>
+
+            <div class="my-4 p-4 rounded-md flex justify-center items-center bg-gray-900 border border-gray-700">
+                <svg width="450" height="150" viewBox="0 0 450 150" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins', sans-serif" font-size="14">
+                    <title>Diagram of a mathematical cascade relationship</title>
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--primary-end)" />
+                        </marker>
+                    </defs>
+                    <!-- Box 1 -->
+                    <rect x="20" y="50" width="80" height="50" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="60" y="80" text-anchor="middle" fill="var(--text-heading)" font-size="20" font-weight="bold">x</text>
+                    <!-- Arrow 1 -->
+                    <line x1="105" y1="75" x2="165" y2="75" stroke="var(--primary-end)" stroke-width="2.5" marker-end="url(#arrow)"></line>
+                    <text x="135" y="60" text-anchor="middle" fill="var(--text-light)">$$z = f(x)$$</text>
+                    <!-- Box 2 -->
+                    <rect x="170" y="50" width="80" height="50" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="210" y="80" text-anchor="middle" fill="var(--text-heading)" font-size="20" font-weight="bold">z</text>
+                    <!-- Arrow 2 -->
+                    <line x1="255" y1="75" x2="315" y2="75" stroke="var(--primary-end)" stroke-width="2.5" marker-end="url(#arrow)"></line>
+                    <text x="285" y="60" text-anchor="middle" fill="var(--text-light)">$$y = f(z)$$</text>
+                    <!-- Box 3 -->
+                    <rect x="320" y="50" width="80" height="50" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="360" y="80" text-anchor="middle" fill="var(--text-heading)" font-size="20" font-weight="bold">y</text>
+                </svg>
+            </div>
+            
+            <h4 class="text-lg font-semibold mt-6">A Physical Analogy</h4>
+            <p>Consider a heating process: the final temperature rise depends on the heat input, which itself depends on the rate of fuel consumption. This is a perfect real-world example of a cascade relationship.</p>
+
+            <div class="my-4 p-4 rounded-md flex justify-center items-center bg-gray-900 border border-gray-700">
+                <svg width="500" height="180" viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins', sans-serif" font-size="12">
+                    <title>Diagram of a physical cascade relationship</title>
+                    <defs>
+                         <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--primary-end)" />
+                        </marker>
+                    </defs>
+                    <!-- Box 1 -->
+                    <rect x="10" y="60" width="120" height="60" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="70" y="85" text-anchor="middle" fill="var(--text-heading)" font-weight="bold">Fuel Consumption (C)</text>
+                    <!-- Arrow 1 -->
+                    <line x1="135" y1="90" x2="195" y2="90" stroke="var(--primary-end)" stroke-width="2.5" marker-end="url(#arrow2)"></line>
+                    <text x="165" y="70" text-anchor="middle" fill="var(--text-light)">Burning Process</text>
+                    <text x="165" y="85" text-anchor="middle" fill="var(--text-light)">$$H = f(C)$$</text>
+                    <!-- Box 2 -->
+                    <rect x="200" y="60" width="120" height="60" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="260" y="85" text-anchor="middle" fill="var(--text-heading)" font-weight="bold">Heat Input (H)</text>
+                    <!-- Arrow 2 -->
+                    <line x1="325" y1="90" x2="385" y2="90" stroke="var(--primary-end)" stroke-width="2.5" marker-end="url(#arrow2)"></line>
+                     <text x="355" y="70" text-anchor="middle" fill="var(--text-light)">Heat Transfer</text>
+                     <text x="355" y="85" text-anchor="middle" fill="var(--text-light)">$$T = f(H)$$</text>
+                    <!-- Box 3 -->
+                    <rect x="390" y="60" width="100" height="60" fill="var(--background-dark)" stroke="var(--text-light)" rx="8"></rect>
+                    <text x="440" y="85" text-anchor="middle" fill="var(--text-heading)" font-weight="bold">Temp Rise (T)</text>
+                </svg>
+            </div>
+
+
+            <hr class="my-8">
+
+            <h3 id="chain-rule" class="text-xl font-semibold">2. The Chain Rule Formula</h3>
+            <div class="info-box">
+                <p>The Chain Rule allows us to find the overall rate of change, $$\frac{dy}{dx}$$, by multiplying the rates of change of the individual functions in the cascade.</p>
+            </div>
+            <div class="math-block">
+                $$ \frac{dy}{dx} = \frac{dy}{dz} \times \frac{dz}{dx} $$
+            </div>
+            <p class="mt-4">You can think of this as the '$$dz$$' terms on the right-hand side 'cancelling out' to leave $$\frac{dy}{dx}$$. While not a true cancellation, it's a useful way to remember the formula's structure.</p>
+
+            <hr class="my-8">
+
+            <h3 id="chain-example" class="text-xl font-semibold">3. Worked Example</h3>
+            <div class="example-box">
+                <p><strong>Example:</strong> Given the relationships $$y=z^2$$ and $$z=x^3$$, find the overall rate of change $$\frac{dy}{dx}$$.</p>
+                <p><strong>Method 1: Direct Substitution</strong></p>
+                <p>First, we can create a single function linking y and x by substituting $$z=x^3$$ into $$y=z^2$$.</p>
+                <div class="math-block">
+                    $$ y = (x^3)^2 = x^6 $$
+                </div>
+                <p>Now, we differentiate this new function directly:</p>
+                <div class="math-block">
+                    $$ \frac{dy}{dx} = 6x^5 $$
+                </div>
+
+                <p class="mt-6"><strong>Method 2: Using the Chain Rule</strong></p>
+                <p><strong>Step 1: Differentiate each part of the cascade separately.</strong></p>
+                <p>For $$y=z^2$$, the derivative is: $$\frac{dy}{dz} = 2z$$</p>
+                <p>For $$z=x^3$$, the derivative is: $$\frac{dz}{dx} = 3x^2$$</p>
+                
+                <p><strong>Step 2: Apply the Chain Rule formula.</strong></p>
+                <div class="math-block">
+                     $$ \frac{dy}{dx} = \frac{dy}{dz} \times \frac{dz}{dx} = (2z) \times (3x^2) $$
+                </div>
+
+                <p><strong>Step 3: Substitute z back in terms of x to get the final answer.</strong></p>
+                 <div class="math-block">
+                     $$ \frac{dy}{dx} = 2(x^3) \times (3x^2) = 6x^5 $$
+                </div>
+                <p class="font-semibold mt-2">Both methods yield the same result, confirming the validity of the Chain Rule.</p>
+            </div>
+            
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HNC Maths Master Reference. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed with a modern aesthetic inspired by Uiverse.io</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
