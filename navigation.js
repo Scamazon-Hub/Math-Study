@@ -1,23 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const NAV_ITEMS = [
+ const NAV_ITEMS = [
+    // General
     { href: 'index.html', label: 'Home' },
     { href: 'units.html', label: 'Units & Notation' },
+
+    // Core Mathematics
     { href: 'algebra.html', label: 'Core Algebra' },
-    { href: 'trigonometry.html', label: 'Trigonometry' },
-    { href: 'sine_wave_fundamentals.html', label: 'Sine Wave Fundamentals' },
-    { href: 'vectors.html', label: 'Vectors' },
-    { href: 'vectorsOldButBEST.html', label: 'VectorsAlt' },
-    { href: 'calculus.html', label: 'Calculus' },
-    { href: 'mechanics.html', label: 'Applied Mechanics' },
-    { href: 'ac_circuits.html', label: 'AC Circuit Analysis' },
     { href: 'linear_methods.html', label: 'Linear Methods' },
+    { href: 'sine_wave_fundamentals.html', label: 'Sine Wave Fundamentals' },
+    { href: 'trigonometry.html', label: 'Trigonometry' },
+    { href: 'vectors.html', label: 'Vectors' },
+    { href: 'sinecosine.html', label: 'Sine/Cosine' },
+    { href: 'vectorsOldButBEST.html', label: 'VectorsAlt' },
+
+    // Calculus
     { href: 'advanced_calculus.html', label: 'Advanced Calculus' },
-    { href: 'numerical_methods.html', label: 'Numerical Methods' },
-    { href: 'economics.html', label: 'Financial Economics' },
-    { href: 'statistics.html', label: 'Statistics' },
+    { href: 'calculus.html', label: 'Calculus' },
     { href: 'chainrule.html', label: 'Calculus - chain Rule' },
     { href: 'expocalc.html', label: 'Exponential Calculus' },
-  ];
+
+    // Applied & Specialized Topics
+    { href: 'ac_circuits.html', label: 'AC Circuit Analysis' },
+    { href: 'mechanics.html', label: 'Applied Mechanics' },
+    { href: 'economics.html', label: 'Financial Economics' },
+    { href: 'numerical_methods.html', label: 'Numerical Methods' },
+    { href: 'statistics.html', label: 'Statistics' },
+];
 
   const placeholder = document.getElementById('navigation-placeholder');
   if (!placeholder) return;

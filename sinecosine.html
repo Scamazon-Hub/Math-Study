@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sine & Cosine Calculus - HNC Maths</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Maths Master Reference</h1>
+            <p class="mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder" class="lg:sticky lg:self-start"></aside>
+
+        <main>
+            <h2 class="text-2xl font-bold text-gray-900">Calculus of Sine & Cosine Functions</h2>
+            
+            <h3 id="sincos-intro" class="text-xl font-semibold">1. Differentiation of Sine and Cosine</h3>
+            <div class="info-box">
+                <p><strong>When to Use</strong></p>
+                <p>These rules are fundamental for finding the rate of change in systems described by sinusoidal waveforms, such as AC circuits, mechanical vibrations, and wave mechanics. A critical point is that these rules are valid when the angle (x) is measured in <strong>radians</strong>.</p>
+            </div>
+            
+            <h4>General Differentiation Formulas</h4>
+             <div class="overflow-x-auto mt-4">
+                <table class="w-full text-left border rounded-lg math-table">
+                    <thead class="bg-gray-100"><tr><th class="p-3">Function ($$y$$)</th><th class="p-3">Derivative ($$\frac{dy}{dx}$$)</th></tr></thead>
+                    <tbody>
+                        <tr><td>$$y = a \sin(kx)$$</td><td>$$\frac{dy}{dx} = ak \cos(kx)$$</td></tr>
+                        <tr><td>$$y = a \cos(kx)$$</td><td>$$\frac{dy}{dx} = -ak \sin(kx)$$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="my-8">
+
+            <h3 id="sincos-graphical" class="text-xl font-semibold">2. Graphical Interpretation</h3>
+            <div class="info-box">
+                <p>The Gradient Connection</p>
+                <p>The derivative of a function gives its gradient. For trigonometric functions, this means:</p>
+                <ul class="list-disc list-inside ml-4 mt-2">
+                    <li>The gradient of the $$y = \sin(x)$$ curve at any point is numerically equal to $$\cos(x)$$.</li>
+                    <li>The gradient of the $$y = \cos(x)$$ curve at any point is numerically equal to $$-\sin(x)$$.</li>
+                </ul>
+            </div>
+
+            <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins', sans-serif" font-size="14">
+                    <title>Graph of y = sin(x) showing a tangent at x = 1.5 pi</title>
+                    <!-- Axes -->
+                    <line x1="20" y1="100" x2="380" y2="100" stroke="var(--text-medium)" stroke-width="1.5"></line>
+                    <line x1="20" y1="20" x2="20" y2="180" stroke="var(--text-medium)" stroke-width="1.5"></line>
+                    <!-- Sine Wave -->
+                    <path d="M 20 100 C 70 20, 120 20, 170 100 S 270 180, 320 100" stroke="var(--accent-green)" stroke-width="2.5" fill="none"></path>
+                    <!-- X-axis labels -->
+                    <text x="15" y="120" fill="var(--text-light)">0</text>
+                    <text x="165" y="120" fill="var(--text-light)">$$\pi$$</text>
+                    <text x="240" y="120" fill="var(--text-light)">$$1.5\pi$$</text>
+                    <text x="315" y="120" fill="var(--text-light)">$$2\pi$$</text>
+                    <!-- Y-axis labels -->
+                    <text x="5" y="25" fill="var(--text-light)">1</text>
+                    <text x="0" y="185" fill="var(--text-light)">-1</text>
+                    <!-- Tangent Line -->
+                    <line x1="210" y1="180" x2="280" y2="180" stroke="var(--primary-end)" stroke-width="2"></line>
+                    <text x="285" y="185" fill="var(--primary-end)" font-weight="bold">T</text>
+                    <circle cx="245" cy="180" r="3" fill="var(--primary-end)"></circle>
+                </svg>
+            </div>
+            <p class="mt-4">For the sine wave above, at $$x=1.5\pi$$, the tangent is horizontal, so its gradient is 0. This matches the rule, as $$\cos(1.5\pi) = 0$$.</p>
+            
+            <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
+                <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins', sans-serif" font-size="14">
+                     <title>Graph of y = cos(x) showing a tangent at x = pi/6</title>
+                    <!-- Axes -->
+                    <line x1="20" y1="100" x2="380" y2="100" stroke="var(--text-medium)" stroke-width="1.5"></line>
+                    <line x1="20" y1="20" x2="20" y2="180" stroke="var(--text-medium)" stroke-width="1.5"></line>
+                    <!-- Cosine Wave -->
+                    <path d="M 20 20 C 70 20, 120 180, 170 180 S 270 20, 320 20" stroke="var(--accent-green)" stroke-width="2.5" fill="none"></path>
+                    <!-- X-axis labels -->
+                    <text x="40" y="120" fill="var(--text-light)">$$\pi/6$$</text>
+                    <text x="90" y="120" fill="var(--text-light)">$$\pi/2$$</text>
+                    <text x="165" y="120" fill="var(--text-light)">$$\pi$$</text>
+                    <!-- Y-axis labels -->
+                    <text x="5" y="25" fill="var(--text-light)">1</text>
+                    <text x="0" y="185" fill="var(--text-light)">-1</text>
+                    <!-- Tangent Line -->
+                    <line x1="25" y1="80" x2="85" y2="50" stroke="var(--primary-end)" stroke-width="2"></line>
+                    <text x="90" y="50" fill="var(--primary-end)" font-weight="bold">T</text>
+                    <circle cx="48" cy="68" r="3" fill="var(--primary-end)"></circle>
+                    <line x1="48" y1="68" x2="48" y2="100" stroke="var(--text-medium)" stroke-width="1" stroke-dasharray="2,2"></line>
+                </svg>
+            </div>
+            <p class="mt-4">For the cosine wave, at $$x=\pi/6$$, the gradient of the tangent is -0.5. This matches the rule, as $$-\sin(\pi/6) = -0.5$$.</p>
+
+            <hr class="my-8">
+
+            <h3 id="sincos-examples" class="text-xl font-semibold">3. Worked Examples</h3>
+            <div class="example-box">
+                <p><strong>Example 1: Rate of Change of Voltage</strong></p>
+                <p>A voltage is given by the expression $$v = 200\sin\theta$$ volts. Evaluate the rate of change, $$\frac{dv}{d\theta}$$, when $$\theta = 0.86$$ radians.</p>
+                <p><strong>Step 1: Differentiate the expression.</strong></p>
+                <div class="math-block">$$ \frac{dv}{d\theta} = 200\cos\theta $$</div>
+                <p><strong>Step 2: Substitute the value for $$\theta$$.</strong> Make sure your calculator is in RADIAN mode.</p>
+                <div class="math-block">$$ \left.\frac{dv}{d\theta}\right|_{\theta=0.86} = 200\cos(0.86) \approx 130.5 $$</div>
+                <p class="font-semibold mt-2">The rate of change is 130.5 V/rad.</p>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Example 2: Gradient of a Curve</strong></p>
+                <p>Evaluate the gradient of the curve $$y = 100\cos\theta$$ at the point where $$\theta = 5.2$$ radians.</p>
+                <p><strong>Step 1: Differentiate the expression.</strong></p>
+                <div class="math-block">$$ \frac{dy}{d\theta} = 100(-\sin\theta) = -100\sin\theta $$</div>
+                <p><strong>Step 2: Substitute the value for $$\theta$$.</strong></p>
+                <div class="math-block">$$ \left.\frac{dy}{d\theta}\right|_{\theta=5.2} = -100\sin(5.2) = -100(-0.88345) \approx 88.3 $$</div>
+                <p class="font-semibold mt-2">The gradient of the curve at that point is approximately 88.3.</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Example 3: Rate of Change of Torque</strong></p>
+                <p>A variable torque is given by $$T = 2000\sin\theta + 3000\cos\theta$$. Determine the rate of change of torque with respect to angular position, $$\frac{dT}{d\theta}$$, when $$\theta = \pi/4$$ radians.</p>
+                <p><strong>Step 1: Differentiate the expression term by term.</strong></p>
+                <div class="math-block">$$ \frac{dT}{d\theta} = 2000\cos\theta - 3000\sin\theta $$</div>
+                <p><strong>Step 2: Substitute the value for $$\theta$$.</strong></p>
+                <div class="math-block">$$ \left.\frac{dT}{d\theta}\right|_{\theta=\pi/4} = 2000\cos(\pi/4) - 3000\sin(\pi/4) $$
+                $$ = 2000\left(\frac{\sqrt{2}}{2}\right) - 3000\left(\frac{\sqrt{2}}{2}\right) = 1414.2 - 2121.3 \approx -707.1 $$</div>
+                <p class="font-semibold mt-2">The rate of change of torque is -707.1 Nm/rad.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HNC Maths Master Reference. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed with a modern aesthetic inspired by Uiverse.io</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
+
