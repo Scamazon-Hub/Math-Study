@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate of Change - HNC Maths</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HNC Maths Master Reference</h1>
+            <p class="mt-1">The definitive guide with all topics and detailed examples.</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder" class="lg:sticky lg:self-start"></aside>
+
+        <main>
+            <h2>Differentiation as a Rate of Change</h2>
+            
+            <section id="roc-intro">
+                <h3>1. The Fundamental Interpretation</h3>
+                <div class="info-box">
+                    <p><strong>What is a Derivative?</strong></p>
+                    <p>Any introduction to differentiation stresses the **rate of change** interpretation. In fact, differentiation can be described as: "an algebraic process for the derivation of rate of change expressions".</p>
+                    <p class="mt-2">Graphically, the 'rate of change' is the **gradient of the tangent to a curve** at a specific point. This allows many derivatives to have a direct physical interpretation.</p>
+                </div>
+            </section>
+
+            <section id="roc-physical">
+                <h3>2. Physical Interpretations & Examples</h3>
+                <div class="info-box"><p>Applications in Science and Engineering</p>Many physical laws are defined in terms of rates of change, which makes differentiation a critical tool for analysis.</div>
+                
+                <p class="mt-4">If $$s$$ represents the linear displacement of a moving body from a fixed reference point, and $$t$$ represents time, we can express the relationship between them as a function:</p>
+                <div class="math-block">$$ s = f(t) $$</div>
+                
+                <h4>Velocity</h4>
+                <div class="info-box"><p>Velocity is defined as the 'rate of change of displacement'. Therefore, it is the derivative of displacement with respect to time.</p></div>
+                <div class="math-block">$$ v = \frac{ds}{dt} = f'(t) $$</div>
+                
+                <h4>Other Rates of Change</h4>
+                <div class="info-box"><p>This concept applies to any changing quantity. For example:</p></div>
+                <p class="mt-4">The rate of change of temperature, $$\theta$$, with respect to time:</p>
+                <div class="math-block">$$ \frac{d\theta}{dt} \quad \text{or} \quad f'(t) $$</div>
+                
+                <p class="mt-4">The rate of change of pressure, $$p$$, with respect to distance $$x$$ along a hydraulic pipeline:</p>
+                <div class="math-block">$$ \frac{dp}{dx} \quad \text{or} \quad f'(x) $$</div>
+            </section>
+
+            <section id="roc-second">
+                <h3>3. The Second Derivative</h3>
+                <div class="info-box"><p>Rate of Change of the Rate of Change</p>The **second derivative** describes how the gradient (the first rate of change) is itself changing. This tells us about the **curvature** of the graph. It is written as $$\frac{d^2y}{dx^2}$$ or $$f''(x)$$.</div>
+                <div class="my-4 p-4 rounded-md flex justify-center bg-gray-900 border border-gray-700">
+                    <svg width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="14">
+                        <defs><marker id="arrow-roc" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-light)" /></marker></defs>
+                        <path d="M 50 180 Q 150 180, 180 80 T 230 30" stroke="var(--accent-green)" stroke-width="2.5" fill="none" />
+                        <line x1="130" y1="145" x2="210" y2="75" stroke="var(--primary-end)" stroke-width="2" />
+                        <circle cx="170" cy="110" r="4" fill="var(--text-light)" />
+                        <text x="175" y="105" fill="var(--text-light)">P</text>
+                        <text x="170" y="65" fill="var(--text-light)">Tangent</text>
+                        <text x="210" y="25" fill="var(--text-light)">y = f(x)</text>
+                        <line x1="20" y1="180" x2="230" y2="180" stroke="var(--text-light)" stroke-width="1.5" marker-end="url(#arrow-roc)" />
+                        <text x="235" y="185" fill="var(--text-light)">x</text>
+                        <line x1="30" y1="190" x2="30" y2="20" stroke="var(--text-light)" stroke-width="1.5" marker-end="url(#arrow-roc)" />
+                        <text x="20" y="15" fill="var(--text-light)">y</text>
+                    </svg>
+                </div>
+
+                <h4>Physical Meaning: Displacement, Velocity, and Acceleration</h4>
+                <div class="info-box"><p>If we apply two stages of differentiation to a displacement expression, we obtain an expression for acceleration.</p></div>
+                <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                    <li><strong>Displacement:</strong> $$ s = f(t) $$</li>
+                    <li><strong>Velocity</strong> is the rate of change of displacement: $$ v = \frac{ds}{dt} = f'(t) $$</li>
+                    <li><strong>Acceleration</strong> is the rate of change of velocity: $$ a = \frac{dv}{dt} = \frac{d^2s}{dt^2} = f''(t) $$</li>
+                </ul>
+
+                <div class="example-box">
+                    <p>Example: Evaluate $$f''(2)$$ for the function $$f(x) = 2x^3 - x^2 + 3x + 1$$.</p>
+                    <p><strong>Step 1: Differentiate to find the first derivative, $$f'(x)$$.</strong></p>
+                    <div class="math-block">$$ f'(x) = 6x^2 - 2x + 3 $$</div>
+                    <p><strong>Step 2: Differentiate again to find the second derivative, $$f''(x)$$.</strong></p>
+                    <div class="math-block">$$ f''(x) = 12x - 2 $$</div>
+                    <p><strong>Step 3: Substitute x=2 into the second derivative.</strong></p>
+                    <div class="math-block">$$ f''(2) = 12(2) - 2 $$</div>
+                    <p><strong>Step 4: Calculate the final value.</strong></p>
+                    <div class="math-block">$$ f''(2) = 24 - 2 = 22 $$</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HNC Maths Master Reference. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

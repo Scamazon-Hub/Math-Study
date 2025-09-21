@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Calculus
     { href: 'advanced_calculus.html', label: 'Advanced Calculus' },
     { href: 'calculus.html', label: 'Calculus' },
+    { href: 'rate_of_change.html', label: 'Rate of Change'},
     { href: 'chainrule.html', label: 'Calculus - chain Rule' },
     { href: 'expocalc.html', label: 'Exponential Calculus' },
 
