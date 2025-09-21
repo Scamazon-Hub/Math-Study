@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Differentiation Reference Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMeaOVTGXRj8jaZB5OA1abAx8FpA6peVdoNurnIyA6PlEVreC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlVwcjNcsNQpJGompJZkyHOjrMYL4vRwYmoqzvUcqErLRTgYewmvMscKPar" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for a reference sheet look and feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .sheet-container {
+            font-family: 'Cardo', serif; /* A more academic font for the content */
+            max-width: 8.5in;
+            margin: 2rem auto;
+            padding: 0.75in;
+            background: white;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .sheet-container:hover {
+            box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+             font-family: 'Inter', sans-serif;
+             font-weight: 600;
+        }
+        .rule-section {
+            margin-bottom: 1.75rem;
+        }
+        .rule-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #334155; /* Slate 700 */
+            border-bottom: 2px solid #e2e8f0; /* Slate 200 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .formula {
+            background-color: #f1f5f9; /* Slate 100 */
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0; /* Slate 200 */
+            font-size: 1.1rem; /* Base size for KaTeX */
+            color: #1e293b; /* Slate 800 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+            .sheet-container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0.5in;
+                max-width: 100%;
+            }
+            .print-hide {
+                display: none;
+            }
+             .rule-section {
+                page-break-inside: avoid;
+            }
+            .formula {
+                background-color: #f8fafc !important; /* Lighter gray for print */
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+                border-color: #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto text-center mb-6 print-hide">
+        <h1 class="text-2xl font-bold text-gray-800">Calculus Reference Sheet</h1>
+        <p class="text-gray-600 mt-2">A quick guide to differentiation rules. Press the button to print.</p>
+        <button onclick="window.print()" class="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-transform transform hover:scale-105">
+            Print Reference Sheet
+        </button>
+    </div>
+
+    <!-- The actual reference sheet content begins here -->
+    <div id="worksheet" class="sheet-container">
+        <header class="text-center pb-4 border-b-2 border-gray-400">
+            <h1 class="text-3xl font-bold text-gray-800">Calculus I: Differentiation Rules</h1>
+            <h2 class="text-lg text-gray-600">A Quick Reference Guide</h2>
+        </header>
+
+        <main class="mt-8">
+            <!-- Basic Differentiation Rules -->
+            <div class="rule-section">
+                <h3 class="rule-title">Core Differentiation Rules</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div><strong>Power Rule</strong><div class="formula">$$\frac{d}{dx} (x^n) = nx^{n-1}$$</div></div>
+                    <div><strong>Constant Rule</strong><div class="formula">$$\frac{d}{dx} (c) = 0$$</div></div>
+                    <div><strong>Sum/Difference Rule</strong><div class="formula">$$\frac{d}{dx} [f(x) \pm g(x)] = f'(x) \pm g'(x)$$</div></div>
+                    <div><strong>Constant Multiple</strong><div class="formula">$$\frac{d}{dx} [c \cdot f(x)] = c \cdot f'(x)$$</div></div>
+                </div>
+            </div>
+
+            <!-- Advanced Differentiation Rules -->
+            <div class="rule-section">
+                <h3 class="rule-title">Advanced Differentiation Rules</h3>
+                <div>
+                    <p class="font-semibold">Product Rule</p>
+                    <div class="formula mb-4">$$\frac{d}{dx} [f(x)g(x)] = f'(x)g(x) + f(x)g'(x)$$</div>
+                </div>
+                 <div>
+                    <p class="font-semibold">Quotient Rule</p>
+                    <div class="formula mb-4">$$\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}$$</div>
+                </div>
+                <div>
+                    <p class="font-semibold">Chain Rule</p>
+                    <div class="formula">$$\frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x)$$</div>
+                </div>
+            </div>
+
+            <!-- Common Derivatives -->
+            <div class="rule-section">
+                <h3 class="rule-title">Common Derivatives</h3>
+                <div class="grid-container">
+                    <!-- Exponential & Logarithmic -->
+                    <div class="subsection">
+                        <h4 class="font-semibold text-lg mb-2 text-gray-700">Exponential & Logarithmic</h4>
+                        <div class="space-y-3">
+                            <div class="formula">$$\frac{d}{dx} (e^x) = e^x$$</div>
+                            <div class="formula">$$\frac{d}{dx} (a^x) = a^x \ln(a)$$</div>
+                            <div class="formula">$$\frac{d}{dx} (\ln(x)) = \frac{1}{x}$$</div>
+                            <div class="formula">$$\frac{d}{dx} (\log_a(x)) = \frac{1}{x \ln(a)}$$</div>
+                        </div>
+                    </div>
+                    <!-- Trigonometric -->
+                    <div class="subsection">
+                        <h4 class="font-semibold text-lg mb-2 text-gray-700">Trigonometric</h4>
+                        <div class="space-y-3">
+                            <div class="formula">$$\frac{d}{dx} (\sin x) = \cos x$$</div>
+                            <div class="formula">$$\frac{d}{dx} (\cos x) = -\sin x$$</div>
+                            <div class="formula">$$\frac{d}{dx} (\tan x) = \sec^2 x$$</div>
+                             <div class="formula">$$\frac{d}{dx} (\cot x) = -\csc^2 x$$</div>
+                             <div class="formula">$$\frac{d}{dx} (\sec x) = \sec x \tan x$$</div>
+                             <div class="formula">$$\frac{d}{dx} (\csc x) = -\csc x \cot x$$</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ]
+            });
+        });
+    </script>
+
+</body>
+</html>
+

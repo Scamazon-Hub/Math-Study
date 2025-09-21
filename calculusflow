@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Differentiation Flowchart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- KaTeX for LaTeX Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMeaOVTGXRj8jaZB5OA1abAx8FpA6peVdoNurnIyA6PlEVreC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlVwcjNcsNQpJGompJZkyHOjrMYL4vRwYmoqzvUcqErLRTgYewmvMscKPar" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sheet-container {
+            font-family: 'Cardo', serif;
+            max-width: 8.5in;
+            margin: 2rem auto;
+            padding: 0.75in;
+            background: white;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+             font-family: 'Inter', sans-serif;
+             font-weight: 600;
+        }
+        .flowchart {
+            font-family: 'Inter', sans-serif;
+        }
+        .flow-step {
+            background-color: #f8fafc; /* Slate 50 */
+            border: 1px solid #e2e8f0; /* Slate 200 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 450px;
+        }
+        .flow-connector {
+            font-size: 1.5rem;
+            color: #94a3b8; /* Slate 400 */
+            text-align: center;
+            margin: 0.25rem 0;
+        }
+        .flow-path {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .flow-line {
+            height: 2px;
+            background-color: #cbd5e1; /* Slate 300 */
+            flex-grow: 1;
+        }
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #94a3b8; /* Slate 400 */
+            margin-left: 0.5rem;
+        }
+        .flow-label {
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 0 1rem;
+        }
+        .flow-result {
+            background-color: #dbeafe; /* Blue 100 */
+            border: 1px solid #bfdbfe; /* Blue 200 */
+            color: #1e3a8a; /* Blue 900 */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+        .example-section {
+            page-break-inside: avoid;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body { background-color: white; margin: 0; padding: 0; }
+            .sheet-container { box-shadow: none; border: none; margin: 0; padding: 0.5in; max-width: 100%; }
+            .print-hide { display: none; }
+            .flow-step, .flow-result {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+             .flow-result { background-color: #eef2ff !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto text-center mb-6 print-hide">
+        <h1 class="text-2xl font-bold text-gray-800">Calculus Flowchart</h1>
+        <p class="text-gray-600 mt-2">A decision tree for choosing the right differentiation rule. Press to print.</p>
+        <button onclick="window.print()" class="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-transform transform hover:scale-105">
+            Print Flowchart
+        </button>
+    </div>
+
+    <div class="sheet-container">
+        <header class="text-center pb-4 border-b-2 border-gray-400">
+            <h1 class="text-3xl font-bold text-gray-800">Differentiation Rule Flowchart</h1>
+            <h2 class="text-lg text-gray-600">How to Choose the Right Rule</h2>
+        </header>
+
+        <main class="mt-8">
+            <div class="flowchart space-y-2">
+                <!-- Start -->
+                <div class="flow-step font-bold bg-green-100 border-green-200">Start with a function $$y = f(x)$$</div>
+                <div class="flow-connector">▼</div>
+                
+                <!-- Step 1 -->
+                <div class="flow-step">Is it a single "basic" function? <br><small class="text-gray-500">(e.g., $$x^n, e^x, \sin x$$)</small></div>
+                <div class="flex">
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-green-700">YES</span><div class="flow-result bg-green-100 border-green-200 text-green-800">Use Basic Derivative Rules</div></div>
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-red-700">NO</span><div class="flow-connector">▼</div></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flow-step">Is it a sum or difference? <br><small class="text-gray-500">$$f(x) \pm g(x)$$</small></div>
+                 <div class="flex">
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-green-700">YES</span><div class="flow-result bg-green-100 border-green-200 text-green-800">Use Sum/Difference Rule</div></div>
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-red-700">NO</span><div class="flow-connector">▼</div></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-step">Is it a product of two functions? <br><small class="text-gray-500">$$f(x) \cdot g(x)$$</small></div>
+                <div class="flex">
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-green-700">YES</span><div class="flow-result bg-green-100 border-green-200 text-green-800">Use Product Rule</div></div>
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-red-700">NO</span><div class="flow-connector">▼</div></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flow-step">Is it a quotient of two functions? <br><small class="text-gray-500">$$f(x) / g(x)$$</small></div>
+                <div class="flex">
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-green-700">YES</span><div class="flow-result bg-green-100 border-green-200 text-green-800">Use Quotient Rule</div></div>
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-red-700">NO</span><div class="flow-connector">▼</div></div>
+                </div>
+                
+                <!-- Step 5 -->
+                 <div class="flow-step">Is it a function inside another function? <br><small class="text-gray-500">$$f(g(x))$$</small></div>
+                <div class="flex">
+                    <div class="w-1/2 p-2 text-center"><span class="font-bold text-green-700">YES</span><div class="flow-result bg-green-100 border-green-200 text-green-800">Use Chain Rule</div></div>
+                     <div class="w-1/2 p-2 text-center"><span class="font-bold text-red-700">NO</span><div class="flow-connector">▼</div></div>
+                </div>
+
+                <!-- End -->
+                 <div class="flow-step">Check for special cases <br><small class="text-gray-500">(logarithmic, inverse trig, etc.)</small></div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t-2 border-gray-300 example-section">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Usage Examples</h3>
+                <div class="space-y-6 text-lg">
+                    <p><strong>1. Example: $$y = x^4 + e^x$$</strong><br><span class="ml-4">→ This is a sum. ✅ Use the <strong>Sum Rule</strong>.</span></p>
+                    <p><strong>2. Example: $$y = (2x)(\sin x)$$</strong><br><span class="ml-4">→ This is a product. ✅ Use the <strong>Product Rule</strong>.</span></p>
+                    <p><strong>3. Example: $$y = \frac{x}{e^x}$$</strong><br><span class="ml-4">→ This is a quotient. ✅ Use the <strong>Quotient Rule</strong>.</span></p>
+                    <p><strong>4. Example: $$y = e^{3x^2}$$</strong><br><span class="ml-4">→ This is a function ($$3x^2$$) inside another ($$e^u$$). ✅ Use the <strong>Chain Rule</strong>.</span></p>
+                    <p><strong>5. Example: $$y = \ln(x^2+1)$$</strong><br><span class="ml-4">→ This is a function ($$x^2+1$$) inside a special case ($$\ln u$$). ✅ Use the <strong>Chain Rule</strong> and the rule for natural logs.</span></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ]
+            });
+        });
+    </script>
+
+</body>
+</html>
