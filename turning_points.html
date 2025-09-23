@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - Maximum & Minimum Turning Points</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HNC Mathematics Reference</h1>
+            <p>Your comprehensive guide to key concepts and examples</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+        <main>
+            <h2>Maximum & Minimum Turning Points</h2>
+            [cite_start]<p>In calculus, we can apply the rules of differentiation to determine the maximum and minimum values of a function. [cite: 678] [cite_start]These points often correspond to the "crest of a wave" (a maximum) or the "bottom of a valley" (a minimum) on a curve. [cite: 687] [cite_start]It's important to note that these are often **local** or **relative** maximums and minimums, as other parts of the graph may have greater or lesser values. [cite: 689]</p>
+            [cite_start]<p>These maximum and minimum values occur at **turning points** on the curve. [cite: 690] [cite_start]Turning points are also known as **stationary points** or **critical values**. [cite: 691] [cite_start]The fundamental property of any turning point is that the gradient of the curve at that exact point is zero. [cite: 316]</p>
+            <div class="math-block">$$ \frac{dy}{dx} = f'(x) = 0 $$</div>
+
+            <h3>Method 1: The First Derivative Test</h3>
+            [cite_start]<p>The first method to classify a turning point involves checking the sign of the gradient ($$\frac{dy}{dx}$$) immediately before and after the point. [cite: 323, 495]</p>
+            <div class="info-box">
+                <h4>Classifying Turning Points with the First Derivative</h4>
+                <ul>
+                    [cite_start]<li>A **Maximum** turning point occurs where the gradient changes from positive, through zero, to negative (+ve ➔ 0 ➔ -ve). [cite: 323, 496]</li>
+                    [cite_start]<li>A **Minimum** turning point occurs where the gradient changes from negative, through zero, to positive (-ve ➔ 0 ➔ +ve). [cite: 364, 497]</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Example 1: Using the First Derivative Test</strong></p>
+                [cite_start]<p><strong>Problem:</strong> Find the turning points of $$y = 2x^3 - 15x^2 + 36x + 5$$ and distinguish between them. [cite: 399]</p>
+                
+                <p><strong>Step 1: Find the first derivative</strong></p>
+                <div class="math-block">$$ \frac{dy}{dx} = 6x^2 - 30x + 36 $$</div>
+                
+                <p><strong>Step 2: Find the coordinates of the turning points</strong></p>
+                [cite_start]<p>Set $$\frac{dy}{dx} = 0$$ and solve for x. [cite: 405]</p>
+                <div class="math-block">$$ 6x^2 - 30x + 36 = 0 $$</div>
+                <div class="math-block">$$ 6(x^2 - 5x + 6) = 0 $$</div>
+                <div class="math-block">$$ 6(x-2)(x-3) = 0 $$</div>
+                [cite_start]<p>Turning points occur at $$x=2$$ and $$x=3$$. [cite: 410]</p>
+
+                <p><strong>Step 3: Test the point at x = 2</strong></p>
+                <ul>
+                    [cite_start]<li><strong>Before (x=1.5):</strong> $$\frac{dy}{dx} = 6(1.5)^2 - 30(1.5) + 36 = 13.5 - 45 + 36 = +4.5$$ (Positive) [cite: 413]</li>
+                    [cite_start]<li><strong>After (x=2.5):</strong> $$\frac{dy}{dx} = 6(2.5)^2 - 30(2.5) + 36 = 37.5 - 75 + 36 = -1.5$$ (Negative) [cite: 414]</li>
+                </ul>
+                [cite_start]<p>The gradient changes from +ve to -ve, so $$x=2$$ is a **maximum**. [cite: 415] [cite_start]The y-value is $$y_{max} = 2(2)^3 - 15(2)^2 + 36(2) + 5 = 33$$. [cite: 419]</p>
+
+                <p><strong>Step 4: Test the point at x = 3</strong></p>
+                 <ul>
+                    [cite_start]<li><strong>Before (x=2.5):</strong> From the previous test, the gradient is -1.5 (Negative). [cite: 423]</li>
+                    [cite_start]<li><strong>After (x=3.5):</strong> $$\frac{dy}{dx} = 6(3.5)^2 - 30(3.5) + 36 = 73.5 - 105 + 36 = +4.5$$ (Positive) [cite: 424]</li>
+                </ul>
+                [cite_start]<p>The gradient changes from -ve to +ve, so $$x=3$$ is a **minimum**. [cite: 426, 429] The y-value is $$y_{min} = 2(3)^3 - 15(3)^2 + 36(3) + 5 = 27$$.</p>
+            </div>
+
+            <h3>Method 2: The Second Derivative Test</h3>
+            [cite_start]<p>A simpler and often quicker method for classifying turning points involves using the second derivative, $$\frac{d^2y}{dx^2}$$. [cite: 430, 431] [cite_start]The second derivative represents the rate of change of the gradient. [cite: 431, 432]</p>
+             <div class="info-box">
+                <h4>Classifying Turning Points with the Second Derivative</h4>
+                <ul>
+                    <li>At a maximum point, the gradient is decreasing (from positive to negative). Therefore, the rate of change of the gradient is negative. [cite_start]If $$\frac{d^2y}{dx^2} < 0$$, the point is a **Maximum**. [cite: 434, 435, 501, 505]</li>
+                    <li>At a minimum point, the gradient is increasing (from negative to positive). Therefore, the rate of change of the gradient is positive. [cite_start]If $$\frac{d^2y}{dx^2} > 0$$, the point is a **Minimum**. [cite: 436, 502, 506]</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <p><strong>Example 2: Using the Second Derivative Test</strong></p>
+                [cite_start]<p><strong>Problem:</strong> Re-examine the turning points of $$y = 2x^3 - 15x^2 + 36x + 5$$. [cite: 438]</p>
+                
+                <p><strong>Step 1: Find the first and second derivatives</strong></p>
+                <div class="math-block">$$ \frac{dy}{dx} = 6x^2 - 30x + 36 $$</div>
+                <div class="math-block">$$ \frac{d^2y}{dx^2} = 12x - 30 $$</div>
+                <p>We already know the turning points are at $$x=2$$ and $$x=3$$.</p>
+
+                <p><strong>Step 2: Test the turning points using the second derivative</strong></p>
+                 <ul>
+                    <li><strong>At x = 2:</strong> $$\frac{d^2y}{dx^2} = 12(2) - 30 = 24 - 30 = -6$$. [cite_start]Since this is negative, $$x=2$$ is a **maximum**. [cite: 441, 443]</li>
+                    <li><strong>At x = 3:</strong> $$\frac{d^2y}{dx^2} = 12(3) - 30 = 36 - 30 = +6$$. [cite_start]Since this is positive, $$x=3$$ is a **minimum**. [cite: 442, 444]</li>
+                </ul>
+                <p>This confirms the previous result with much less calculation.</p>
+            </div>
+            
+            <div class="example-box">
+                 <p><strong>Example 3: Trigonometric Turning Points</strong></p>
+                 [cite_start]<p><strong>Problem:</strong> Locate and distinguish the turning points of $$y = 3\sin\theta - 4\cos\theta$$ in the range $$0$$ to $$2\pi$$. [cite: 529]</p>
+                 <p><strong>Step 1: Find derivatives</strong></p>
+                 <div class="math-block">$$ \frac{dy}{d\theta} = 3\cos\theta + 4\sin\theta $$</div>
+                 <div class="math-block">$$ \frac{d^2y}{d\theta^2} = -3\sin\theta + 4\cos\theta $$</div>
+                 
+                 <p><strong>Step 2: Find turning points ($$\frac{dy}{d\theta}=0$$)</strong></p>
+                 <div class="math-block">$$ 3\cos\theta + 4\sin\theta = 0 \implies 4\sin\theta = -3\cos\theta $$</div>
+                 <div class="math-block">$$ \frac{\sin\theta}{\cos\theta} = \tan\theta = -0.75 $$</div>
+                 [cite_start]<p>The solutions for $$\theta$$ in the given range are $$\theta = 143.13^\circ$$ and $$\theta = 323.13^\circ$$. [cite: 541]</p>
+                 
+                 <p><strong>Step 3: Test with the second derivative</strong></p>
+                 <ul>
+                     <li><strong>At $$\theta = 143.13^\circ$$:</strong> $$\frac{d^2y}{d\theta^2} = -3\sin(143.13^\circ) + 4\cos(143.13^\circ) = -1.8 - 3.2 = -5$$. [cite_start]Negative, hence **maximum**. [cite: 544, 545, 546] [cite_start]The value is $$y_{max} = 5$$. [cite: 553]</li>
+                     <li><strong>At $$\theta = 323.13^\circ$$:</strong> $$\frac{d^2y}{d\theta^2} = -3\sin(323.13^\circ) + 4\cos(323.13^\circ) = 1.8 + 3.2 = +5$$. [cite_start]Positive, hence **minimum**. [cite: 547, 548, 549] [cite_start]The value is $$y_{min} = -5$$. [cite: 557]</li>
+                 </ul>
+                 [cite_start]<p><strong>Solution:</strong> Max at $$(143.13^\circ, 5)$$ and Min at $$(323.13^\circ, -5)$$. [cite: 558]</p>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy: 2024 HNC Mathematics Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

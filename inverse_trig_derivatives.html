@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - Inverse Trig Derivatives</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HNC Mathematics Reference</h1>
+            <p>Your comprehensive guide to key concepts and examples</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+        <main>
+            <h2>Derivatives of Inverse Trigonometric Functions</h2>
+            [cite_start]<p>To complete our study of trigonometric differentiation, we can find the derivatives for the inverse trigonometric functions, such as $$f(x) = \arcsin(x)$$[cite: 2]. [cite_start]The derivatives for $$\arccos(x)$$ and $$\arctan(x)$$ can be found using a similar method[cite: 3, 12].</p>
+
+            <h3>Deriving the Derivative of arcsin(x)</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> Find the derivative of $$y = \arcsin(x)$$.</p>
+
+                <p><strong>Step 1: Rewrite the function</strong></p>
+                [cite_start]<p>If $$y = \arcsin(x)$$, we can rewrite this as $$x = \sin(y)$$[cite: 4, 5].</p>
+
+                <p><strong>Step 2: Differentiate with respect to y</strong></p>
+                <p>We can find the derivative of $$x$$ with respect to $$y$$:</p>
+                <div class="math-block">
+                    [cite_start]$$ \frac{dx}{dy} = \cos(y) $$ [cite: 6]
+                </div>
+
+                <p><strong>Step 3: Use a trigonometric identity to express $$\cos(y)$$ in terms of x</strong></p>
+                [cite_start]<p>Using the identity $$\sin^2(y) + \cos^2(y) = 1$$ [cite: 7][cite_start], we can state that $$\cos(y) = \sqrt{1 - \sin^2(y)}$$[cite: 8]. [cite_start]Since we know $$x = \sin(y)$$[cite: 9], we can substitute this in:</p>
+                <div class="math-block">
+                    [cite_start]$$ \cos(y) = \sqrt{1 - x^2} $$ [cite: 11]
+                </div>
+                [cite_start]<p>This means $$\frac{dx}{dy} = \sqrt{1-x^2}$$[cite: 11].</p>
+
+                <p><strong>Step 4: Find the derivative with respect to x</strong></p>
+                [cite_start]<p>The derivative $$\frac{dy}{dx}$$ is the reciprocal of $$\frac{dx}{dy}$$[cite: 11].</p>
+                <div class="math-block">
+                    [cite_start]$$ \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}} = \frac{1}{\sqrt{1-x^2}} $$ [cite: 11]
+                </div>
+                [cite_start]<p><strong>Conclusion:</strong> The derivative of $$\arcsin(x)$$ is $$\frac{1}{\sqrt{1-x^2}}$$[cite: 11].</p>
+            </div>
+
+            <h3>Summary of Inverse Trigonometric Derivatives</h3>
+            <div class="info-box">
+                <h4>Key Derivative Formulas</h4>
+                <p>The main results for the inverse trigonometric functions are:</p>
+                <ul>
+                    [cite_start]<li>$$\frac{d}{dx}(\arcsin x) = \frac{1}{\sqrt{1-x^2}}$$ [cite: 11]</li>
+                    [cite_start]<li>$$\frac{d}{dx}(\arccos x) = \frac{-1}{\sqrt{1-x^2}}$$ [cite: 14]</li>
+                    [cite_start]<li>$$\frac{d}{dx}(\arctan x) = \frac{1}{1+x^2}$$ [cite: 14]</li>
+                </ul>
+            </div>
+
+            <h3>Worked Example</h3>
+            <div class="example-box">
+                [cite_start]<p><strong>Problem:</strong> Given that $$f(\theta) = \arccos(\theta)$$, evaluate $$f'(0.5)$$[cite: 15].</p>
+
+                <p><strong>Step 1: State the derivative of the function</strong></p>
+                [cite_start]<p>The function is $$f(\theta) = \arccos(\theta)$$[cite: 17]. Its derivative is:</p>
+                <div class="math-block">
+                    [cite_start]$$ f'(\theta) = \frac{-1}{\sqrt{1-\theta^2}} $$ [cite: 18]
+                </div>
+
+                <p><strong>Step 2: Substitute the value into the derivative</strong></p>
+                <p>We substitute $$\theta = 0.5$$ into the derivative function:</p>
+                <div class="math-block">
+                    [cite_start]$$ f'(0.5) = \frac{-1}{\sqrt{1-0.5^2}} = \frac{-1}{\sqrt{1-0.25}} = \frac{-1}{\sqrt{0.75}} $$ [cite: 18]
+                </div>
+
+                <p><strong>Final Answer:</strong></p>
+                <p>Calculating the value gives:</p>
+                <div class="math-block">
+                    [cite_start]$$ f'(0.5) \approx -1.155 $$ [cite: 18]
+                </div>
+                [cite_start]<p>This result of -1.155 represents the gradient of the curve $$f(\theta) = \arccos(\theta)$$ at the point where $$\theta = 0.5$$[cite: 30].</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Mathematics Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

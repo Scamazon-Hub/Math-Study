@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { href: 'calculus.html', label: 'Calculus' },
     { href: 'rate_of_change.html', label: 'Rate of Change'},
     { href: 'chainrule.html', label: 'Calculus - chain Rule' },
+    { href: 'inverse_trig_derivatives.html', label: 'Inverse Trig Derivatives' },
+    { href: 'inverse_trig_derivatives_expanded.html', label: 'Inverse Trig (Expanded)' },
+    { href: 'repeated_differentiation.html', label: 'Higher-Order Differentiation' },
+    { href: 'turning_points.html', label: 'Max/Min Turning Points' },
+    { href: 'quotient_rule.html', label: 'Calculus - Quotient Rule' },
     { href: 'expocalc.html', label: 'Exponential Calculus' },
 
     // Applied & Specialized Topics

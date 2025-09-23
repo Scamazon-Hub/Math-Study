@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - Inverse Trig Derivatives (Expanded)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HNC Mathematics Reference</h1>
+            <p>Your comprehensive guide to key concepts and examples</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+        <main>
+            <h2>Inverse Trig Derivatives: Expanded Workings</h2>
+            <p>This section provides a more detailed look at the derivatives of inverse trigonometric functions. [cite_start]We will show the full, step-by-step derivations for $$\arccos(x)$$ and $$\arctan(x)$$, which were left as exercises previously. [cite: 12] We will also explore how to combine these rules with the chain rule for more complex functions.</p>
+
+            <h3>Deriving the Derivative of arccos(x)</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> Find the derivative of $$y = \arccos(x)$$.</p>
+
+                <p><strong>Step 1: Rewrite the function in terms of x</strong></p>
+                <p>If $$y = \arccos(x)$$, we can express $$x$$ as a function of $$y$$:</p>
+                <div class="math-block">$$x = \cos(y)$$</div>
+
+                <p><strong>Step 2: Differentiate with respect to y</strong></p>
+                <p>Find the derivative of $$x$$ with respect to $$y$$. The derivative of $$\cos(y)$$ is $$-\sin(y)$$.</p>
+                <div class="math-block">$$ \frac{dx}{dy} = -\sin(y) $$</div>
+
+                <p><strong>Step 3: Use a trigonometric identity to express $$\sin(y)$$ in terms of x</strong></p>
+                [cite_start]<p>From the identity $$\sin^2(y) + \cos^2(y) = 1$$, we get $$\sin(y) = \sqrt{1 - \cos^2(y)}$$. [cite: 7] Since $$x = \cos(y)$$, we can substitute this in:</p>
+                <div class="math-block">$$ \sin(y) = \sqrt{1 - x^2} $$</div>
+                <p>Therefore, $$\frac{dx}{dy} = -\sqrt{1-x^2}$$.</p>
+
+                <p><strong>Step 4: Find the reciprocal to get $$\frac{dy}{dx}$$</strong></p>
+                [cite_start]<p>The derivative we want, $$\frac{dy}{dx}$$, is the reciprocal of $$\frac{dx}{dy}$$. [cite: 11]</p>
+                <div class="math-block">
+                    $$ \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}} = \frac{1}{-\sqrt{1-x^2}} = \frac{-1}{\sqrt{1-x^2}} $$
+                </div>
+                [cite_start]<p><strong>Conclusion:</strong> This confirms the formula for the derivative of $$\arccos(x)$$. [cite: 14]</p>
+            </div>
+
+            <h3>Deriving the Derivative of arctan(x)</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> Find the derivative of $$y = \arctan(x)$$.</p>
+
+                <p><strong>Step 1: Rewrite the function in terms of x</strong></p>
+                <div class="math-block">$$y = \arctan(x) \implies x = \tan(y)$$</div>
+
+                <p><strong>Step 2: Differentiate with respect to y</strong></p>
+                <p>The derivative of $$\tan(y)$$ is $$\sec^2(y)$$.</p>
+                <div class="math-block">$$ \frac{dx}{dy} = \sec^2(y) $$</div>
+
+                <p><strong>Step 3: Use a trigonometric identity to express $$\sec^2(y)$$ in terms of x</strong></p>
+                [cite_start]<p>We use the identity $$1 + \tan^2(y) = \sec^2(y)$$. [cite: 13] Since $$x = \tan(y)$$, we can substitute this in:</p>
+                <div class="math-block">$$ \sec^2(y) = 1 + x^2 $$</div>
+                <p>Therefore, $$\frac{dx}{dy} = 1+x^2$$.</p>
+
+                <p><strong>Step 4: Find the reciprocal to get $$\frac{dy}{dx}$$</strong></p>
+                <div class="math-block">$$ \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}} = \frac{1}{1+x^2} $$</div>
+                [cite_start]<p><strong>Conclusion:</strong> This confirms the formula for the derivative of $$\arctan(x)$$. [cite: 14]</p>
+            </div>
+            
+            <h3>Applying the Rules with the Chain Rule</h3>
+            <p>When the input to the inverse trigonometric function is another function of $$x$$ (e.g., $$\arcsin(u)$$ where $$u=f(x)$$), we must apply the chain rule.</p>
+            <div class="info-box">
+                <h4>Inverse Trig Derivatives with the Chain Rule</h4>
+                <p>If $$u$$ is a function of $$x$$:</p>
+                <ul>
+                    <li>$$\frac{d}{dx}(\arcsin u) = \frac{1}{\sqrt{1-u^2}} \cdot \frac{du}{dx}$$</li>
+                    <li>$$\frac{d}{dx}(\arccos u) = \frac{-1}{\sqrt{1-u^2}} \cdot \frac{du}{dx}$$</li>
+                    <li>$$\frac{d}{dx}(\arctan u) = \frac{1}{1+u^2} \cdot \frac{du}{dx}$$</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Example: Differentiate $$y = \arcsin(5x)$$</strong></p>
+                <p>Here, the inner function is $$u = 5x$$, so $$\frac{du}{dx} = 5$$.</p>
+                <p>Using the chain rule formula for $$\arcsin(u)$$, we get:</p>
+                <div class="math-block">$$ \frac{dy}{dx} = \frac{1}{\sqrt{1-(5x)^2}} \cdot 5 $$</div>
+                <p><strong>Final Answer:</strong></p>
+                <div class="math-block">$$ \frac{dy}{dx} = \frac{5}{\sqrt{1-25x^2}} $$</div>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Example: Differentiate $$y = \arctan(x^2)$$</strong></p>
+                <p>The inner function is $$u = x^2$$, so $$\frac{du}{dx} = 2x$$.</p>
+                <p>Using the chain rule formula for $$\arctan(u)$$, we get:</p>
+                <div class="math-block">$$ \frac{dy}{dx} = \frac{1}{1+(x^2)^2} \cdot 2x $$</div>
+                <p><strong>Final Answer:</strong></p>
+                <div class="math-block">$$ \frac{dy}{dx} = \frac{2x}{1+x^4} $$</div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Mathematics Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - Higher-Order & Repeated Differentiation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HNC Mathematics Reference</h1>
+            <p>Your comprehensive guide to key concepts and examples</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+        <main>
+            <h2>Higher-Order & Repeated Differentiation</h2>
+            <p>The process of differentiation can be applied repeatedly. Taking the derivative of a function's derivative is called finding the <strong>second derivative</strong>, and continuing the process yields <strong>higher-order derivatives</strong>. These derivatives provide deeper insight into a function's behavior, particularly its shape, curvature, and rates of change.</p>
+            <p>The gradient at a point on a curve changes as the point moves along the curve. The rate of this change is determined by the curve's curvature. This 'rate of change of the gradient' is what the second derivative represents.</p>
+            
+            <div class="info-box">
+                <h4>Notation for Higher-Order Derivatives</h4>
+                <p>The rate of change of the gradient, $$\frac{d}{dx}\left(\frac{dy}{dx}\right)$$, is denoted as follows. Higher-order derivatives follow a similar pattern.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Function Notation</th>
+                            <th>Leibniz Notation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First Derivative</td>
+                            <td>$$f'(x)$$</td>
+                            <td>$$\frac{dy}{dx}$$</td>
+                        </tr>
+                        <tr>
+                            <td>Second Derivative</td>
+                            <td>$$f''(x)$$</td>
+                            <td>$$\frac{d^2y}{dx^2}$$</td>
+                        </tr>
+                        <tr>
+                            <td>Third Derivative</td>
+                            <td>$$f'''(x)$$</td>
+                            <td>$$\frac{d^3y}{dx^3}$$</td>
+                        </tr>
+                        <tr>
+                            <td>n-th Derivative</td>
+                            <td>$$f^{(n)}(x)$$</td>
+                            <td>$$\frac{d^ny}{dx^n}$$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Geometric Interpretation: Concavity</h3>
+            <p>The second derivative tells us about the shape or curvature of a function's graph. This is a crucial tool for curve sketching and analysis.</p>
+            <ul>
+                <li>If $$f''(x) > 0$$ on an interval, the graph is <strong>concave up</strong> (shaped like a cup). This means the slope, $$f'(x)$$, is increasing.</li>
+                <li>If $$f''(x) < 0$$ on an interval, the graph is <strong>concave down</strong> (shaped like a frown). This means the slope, $$f'(x)$$, is decreasing.</li>
+                <li>A <strong>point of inflection</strong> is a point on the graph where the concavity changes. This typically occurs where $$f''(x) = 0$$.</li>
+            </ul>
+
+            <div class="example-box">
+                <p><strong>Example 1: Finding Concavity and Inflection Points</strong></p>
+                <p><strong>Problem:</strong> For the function $$f(x) = x^3 - 6x^2 + 5$$, find the intervals of concavity and any points of inflection.</p>
+                
+                <p><strong>Step 1: Find the first and second derivatives</strong></p>
+                <div class="math-block">$$ f'(x) = 3x^2 - 12x $$</div>
+                <div class="math-block">$$ f''(x) = 6x - 12 $$</div>
+                
+                <p><strong>Step 2: Find potential points of inflection</strong></p>
+                <p>Set the second derivative to zero and solve for $$x$$.</p>
+                <div class="math-block">$$ 6x - 12 = 0 \implies x = 2 $$</div>
+
+                <p><strong>Step 3: Test the intervals around $$x=2$$</strong></p>
+                <ul>
+                    <li>For $$x < 2$$ (e.g., $$x=0$$): $$f''(0) = -12$$. Since $$f''(x) < 0$$, the graph is <strong>concave down</strong>.</li>
+                    <li>For $$x > 2$$ (e.g., $$x=3$$): $$f''(3) = 6$$. Since $$f''(x) > 0$$, the graph is <strong>concave up</strong>.</li>
+                </ul>
+                <p><strong>Conclusion:</strong> The function is concave down on $$(-\infty, 2)$$ and concave up on $$(2, \infty)$$. Since concavity changes at $$x=2$$, there is a point of inflection at $$x=2$$. The y-coordinate is $$f(2) = (2)^3 - 6(2)^2 + 5 = -11$$. The point of inflection is at $$(2, -11)$$.</p>
+            </div>
+
+            <h3>Physical Interpretation: Linear Motion</h3>
+            <p>One of the most intuitive applications of higher-order derivatives is in mechanics, relating displacement, velocity, and acceleration.</p>
+             <div class="info-box">
+                <h4>Displacement, Velocity, and Acceleration</h4>
+                <ul>
+                    <li><strong>Displacement:</strong> $$s = f(t)$$</li>
+                    <li><strong>Velocity (First Derivative):</strong> $$v = \frac{ds}{dt} = f'(t)$$</li>
+                    <li><strong>Acceleration (Second Derivative):</strong> $$a = \frac{dv}{dt} = \frac{d^2s}{dt^2} = f''(t)$$</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Example 2: Analyzing Linear Motion</strong></p>
+                <p><strong>Problem:</strong> The motion of a body is described by $$s = 2t^3 - 8.5t^2 + 12t - 8$$, where s is in metres and t is in seconds.</p>
+                
+                <p><strong>a. Find the velocity at t = 2s</strong></p>
+                 <p><strong>Workings:</strong> First, find the velocity function, $$v(t)$$, by differentiating $$s(t)$$.</p>
+                 <div class="math-block">$$ v(t) = \frac{ds}{dt} = 6t^2 - 17t + 12 $$</div>
+                 <p>Now substitute $$t=2$$:</p>
+                 <div class="math-block">$$ v(2) = 6(2)^2 - 17(2) + 12 = 24 - 34 + 12 = 2 $$</div>
+                 <p><strong>Answer:</strong> The velocity at t=2s is $$2 \text{ m/s}$$.</p>
+
+                 <p><strong>b. Find the acceleration at t = 3s</strong></p>
+                 <p><strong>Workings:</strong> Find the acceleration function, $$a(t)$$, by differentiating $$v(t)$$.</p>
+                 <div class="math-block">$$ a(t) = \frac{dv}{dt} = \frac{d^2s}{dt^2} = 12t - 17 $$</div>
+                 <p>Now substitute $$t=3$$:</p>
+                 <div class="math-block">$$ a(3) = 12(3) - 17 = 36 - 17 = 19 $$</div>
+                 <p><strong>Answer:</strong> The acceleration at t=3s is $$19 \text{ m/s}^2$$.</p>
+                 
+                 <p><strong>c. Find when the body is stationary</strong></p>
+                 <p><strong>Workings:</strong> The body is stationary when velocity is zero. Set $$v(t) = 0$$ and solve.</p>
+                 <div class="math-block">$$ 6t^2 - 17t + 12 = 0 $$</div>
+                 <p>Factor the quadratic: $$(2t - 3)(3t - 4) = 0$$. This gives two solutions: $$t = \frac{3}{2}$$ and $$t = \frac{4}{3}$$.</p>
+                 <p><strong>Answer:</strong> The body is stationary at $$t = 1.33$$s and $$t = 1.5$$s.</p>
+            </div>
+
+            <h3>Advanced Example: Repeated Product Rule</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> Given $$y = e^{3x}\sin(x)$$, show that $$\frac{d^2y}{dx^2} - 6\frac{dy}{dx} + 10y = 0$$.</p>
+                
+                <p><strong>Step 1: Find the first derivative, $$\frac{dy}{dx}$$</strong></p>
+                <p>Use the product rule with $$u=e^{3x}$$ and $$v=\sin(x)$$.</p>
+                <div class="math-block">$$ \frac{dy}{dx} = (3e^{3x})(\sin x) + (e^{3x})(\cos x) = e^{3x}(3\sin x + \cos x) $$</div>
+
+                <p><strong>Step 2: Find the second derivative, $$\frac{d^2y}{dx^2}$$</strong></p>
+                <p>Apply the product rule again to $$\frac{dy}{dx}$$. Let $$u=e^{3x}$$ and $$v=3\sin x + \cos x$$.</p>
+                <div class="math-block">$$ \frac{d^2y}{dx^2} = (3e^{3x})(3\sin x + \cos x) + (e^{3x})(3\cos x - \sin x) $$</div>
+                <p>Simplify by expanding and collecting terms:</p>
+                <div class="math-block">$$ \frac{d^2y}{dx^2} = 9e^{3x}\sin x + 3e^{3x}\cos x + 3e^{3x}\cos x - e^{3x}\sin x $$</div>
+                <div class="math-block">$$ \frac{d^2y}{dx^2} = 8e^{3x}\sin x + 6e^{3x}\cos x $$</div>
+
+                <p><strong>Step 3: Substitute into the differential equation</strong></p>
+                <p>Substitute the expressions for $$y$$, $$\frac{dy}{dx}$$, and $$\frac{d^2y}{dx^2}$$ into the target equation:</p>
+                <p>$$(8e^{3x}\sin x + 6e^{3x}\cos x) - 6(e^{3x}(3\sin x + \cos x)) + 10(e^{3x}\sin x) = 0$$</p>
+                <p>Expand and simplify:</p>
+                <div class="math-block">$$ 8e^{3x}\sin x + 6e^{3x}\cos x - 18e^{3x}\sin x - 6e^{3x}\cos x + 10e^{3x}\sin x = 0 $$</div>
+                <p>Combine like terms: $$ (8 - 18 + 10)e^{3x}\sin x + (6 - 6)e^{3x}\cos x = 0 $$</p>
+                <div class="math-block">$$ 0 \cdot e^{3x}\sin x + 0 \cdot e^{3x}\cos x = 0 $$</div>
+                <p><strong>Conclusion:</strong> Since $$0=0$$, the original equation is shown to be true.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Mathematics Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

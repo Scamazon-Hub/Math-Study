@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus - The Quotient Rule</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HNC Mathematics Reference</h1>
+            <p>Your comprehensive guide to key concepts and examples</p>
+        </div>
+    </header>
+
+    <div class="container grid-layout">
+        <aside id="navigation-placeholder"></aside>
+        <main>
+            <h2>The Quotient Rule</h2>
+            <p>The rule for the differentiation of quotients has a similar form to the 'product rule', and again the emphasis is placed on the application of the rule rather than its derivation. For this reason the derivation is offered as optional reading in the Appendix.</p>
+
+            <div class="info-box">
+                <h4>The Quotient Rule</h4>
+                <p>If $$u$$ and $$v$$ are functions of $$x$$ such that $$f(x) = \frac{u}{v}$$, then:</p>
+                <div class="math-block">
+                    $$ f'(x) = \frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2} $$
+                </div>
+            </div>
+
+            <p>Comparing with the 'product rule' we see two differences: the plus sign has become a <strong>minus sign</strong> and the $$v^2$$ divisor has been introduced.</p>
+            <p>We can still make use of the 'cross-product' layout which we employed for the product rule, but the presence of the minus sign adds significance to the sequence of terms.</p>
+            <p>Example 1 illustrates this by numbering the two cross-products.</p>
+
+            <h3>Example 1</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> Obtain $$\frac{dy}{dx}$$ for the quotient $$y = \frac{x^2}{x-1}$$</p>
+                <p><strong>Step 1: Assign u and v</strong></p>
+                <p>Let $$u = x^2$$ and $$v = x-1$$</p>
+                
+                <p><strong>Step 2: Differentiate u and v</strong></p>
+                <p>Differentiating each function with respect to $$x$$ gives:</p>
+                <ul>
+                    <li>$$\frac{du}{dx} = 2x$$</li>
+                    <li>$$\frac{dv}{dx} = 1$$</li>
+                </ul>
+
+                <p><strong>Step 3: Apply the quotient rule formula</strong></p>
+                <p>Apply the 'quotient rule' using the cross products. The term $$v\frac{du}{dx}$$ must come first.</p>
+                <div class="math-block">
+                    $$ \frac{dy}{dx} = \frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2} $$
+                </div>
+                <p>Substitute the functions and their derivatives into the formula:</p>
+                 <div class="math-block">
+                    $$ \frac{dy}{dx} = \frac{(x-1)(2x) - (x^2)(1)}{(x-1)^2} $$
+                </div>
+                <p>Now, simplify the numerator:</p>
+                <div class="math-block">
+                    $$ \frac{dy}{dx} = \frac{2x^2 - 2x - x^2}{(x-1)^2} $$
+                </div>
+                <p><strong>Final Answer:</strong></p>
+                <div class="math-block">
+                    $$ \frac{dy}{dx} = \frac{x^2 - 2x}{(x-1)^2} $$
+                </div>
+            </div>
+
+            <p>The following two examples retain the polynomial form for u and v but introduce 'function of a function' expressions. The 'product rule' lesson gave you plenty of opportunity to practise the inspection approach for F of F differentiation, and we'll continue to use it here.</p>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HNC Mathematics Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
